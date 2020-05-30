@@ -23,13 +23,15 @@ DROP TABLE IF EXISTS `diary`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `diary` (
-  `travelid` decimal(12,0) NOT NULL,
+  `diaryid` decimal(12,0) NOT NULL,
   `title` varchar(45) DEFAULT NULL,
   `description` longtext,
   `photo` longtext,
   `share` decimal(1,0) NOT NULL DEFAULT '0',
-  `isdelete` decimal(1,0) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`travelid`)
+  `travelid` decimal(12,0) DEFAULT NULL,
+  PRIMARY KEY (`diaryid`),
+  KEY `travelid_idx` (`travelid`),
+  CONSTRAINT `travelid` FOREIGN KEY (`travelid`) REFERENCES `travel` (`travelid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='日记表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,7 +53,7 @@ DROP TABLE IF EXISTS `route`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `route` (
   `routeid` int NOT NULL,
-  `state` decimal(1,0) NOT NULL,
+  `state` decimal(1,0) NOT NULL DEFAULT '0',
   `method` varchar(100) NOT NULL DEFAULT '未定义出行方式',
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
@@ -59,12 +61,8 @@ CREATE TABLE `route` (
   `end_siteid` varchar(45) DEFAULT NULL,
   `travelid` decimal(12,0) NOT NULL,
   PRIMARY KEY (`routeid`),
-  KEY `start_site_idx` (`start_siteid`),
-  KEY `end_siteid_idx` (`end_siteid`),
   KEY `travelid_idx` (`travelid`),
-  CONSTRAINT `end_siteid` FOREIGN KEY (`end_siteid`) REFERENCES `site` (`siteid`),
-  CONSTRAINT `start_siteid` FOREIGN KEY (`start_siteid`) REFERENCES `site` (`siteid`),
-  CONSTRAINT `travel_id` FOREIGN KEY (`travelid`) REFERENCES `diary` (`travelid`)
+  CONSTRAINT `travel_id` FOREIGN KEY (`travelid`) REFERENCES `travel` (`travelid`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='路线表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,33 +103,56 @@ LOCK TABLES `site` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `todo`
+-- Table structure for table `task`
 --
 
-DROP TABLE IF EXISTS `todo`;
+DROP TABLE IF EXISTS `task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `todo` (
+CREATE TABLE `task` (
   `taskid` int NOT NULL,
-  `state` decimal(1,0) NOT NULL DEFAULT '0' COMMENT '1或0',
-  `task` varchar(45) NOT NULL,
+  `state` decimal(1,0) NOT NULL DEFAULT '0',
+  `description` varchar(45) NOT NULL,
   `routeid` int NOT NULL,
-  `siteid` varchar(45) NOT NULL,
   PRIMARY KEY (`taskid`),
   KEY `routeid_idx` (`routeid`),
-  KEY `siteid_idx` (`siteid`),
-  CONSTRAINT `routeid` FOREIGN KEY (`routeid`) REFERENCES `route` (`routeid`) ON DELETE CASCADE,
-  CONSTRAINT `siteid` FOREIGN KEY (`siteid`) REFERENCES `site` (`siteid`)
+  CONSTRAINT `routeid` FOREIGN KEY (`routeid`) REFERENCES `route` (`routeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='待办表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `todo`
+-- Dumping data for table `task`
 --
 
-LOCK TABLES `todo` WRITE;
-/*!40000 ALTER TABLE `todo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `todo` ENABLE KEYS */;
+LOCK TABLES `task` WRITE;
+/*!40000 ALTER TABLE `task` DISABLE KEYS */;
+/*!40000 ALTER TABLE `task` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `travel`
+--
+
+DROP TABLE IF EXISTS `travel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `travel` (
+  `travelid` decimal(12,0) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `uid` decimal(5,0) NOT NULL,
+  PRIMARY KEY (`travelid`),
+  KEY `uid` (`uid`),
+  CONSTRAINT `uid` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='旅游表';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `travel`
+--
+
+LOCK TABLES `travel` WRITE;
+/*!40000 ALTER TABLE `travel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `travel` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -160,32 +181,6 @@ LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `user_travel`
---
-
-DROP TABLE IF EXISTS `user_travel`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_travel` (
-  `uid` decimal(5,0) NOT NULL,
-  `travelid` decimal(12,0) NOT NULL COMMENT '20200520xxxx',
-  PRIMARY KEY (`uid`,`travelid`),
-  KEY `travelid_idx` (`travelid`),
-  CONSTRAINT `travelid` FOREIGN KEY (`travelid`) REFERENCES `diary` (`travelid`),
-  CONSTRAINT `uid` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户与旅游连接表';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_travel`
---
-
-LOCK TABLES `user_travel` WRITE;
-/*!40000 ALTER TABLE `user_travel` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_travel` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -196,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-30 10:50:19
+-- Dump completed on 2020-05-30 20:19:29
