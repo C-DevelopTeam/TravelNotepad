@@ -1,18 +1,20 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace TravelApi.Models
 {
-    class site
+    public class Site
     {
-        [key]
-        public string siteid{get;set;}
+        [Key]
+        public string SiteId{get; set;}
+        [Required]
+        public string SiteName{get; set;}
 
-        public string sitename{get;set;}
+        public string Distinct{get; set;}
 
-        public string distinct{get;set;}
+        public string Adcode{get; set;}
 
-        public string adcode{get;set;}
-
-        public string location{get;set;}
+        public string Location{get; set;}
         
-        public string address{get;set;}
+        public string Address{get; set;}
     }
 }
