@@ -12,8 +12,8 @@ namespace TravelApi.Dao
         public DbSet<Site> Sites{get; set;}
         public DbSet<Route> Routes{get; set;}
         public DbSet<Diary> Diaries{get; set;}
-        public DbSet<Todo> Todos{get; set;}
-        public DbSet<UserTravel> UserTravels{get; set;}
+        public DbSet<Task> Tasks{get; set;}
+        public DbSet<Travel> Travels{get; set;}
         
     }
 }

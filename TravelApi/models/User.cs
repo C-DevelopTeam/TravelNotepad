@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace TravelApi.Models
 {
@@ -12,5 +13,6 @@ namespace TravelApi.Models
         public string Password {get; set;}
         public string Sex {get; set;}
         public string Introduction {get; set;}
+        public List<Travel> Travels {get; set;}
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace TravelApi.Models
 {
@@ -22,6 +23,8 @@ namespace TravelApi.Models
         public Site EndSite{get; set;}
         public int TravelId{get; set;}
         [ForeignKey("TravelId")]
-        public Diary Diary{get; set;}
+        public Travel Travel{get; set;}
+
+        public List<Task> Tasks{get; set;}
     }
 }
