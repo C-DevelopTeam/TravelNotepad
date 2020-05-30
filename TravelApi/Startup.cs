@@ -32,7 +32,7 @@ namespace TravelApi
             .UseMySql(Configuration.GetConnectionString("travelDataBase"),
             mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 30), ServerType.MySql)
             ));
-            services.AddControllers();
+            services.AddControllers().AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
