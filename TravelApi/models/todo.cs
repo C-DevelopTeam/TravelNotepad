@@ -1,18 +1,22 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace TravelApi.Models
 {
-    class todo
+    public class Todo
     {
-    [key]
-    public int taskid{get;set;}
-
-    public int state{get;set;}
-
-    public string task{get;set;}
-    
-    [ForeignKey]
-    public int routeid{get;set;}
-    [ForeignKey]
-    public string siteid{get;set;}
+        [Key]
+        public int TaskId{get; set;}
+        [Required]
+        public int State{get; set;}
+        [Required]
+        public string Task{get; set;}
+        public int RouteId{get; set;}
+        [ForeignKey("RouteId")]
+        public Route Route{get; set;}
+        public string SiteId{get; set;}
+        [ForeignKey("SiteId")]
+        public Site Site{get; set;}
     }
 }
 
