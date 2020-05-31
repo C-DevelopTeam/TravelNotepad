@@ -7,7 +7,7 @@ namespace TravelApi.Models
     public class Travel
     {
         [Key]
-        public int TravelId {get; set;}
+        public long TravelId {get; set;}
         public string Description {get; set;}
         public int Uid {get; set;}
         [ForeignKey("Uid")]
