@@ -8,7 +8,7 @@ namespace TravelApi.Models
     public class Route
     {
         [Key]
-        public int RouteId{get; set;}
+        public long RouteId{get; set;}
         [Required]
         public int State{get; set;}
         [Required]
@@ -21,7 +21,7 @@ namespace TravelApi.Models
         public string EndSiteId{get; set;}
         [ForeignKey("EndSiteId")]
         public Site EndSite{get; set;}
-        public int TravelId{get; set;}
+        public long TravelId{get; set;}
         [ForeignKey("TravelId")]
         public Travel Travel{get; set;}
 

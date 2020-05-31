@@ -6,12 +6,12 @@ namespace TravelApi.Models
     public class Task
     {
         [Key]
-        public int TaskId{get; set;}
+        public long TaskId{get; set;}
         [Required]
         public int State{get; set;}
         [Required]
         public string Description{get; set;}
-        public int RouteId{get; set;}
+        public long RouteId{get; set;}
         [ForeignKey("RouteId")]
         public Route Route{get; set;}
     }
