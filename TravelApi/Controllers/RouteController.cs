@@ -51,7 +51,7 @@ namespace TravelApi.Controllers
         }
 
         //根据旅游id获取路线
-        [HttpGet("/post")]
+        [HttpGet("/get")]
         public ActionResult<List<Route>> GetRoute(int travelid)
         {
             IQueryable<Route> query = travelDb.Routes;

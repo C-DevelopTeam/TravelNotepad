@@ -48,7 +48,7 @@ namespace TravelApi.Controllers
         }
 
         //根据地点id获取待办
-        [HttpGet("/post")]
+        [HttpGet("/get")]
         public ActionResult<List<TravelApi.Models.Task>> GetRoute(int routeid)
         {
             IQueryable<TravelApi.Models.Task> query = travelDb.Tasks;
