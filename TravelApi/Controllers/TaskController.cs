@@ -24,7 +24,7 @@ namespace TravelApi.Controllers
 
         //新建待办
         [HttpPost]
-        public ActionResult<TravelApi.Models.Task> AddTask(int routeid,TravelApi.Models.Task task)
+        public ActionResult<TravelApi.Models.Task> AddTask(long routeid,TravelApi.Models.Task task)
         {
             try{
                 IQueryable<TravelApi.Models.Task> query = travelDb.Tasks;
@@ -49,7 +49,7 @@ namespace TravelApi.Controllers
 
         //根据地点id获取待办
         [HttpGet("/get")]
-        public ActionResult<List<TravelApi.Models.Task>> GetRoute(int routeid)
+        public ActionResult<List<TravelApi.Models.Task>> GetRoute(long routeid)
         {
             IQueryable<TravelApi.Models.Task> query = travelDb.Tasks;
             query = query.Where(t => t.RouteId == routeid);
@@ -62,7 +62,7 @@ namespace TravelApi.Controllers
 
         //更该待办信息
         [HttpPut("/update")]
-        public ActionResult<TravelApi.Models.Task> UpdateRoute(int taskid, TravelApi.Models.Task task)
+        public ActionResult<TravelApi.Models.Task> UpdateRoute(long taskid, TravelApi.Models.Task task)
         {
             if (taskid != task.TaskId)
             {
@@ -84,7 +84,7 @@ namespace TravelApi.Controllers
 
         //按照id删除待办
         [HttpDelete("/delete")]
-        public ActionResult DeleteRoute(int taskid)
+        public ActionResult DeleteRoute(long taskid)
         {
             try
             {

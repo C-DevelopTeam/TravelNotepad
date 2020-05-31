@@ -24,7 +24,7 @@ namespace TravelApi.Controllers
 
         //新建路线
         [HttpPost]
-        public ActionResult<Route> AddRoute(int travelid,Route route,Site startSite,Site endSite)
+        public ActionResult<Route> AddRoute(long travelid,Route route,Site startSite,Site endSite)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace TravelApi.Controllers
 
         //根据旅游id获取路线
         [HttpGet("/get")]
-        public ActionResult<List<Route>> GetRoute(int travelid)
+        public ActionResult<List<Route>> GetRoute(long travelid)
         {
             IQueryable<Route> query = travelDb.Routes;
             query = query.Where(t => t.TravelId == travelid);
@@ -65,7 +65,7 @@ namespace TravelApi.Controllers
 
         //更该路线信息
         [HttpPut("/update")]
-        public ActionResult<Route> UpdateRoute(int RouteId, Route route)
+        public ActionResult<Route> UpdateRoute(long RouteId, Route route)
         {
             if (RouteId != route.RouteId)
             {
@@ -87,7 +87,7 @@ namespace TravelApi.Controllers
 
         //按照id删除订单
         [HttpDelete("/delete")]
-        public ActionResult DeleteRoute(int[] routeids)
+        public ActionResult DeleteRoute(long[] routeids)
         {
             try
             {
