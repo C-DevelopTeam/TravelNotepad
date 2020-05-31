@@ -1,4 +1,4 @@
-﻿namespace TravelClient.Templates
+﻿namespace TravelClient
 {
     partial class Form1
     {
