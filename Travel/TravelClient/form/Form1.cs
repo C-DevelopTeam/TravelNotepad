@@ -8,13 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TravelClient
+namespace TravelClient.form
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            using (Form_CreateTrip ct = new Form_CreateTrip())
+            {
+                ct.ShowDialog();
+            }
         }
     }
 }
