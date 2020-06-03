@@ -21,6 +21,7 @@ namespace TravelClient.form
         {
 
         }
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -33,6 +34,30 @@ namespace TravelClient.form
             {
                 ct.ShowDialog();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Login a = new Login();
+            this.Hide();
+            a.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Sign a = new Sign();
+            this.Hide();
+            a.Show();
         }
     }
 }
