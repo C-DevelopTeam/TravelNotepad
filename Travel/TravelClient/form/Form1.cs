@@ -34,5 +34,13 @@ namespace TravelClient.form
                 ct.ShowDialog();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (Form_MyTrip mt = new Form_MyTrip())
+            {
+                mt.ShowDialog();
+            }
+        }
     }
 }

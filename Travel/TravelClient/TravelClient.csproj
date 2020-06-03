@@ -52,6 +52,18 @@
     <Compile Include="controller\UC_CreateTrip.Designer.cs">
       <DependentUpon>UC_CreateTrip.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\UC_Journal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_Journal.Designer.cs">
+      <DependentUpon>UC_Journal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_MyJournal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_MyJournal.Designer.cs">
+      <DependentUpon>UC_MyJournal.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\UC_TodoLIst.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,6 +82,12 @@
     <Compile Include="form\Form_CreateTrip.Designer.cs">
       <DependentUpon>Form_CreateTrip.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Form_MyTrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Form_MyTrip.Designer.cs">
+      <DependentUpon>Form_MyTrip.cs</DependentUpon>
+    </Compile>
     <Compile Include="models\Diary.cs" />
     <Compile Include="models\Route.cs" />
     <Compile Include="models\Site.cs" />
@@ -81,6 +99,12 @@
     <EmbeddedResource Include="controller\UC_CreateTrip.resx">
       <DependentUpon>UC_CreateTrip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_Journal.resx">
+      <DependentUpon>UC_Journal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_MyJournal.resx">
+      <DependentUpon>UC_MyJournal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_TodoLIst.resx">
       <DependentUpon>UC_TodoLIst.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Form_CreateTrip.resx">
       <DependentUpon>Form_CreateTrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Form_MyTrip.resx">
+      <DependentUpon>Form_MyTrip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
