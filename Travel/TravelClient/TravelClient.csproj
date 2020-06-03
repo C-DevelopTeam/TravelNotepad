@@ -58,6 +58,7 @@
     <Compile Include="controller\UC_TodoLIst.Designer.cs">
       <DependentUpon>UC_TodoLIst.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Class1.cs" />
     <Compile Include="form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,24 @@
     </Compile>
     <Compile Include="form\Form_CreateTrip.Designer.cs">
       <DependentUpon>Form_CreateTrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Sign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Sign.Designer.cs">
+      <DependentUpon>Sign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Successful.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Successful.Designer.cs">
+      <DependentUpon>Successful.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Diary.cs" />
     <Compile Include="models\Route.cs" />
@@ -89,6 +108,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Form_CreateTrip.resx">
       <DependentUpon>Form_CreateTrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Sign.resx">
+      <DependentUpon>Sign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Successful.resx">
+      <DependentUpon>Successful.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
