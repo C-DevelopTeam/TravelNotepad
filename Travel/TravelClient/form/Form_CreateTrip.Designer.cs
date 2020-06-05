@@ -95,6 +95,7 @@
             this.panelSlide.Name = "panelSlide";
             this.panelSlide.Size = new System.Drawing.Size(265, 10);
             this.panelSlide.TabIndex = 1;
+            this.panelSlide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSlide_Paint);
             // 
             // btn_journal
             // 
@@ -146,6 +147,7 @@
             // 
             // panelControls
             // 
+            this.panelControls.AutoSize = true;
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControls.Location = new System.Drawing.Point(405, 100);
             this.panelControls.Name = "panelControls";
@@ -164,11 +166,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_CreateTrip";
             this.Text = "Form_CreateTrip";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.panel1.ResumeLayout(false);
             this.paneltop.ResumeLayout(false);
             this.paneltop.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
