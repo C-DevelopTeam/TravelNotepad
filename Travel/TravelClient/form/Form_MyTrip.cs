@@ -46,7 +46,9 @@ namespace TravelClient.form
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            moveSlidePanel(btn_journal);
+            UC_MyJournal mj = new UC_MyJournal();
+            AddControlsToPanel(mj);
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
