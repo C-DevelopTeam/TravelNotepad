@@ -52,13 +52,36 @@
     <Compile Include="controller\UC_CreateTrip.Designer.cs">
       <DependentUpon>UC_CreateTrip.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\UC_Journal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_Journal.Designer.cs">
+      <DependentUpon>UC_Journal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_Login.Designer.cs">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_MyJournal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_MyJournal.Designer.cs">
+      <DependentUpon>UC_MyJournal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_Register.Designer.cs">
+      <DependentUpon>UC_Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\UC_TodoLIst.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="controller\UC_TodoLIst.Designer.cs">
       <DependentUpon>UC_TodoLIst.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Class1.cs" />
     <Compile Include="form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,23 +94,23 @@
     <Compile Include="form\Form_CreateTrip.Designer.cs">
       <DependentUpon>Form_CreateTrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Login.cs">
+    <Compile Include="form\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="form\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Sign.cs">
+    <Compile Include="form\Form_MyTrip.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\Sign.Designer.cs">
-      <DependentUpon>Sign.cs</DependentUpon>
+    <Compile Include="form\Form_MyTrip.Designer.cs">
+      <DependentUpon>Form_MyTrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Successful.cs">
+    <Compile Include="form\Form_TripReview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\Successful.Designer.cs">
-      <DependentUpon>Successful.cs</DependentUpon>
+    <Compile Include="form\Form_TripReview.Designer.cs">
+      <DependentUpon>Form_TripReview.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Diary.cs" />
     <Compile Include="models\Route.cs" />
@@ -100,6 +123,18 @@
     <EmbeddedResource Include="controller\UC_CreateTrip.resx">
       <DependentUpon>UC_CreateTrip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_Journal.resx">
+      <DependentUpon>UC_Journal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_Login.resx">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_MyJournal.resx">
+      <DependentUpon>UC_MyJournal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_Register.resx">
+      <DependentUpon>UC_Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_TodoLIst.resx">
       <DependentUpon>UC_TodoLIst.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,14 +144,14 @@
     <EmbeddedResource Include="form\Form_CreateTrip.resx">
       <DependentUpon>Form_CreateTrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="form\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\Sign.resx">
-      <DependentUpon>Sign.cs</DependentUpon>
+    <EmbeddedResource Include="form\Form_MyTrip.resx">
+      <DependentUpon>Form_MyTrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\Successful.resx">
-      <DependentUpon>Successful.cs</DependentUpon>
+    <EmbeddedResource Include="form\Form_TripReview.resx">
+      <DependentUpon>Form_TripReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -140,7 +175,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="utils\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="static\test.png" />
   </ItemGroup>
