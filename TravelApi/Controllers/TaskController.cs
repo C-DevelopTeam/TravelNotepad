@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using TravelApi.Dao;
+using TravelApi.Service;
 using TravelApi.Models;
 
 namespace TravelApi.Controllers
@@ -15,30 +12,28 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class TaskController : ControllerBase
     {
-        private readonly TravelContext travelDb;
+        private readonly TaskService _taskService;
 
-        public TaskController(TravelContext context)
+        public TaskController(TaskService taskService)
         {
-            this.travelDb = context;
+            this._taskService = taskService;
         }
 
         //新建待办
         [HttpPost]
-        public ActionResult<TravelApi.Models.Task> AddTask(long routeid,TravelApi.Models.Task task)
+        public ActionResult<Task> AddTask(Task task)
         {
             try{
-                IQueryable<TravelApi.Models.Task> query = travelDb.Tasks;
-                query = query.Where(t => t.RouteId == routeid).OrderByDescending(c=>c.TaskId);
+                IQueryable<Task> query = _taskService.GetByRouteId(task.RouteId);
                 if(query!=null)
                 {
                     task.TaskId = query.ToList().First().TaskId+1;
                 }
                 else
                 {
-                    task.TaskId = routeid*100+1;
+                    task.TaskId = task.RouteId*100+1;
                 }
-                travelDb.Tasks.Add(task);
-                travelDb.SaveChanges();
+                _taskService.Add(task);
             }
             catch (Exception e)
             {
@@ -49,10 +44,9 @@ namespace TravelApi.Controllers
 
         //根据地点id获取待办
         [HttpGet("/get")]
-        public ActionResult<List<TravelApi.Models.Task>> GetRoute(long routeid)
+        public ActionResult<List<Task>> GetRoute(long routeId)
         {
-            IQueryable<TravelApi.Models.Task> query = travelDb.Tasks;
-            query = query.Where(t => t.RouteId == routeid);
+            IQueryable<Task> query = _taskService.GetByRouteId(routeId);
             if(query==null)
             {
                 return NotFound();
@@ -62,16 +56,15 @@ namespace TravelApi.Controllers
 
         //更该待办信息
         [HttpPut("/update")]
-        public ActionResult<TravelApi.Models.Task> UpdateRoute(long taskid, TravelApi.Models.Task task)
+        public ActionResult<Task> UpdateRoute(long taskId, Task task)
         {
-            if (taskid != task.TaskId)
+            if (taskId != task.TaskId)
             {
                 return BadRequest("Id cannot be modified!");
             }
             try
             {
-                travelDb.Entry(task).State = EntityState.Modified;
-                travelDb.SaveChanges();
+                _taskService.Update(task);
             }
             catch (Exception e)
             {
@@ -84,15 +77,14 @@ namespace TravelApi.Controllers
 
         //按照id删除待办
         [HttpDelete("/delete")]
-        public ActionResult DeleteRoute(long taskid)
+        public ActionResult DeleteRoute(long taskId)
         {
             try
             {
-                var route = travelDb.Tasks.FirstOrDefault(t => t.TaskId == taskid);
-                if (route != null)
+                var task = _taskService.GetById(taskId);
+                if (task != null)
                 {
-                    travelDb.Remove(route);
-                    travelDb.SaveChanges();
+                    _taskService.Delete(task);
                 }
             }
             catch (Exception e)

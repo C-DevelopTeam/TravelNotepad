@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using TravelApi.Dao;
+using TravelApi.Service;
 using TravelApi.Models;
 
 namespace TravelApi.Controllers
@@ -15,21 +12,21 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class TravelController : ControllerBase
     {
-        private readonly TravelContext travelDb;
+        private readonly TravelService _travelService;
 
-        public TravelController(TravelContext context)
+        public TravelController(TravelService travelService)
         {
-            this.travelDb = context;
+            this._travelService = travelService;
         }
 
         // POST: api/travel
         [HttpPost("/")]
-        public ActionResult<Travel> PostTravel(int uid, Travel travel)
+        public ActionResult<Travel> AddTravel(Travel travel)
         {
             try
             {
                 string date = DateTime.Now.ToString("yyyyMMdd");
-                var query = from t in travelDb.Travels 
+                var query = from t in _travelService.GetTravels()
                             where t.TravelId.ToString().StartsWith(date)
                             orderby t.TravelId
                             select t;
@@ -41,9 +38,7 @@ namespace TravelApi.Controllers
                 {
                     travel.TravelId = query.First().TravelId + 1;
                 }
-                travel.Uid = uid;
-                travelDb.Travels.Add(travel);
-                travelDb.SaveChanges();
+                _travelService.Add(travel);
             }
             catch(Exception e)
             {
@@ -55,21 +50,20 @@ namespace TravelApi.Controllers
         [HttpGet("/get")]
         public ActionResult<List<Travel>> GetTravel(int uid)
         {
-            var query = travelDb.Travels.Where(t => t.Uid == uid);
+            var query = _travelService.GetByUid(uid);
             return query.ToList();
         }
 
         [HttpPut("/update")]
-        public ActionResult<Travel> UpdateTravel(long travelid, Travel travel)
+        public ActionResult<Travel> UpdateTravel(long travelId, Travel travel)
         {
-            if(travelid != travel.TravelId)
+            if(travelId != travel.TravelId)
             {
                 return BadRequest("The travel cannot be modified.");
             }
             try
             {
-                travelDb.Entry(travel).State = EntityState.Modified;
-                travelDb.SaveChanges();
+                _travelService.Update(travel);
             }
             catch(Exception e)
             {
@@ -81,15 +75,14 @@ namespace TravelApi.Controllers
         }
 
         [HttpDelete("/delete")]
-        public ActionResult DeleteTravel(long travelid)
+        public ActionResult DeleteTravel(long travelId)
         {
             try
             {
-                var travel = travelDb.Travels.FirstOrDefault(t => t.TravelId == travelid);
+                var travel = _travelService.GetById(travelId);
                 if(travel != null)
                 {
-                    travelDb.Remove(travel);
-                    travelDb.SaveChanges();
+                    _travelService.Delete(travel);
                 }
             }
             catch (Exception e)

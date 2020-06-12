@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using TravelApi.Dao;
+using TravelApi.Service;
 using TravelApi.Models;
 
 namespace TravelApi.Controllers
@@ -15,33 +12,29 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class RouteController : ControllerBase
     {
-        private readonly TravelContext travelDb;
+        private readonly RouteService _routeService;
 
-        public RouteController(TravelContext context)
+        public RouteController(RouteService routeService)
         {
-            this.travelDb = context;
+            this._routeService = routeService;
         }
 
         //新建路线
-        [HttpPost]
-        public ActionResult<Route> AddRoute(long travelid,Route route,Site startSite,Site endSite)
+        [HttpPost("/")]
+        public ActionResult<Route> AddRoute(Route route)
         {
             try
             {
-                IQueryable<Route> query = travelDb.Routes;
-                query = query.Where(t => t.TravelId == travelid).OrderByDescending(c=>c.RouteId);
+                IQueryable<Route> query = _routeService.GetByTravelId(route.TravelId);
                 if(query!=null)
                 {
                     route.RouteId = query.ToList().First().RouteId+1;
                 }
                 else
                 {
-                    route.RouteId = travelid*100+1;
+                    route.RouteId = route.TravelId*100+1;
                 }
-                travelDb.Sites.Add(startSite);
-                travelDb.Sites.Add(endSite);
-                travelDb.Routes.Add(route);
-                travelDb.SaveChanges();
+                _routeService.Add(route);
             }
             catch (Exception e)
             {
@@ -52,10 +45,9 @@ namespace TravelApi.Controllers
 
         //根据旅游id获取路线
         [HttpGet("/get")]
-        public ActionResult<List<Route>> GetRoute(long travelid)
+        public ActionResult<List<Route>> GetRoute(long travelId)
         {
-            IQueryable<Route> query = travelDb.Routes;
-            query = query.Where(t => t.TravelId == travelid);
+            IQueryable<Route> query = _routeService.GetByTravelId(travelId);
             if(query==null)
             {
                 return NotFound();
@@ -65,16 +57,15 @@ namespace TravelApi.Controllers
 
         //更该路线信息
         [HttpPut("/update")]
-        public ActionResult<Route> UpdateRoute(long RouteId, Route route)
+        public ActionResult<Route> UpdateRoute(long routeId, Route route)
         {
-            if (RouteId != route.RouteId)
+            if (routeId != route.RouteId)
             {
                 return BadRequest("Id cannot be modified!");
             }
             try
             {
-                travelDb.Entry(route).State = EntityState.Modified;
-                travelDb.SaveChanges();
+                _routeService.Update(route);
             }
             catch (Exception e)
             {
@@ -85,19 +76,18 @@ namespace TravelApi.Controllers
             return NoContent();
         }
 
-        //按照id删除订单
+        //按照id删除路线
         [HttpDelete("/delete")]
-        public ActionResult DeleteRoute(long[] routeids)
+        public ActionResult DeleteRoute(long[] routeIds)
         {
             try
             {
-                for (int i = 0; i < routeids.Length; i++)
+                for (int i = 0; i < routeIds.Length; i++)
                 {
-                    var route = travelDb.Routes.FirstOrDefault(t => t.RouteId == routeids[i]);
+                    var route = _routeService.GetById(routeIds[i]);
                     if (route != null)
                     {
-                        travelDb.Remove(route);
-                        travelDb.SaveChanges();
+                        _routeService.Delete(route);
                     }
                 }
             }
