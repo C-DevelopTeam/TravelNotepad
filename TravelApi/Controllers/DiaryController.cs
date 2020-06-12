@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using TravelApi.Dao;
+using TravelApi.Service;
 using TravelApi.Models;
 
 namespace TravelApi.Controllers
@@ -15,20 +12,26 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class DiaryController : ControllerBase
     {
-        private readonly TravelContext travelDb;
+        private readonly DiaryService _diaryService;
+        private readonly SiteService _siteService;
+        private readonly TravelService _travelService;
+        private readonly RouteService _routeService;
 
-        public DiaryController(TravelContext context)
+        public DiaryController(DiaryService diaryService, SiteService siteService, TravelService travelService, RouteService routeService)
         {
-            this.travelDb = context;
+            this._diaryService = diaryService;
+            this._siteService = siteService;
+            this._travelService = travelService;
+            this._routeService = routeService;
         }
 
         [HttpPost("/")]
-        public ActionResult<Diary> PostDiary(Diary diary)
+        public ActionResult<Diary> AddDiary(Diary diary)
         {
             try
             {
                 string date = DateTime.Now.ToString("yyyyMMdd");
-                var query = from t in travelDb.Diaries 
+                var query = from t in _diaryService.GetDiaries() 
                             where t.DiaryId.ToString().StartsWith(date)
                             orderby t.DiaryId
                             select t;
@@ -40,8 +43,7 @@ namespace TravelApi.Controllers
                 {
                     diary.DiaryId = query.First().DiaryId + 1;
                 }
-                travelDb.Diaries.Add(diary);
-                travelDb.SaveChanges();
+                _diaryService.Add(diary);
             }
             catch(Exception e)
             {
@@ -54,24 +56,24 @@ namespace TravelApi.Controllers
         public ActionResult<List<Object>> GetDairy(long diaryId)
         {
             List<Object> result = new List<object>();
-            var diary = travelDb.Diaries.FirstOrDefault(t => t.DiaryId == diaryId);
+            var diary = _diaryService.GetById(diaryId);
             if(diary != null)
             {
                 result.Add(diary);
                 if(diary.TravelId != null)
                 {
-                    var travel = travelDb.Travels.FirstOrDefault(t => t.TravelId == diary.TravelId);
+                    var travel = _travelService.GetById(diary.TravelId);
                     if( travel != null)
                     {
                         result.Add(travel);
-                        var routes = from r in travelDb.Routes
+                        var routes = from r in _routeService.GetRoutes()
                                     where r.TravelId == travel.TravelId
                                     orderby r.StartTime
                                     select r;
                         foreach(Route r in routes)
                         {
-                            var startSite = travelDb.Sites.FirstOrDefault(s => s.SiteId == r.StartSiteId);
-                            var endSite = travelDb.Sites.FirstOrDefault(s => s.SiteId == r.EndSiteId);
+                            var startSite = _siteService.GetById(r.StartSiteId);
+                            var endSite = _siteService.GetById(r.EndSiteId);
                             result.Add(r);
                             result.Add(startSite);
                             result.Add(endSite);
@@ -95,8 +97,7 @@ namespace TravelApi.Controllers
             }
             try
             {
-                travelDb.Entry(diary).State = EntityState.Modified;
-                travelDb.SaveChanges();
+                _diaryService.Update(diary);
             }
             catch(Exception e)
             {
@@ -112,11 +113,10 @@ namespace TravelApi.Controllers
         {
             try
             {
-                var diary = travelDb.Diaries.FirstOrDefault(t => t.DiaryId == diaryId);
+                var diary = _diaryService.GetById(diaryId);
                 if(diary != null)
                 {
-                    travelDb.Remove(diary);
-                    travelDb.SaveChanges();
+                    _diaryService.Delete(diary);
                 }
             }
             catch (Exception e)

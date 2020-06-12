@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using TravelApi.Dao;
+using TravelApi.Service;
 using TravelApi.Models;
 
 namespace TravelApi.Controllers
@@ -15,11 +11,11 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class UserController : ControllerBase
     {
-        private readonly TravelContext travelDb;
+        private readonly UserService _userService;
 
-        public UserController(TravelContext context)
+        public UserController(UserService userService)
         {
-            this.travelDb = context;
+            this._userService = userService;
         }
 
         //注册
@@ -27,7 +23,7 @@ namespace TravelApi.Controllers
         public ActionResult<User> AddUser(User user)
         {
             try{
-                IQueryable<User> query = travelDb.Users.OrderByDescending(c=>c.Uid);
+                IQueryable<User> query = _userService.SelectAll();
                 if(query!=null)
                 {
                     user.Uid = query.ToList().First().Uid+1;
@@ -36,8 +32,7 @@ namespace TravelApi.Controllers
                 {
                     user.Uid = 000000;
                 }
-                travelDb.Users.Add(user);
-                travelDb.SaveChanges();
+                _userService.Add(user);
             }
             catch (Exception e)
             {
@@ -48,9 +43,9 @@ namespace TravelApi.Controllers
 
         //获取个人信息
         [HttpGet("/get")]
-        public ActionResult<User> GetUserInfo(int Uid)
+        public ActionResult<User> GetUserInfo(int uid)
         {
-            var user = travelDb.Users.FirstOrDefault(t=>t.Uid ==Uid);
+            var user = _userService.GetById(uid);
             if(user==null)
             {
                 return NotFound();
@@ -60,16 +55,15 @@ namespace TravelApi.Controllers
 
         //更新个人信息
         [HttpPut("/update")]
-        public ActionResult<User> UpdateRoute(int Uid, User user)
+        public ActionResult<User> UpdateRoute(int uid, User user)
         {
-            if (Uid != user.Uid)
+            if (uid != user.Uid)
             {
                 return BadRequest("Id cannot be modified!");
             }
             try
             {
-                travelDb.Entry(user).State = EntityState.Modified;
-                travelDb.SaveChanges();
+                _userService.Update(user);
             }
             catch (Exception e)
             {
@@ -82,11 +76,11 @@ namespace TravelApi.Controllers
 
         //登录
         [HttpPut("/login")]
-        public ActionResult<User> userLogin(int Uid, string password)
+        public ActionResult<User> userLogin(int uid, string password)
         {
             try
             {
-                var user = travelDb.Users.FirstOrDefault(t => t.Uid == Uid);
+                var user = _userService.GetById(uid);
                 if (user == null)
                 {
                     return NotFound();
@@ -103,8 +97,6 @@ namespace TravelApi.Controllers
                 return BadRequest(error);
             }
             return NoContent();
-        }
-
-        
+        }        
     }
 }

@@ -1,11 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using TravelApi.Dao;
+using TravelApi.Service;
 using TravelApi.Models;
 
 namespace TravelApi.Controllers
@@ -15,19 +11,18 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class BloggerController : ControllerBase
     {
-        private readonly TravelContext travelDb;
+        private readonly DiaryService _diaryService;
 
-        public BloggerController(TravelContext context)
+        public BloggerController(DiaryService diaryService)
         {
-            this.travelDb = context;
+            this._diaryService = diaryService;
         }
 
         //获取分享动态
         [HttpGet("/get")]
         public ActionResult<List<Diary>> GetBlogShared()
         {
-            IQueryable<Diary> query = travelDb.Diaries;
-            query = query.Where(t =>t.Share==1 );
+            IQueryable<Diary> query = _diaryService.GetByShare();
             if(query==null)
             {
                 return NotFound();

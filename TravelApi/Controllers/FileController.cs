@@ -1,18 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using TravelApi.Dao;
-using TravelApi.Models;
 using System.IO;
-using TravelApi.Utils;
 using Microsoft.Net.Http.Headers;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Configuration;
+using TravelApi.Service;
+using TravelApi.Models;
+using TravelApi.Utils;
 
 namespace TravelApi.Controllers
 {
@@ -20,17 +16,17 @@ namespace TravelApi.Controllers
     [Route("api/[controller]")]
     public class FileController : ControllerBase
     {
-        private readonly TravelContext travelDb;
-        private readonly long fileSizeLimit;
-        private readonly string[] permittedExtensions = {".jpg", ".gif", ".jpeg", ".png"};
-        private readonly string root;
+        private readonly DiaryService _diaryService;
+        private readonly long _fileSizeLimit;
+        private readonly string[] _permittedExtensions = {".jpg", ".gif", ".jpeg", ".png"};
+        private readonly string _rootPath;
         private static readonly FormOptions _defaultFormOptions = new FormOptions();
 
-        public FileController(TravelContext context, IConfiguration config)
+        public FileController(DiaryService diaryService, IConfiguration config)
         {
-            this.travelDb = context;
-            this.root = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, config.GetValue<string>("StoredFileFolder"));
-            this.fileSizeLimit = config.GetValue<long>("FileSizeLimit");
+            this._diaryService = diaryService;
+            this._rootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, config.GetValue<string>("StoredFileFolder"));
+            this._fileSizeLimit = config.GetValue<long>("fileSizeLimit");
         }
 
         [HttpPost("/upload")]
@@ -44,7 +40,7 @@ namespace TravelApi.Controllers
                 return BadRequest(ModelState);
             }
             var fileName = "";
-            var diary = travelDb.Diaries.Where(d => d.DiaryId == diaryId).FirstOrDefault();
+            var diary = _diaryService.GetById(diaryId);
             if(diary == null)
             {
                 return BadRequest("The diary is not existed.");
@@ -75,14 +71,14 @@ namespace TravelApi.Controllers
                         fileName = Path.GetRandomFileName();
                         var streamedFileContent = await FileHelpers.ProcessStreamedFile(
                             section, contentDisposition, ModelState, 
-                            permittedExtensions, fileSizeLimit);
+                            _permittedExtensions, _fileSizeLimit);
 
                         if (!ModelState.IsValid)
                         {
                             return BadRequest(ModelState);
                         }
 
-                        using (var targetStream = System.IO.File.Create(Path.Combine(root, fileName)))
+                        using (var targetStream = System.IO.File.Create(Path.Combine(_rootPath, fileName)))
                         {
                             await targetStream.WriteAsync(streamedFileContent);
                         }
@@ -91,7 +87,7 @@ namespace TravelApi.Controllers
                 // Drain any remaining section body that hasn't been consumed and
                 // read the headers for the next section.
                 diary.Photo = String.Join(" ", new string[]{diary.Photo, fileName});
-                travelDb.SaveChanges();
+                _diaryService.Update(diary);
                 section = await reader.ReadNextSectionAsync();
             }
 
@@ -102,12 +98,12 @@ namespace TravelApi.Controllers
         [HttpGet("/download")]
         public async Task<IActionResult> Download(string fileName)
         {
-            if(! Directory.Exists(root))
+            if(! Directory.Exists(_rootPath))
             {
                 Directory.CreateDirectory("static");
             }
 
-            var filePath = Path.Combine(root, fileName);
+            var filePath = Path.Combine(_rootPath, fileName);
             try
             {
                 if(! System.IO.File.Exists(filePath))
