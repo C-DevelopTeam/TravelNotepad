@@ -26,10 +26,7 @@ namespace TravelApi.Controllers
             try
             {
                 string date = DateTime.Now.ToString("yyyyMMdd");
-                var query = from t in _travelService.GetTravels()
-                            where t.TravelId.ToString().StartsWith(date)
-                            orderby t.TravelId
-                            select t;
+                var query = _travelService.GetTravelByDate(date);
                 if(query.Count() == 0)
                 {
                     travel.TravelId = System.Convert.ToInt64(date + "0000");

@@ -14,9 +14,9 @@ namespace TravelApi.Service
         {
         }
 
-        public IQueryable<Route> GetRoutes()
+        public IQueryable<Route> GetByTravelIdOrderStartTime(long travelId)
         {
-            return this.dbset;
+            return this.dbset.Where(r => r.TravelId == travelId).OrderBy(c=>c.StartTime);
         }
 
         public IQueryable<Route> GetByTravelId(long travelId)

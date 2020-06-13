@@ -14,9 +14,9 @@ namespace TravelApi.Service
         {
         }
 
-        public IQueryable<Diary> GetDiaries()
+        public IQueryable<Diary> GetDiaryByDate(string date)
         {
-            return this.dbset;
+            return this.dbset.Where(d => d.DiaryId.ToString().StartsWith(date)).OrderBy(d => d.DiaryId);
         }
         
         public IQueryable<Diary> GetByShare()

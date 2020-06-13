@@ -31,10 +31,7 @@ namespace TravelApi.Controllers
             try
             {
                 string date = DateTime.Now.ToString("yyyyMMdd");
-                var query = from t in _diaryService.GetDiaries() 
-                            where t.DiaryId.ToString().StartsWith(date)
-                            orderby t.DiaryId
-                            select t;
+                var query = _diaryService.GetDiaryByDate(date);
                 if(query.Count() == 0)
                 {
                     diary.DiaryId = System.Convert.ToInt64(date + "0000");
@@ -66,10 +63,7 @@ namespace TravelApi.Controllers
                     if( travel != null)
                     {
                         result.Add(travel);
-                        var routes = from r in _routeService.GetRoutes()
-                                    where r.TravelId == travel.TravelId
-                                    orderby r.StartTime
-                                    select r;
+                        var routes = _routeService.GetByTravelIdOrderStartTime(travel.TravelId);
                         foreach(Route r in routes)
                         {
                             var startSite = _siteService.GetById(r.StartSiteId);

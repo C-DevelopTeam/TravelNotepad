@@ -14,9 +14,9 @@ namespace TravelApi.Service
         {
         }
 
-        public IQueryable<Travel> GetTravels()
+        public IQueryable<Travel> GetTravelByDate(string date)
         {
-            return this.dbset;
+            return this.dbset.Where(t => t.TravelId.ToString().StartsWith(date)).OrderBy(t => t.TravelId);
         }
 
         public Travel GetById(long? travelId)
