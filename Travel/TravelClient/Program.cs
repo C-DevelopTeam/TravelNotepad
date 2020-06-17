@@ -16,7 +16,7 @@ namespace TravelClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form.Form1());
+            Application.Run(new form.Form_MainPage());
         }
     }
 }
