@@ -64,6 +64,12 @@
     <Compile Include="form\Form_TripNote.Designer.cs">
       <DependentUpon>Form_TripNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\Diary.cs" />
+    <Compile Include="models\Route.cs" />
+    <Compile Include="models\Site.cs" />
+    <Compile Include="models\Task.cs" />
+    <Compile Include="models\Travel.cs" />
+    <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="form\Form_MainPage.resx">
@@ -93,17 +99,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="static\font\JOKERMAN.TTF" />
+    <None Include="static\font\SF-Pro-Text-Medium.otf" />
+    <None Include="static\font\造字工房映力黑规体.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controller\" />
-    <Folder Include="models\" />
     <Folder Include="utils\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="static\test.png" />
+    <Content Include="static\font\字体.txt" />
+    <Content Include="static\image\forward.png" />
+    <Content Include="static\image\forward_2.png" />
+    <Content Include="static\image\forward_3.png" />
+    <Content Include="static\image\主界面关闭.png" />
+    <Content Include="static\image\主界面关闭2.png" />
+    <Content Include="static\image\主界面关闭3.png" />
+    <Content Include="static\image\主界面关闭4.png" />
+    <Content Include="static\image\关闭.png" />
+    <Content Include="static\image\图标.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
