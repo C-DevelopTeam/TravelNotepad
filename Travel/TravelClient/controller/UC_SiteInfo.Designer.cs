@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_SiteInfo));
-            this.pictureBox_add1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,33 +43,22 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.TodoflowLayoutPanel1 = new System.Windows.Forms.Panel();
-            this.TodoflowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.TodoflowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.TodoflowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TodoflowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TodoflowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.TodoflowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).BeginInit();
+            this.TodoflowLayoutPanel1 = new System.Windows.Forms.Panel();
+            this.Btn_addSite = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox_add1
-            // 
-            this.pictureBox_add1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_add1.Image")));
-            this.pictureBox_add1.InitialImage = null;
-            this.pictureBox_add1.Location = new System.Drawing.Point(730, 41);
-            this.pictureBox_add1.Name = "pictureBox_add1";
-            this.pictureBox_add1.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox_add1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_add1.TabIndex = 11;
-            this.pictureBox_add1.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(114, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(113, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,7 +70,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(185, 47);
+            this.label3.Location = new System.Drawing.Point(184, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(183, 54);
             this.label3.TabIndex = 9;
@@ -91,7 +79,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(30, 114);
+            this.label1.Location = new System.Drawing.Point(29, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(780, 2);
             this.label1.TabIndex = 8;
@@ -102,7 +90,7 @@
             this.Btn_backToRoute.FlatAppearance.BorderSize = 0;
             this.Btn_backToRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_backToRoute.Image = ((System.Drawing.Image)(resources.GetObject("Btn_backToRoute.Image")));
-            this.Btn_backToRoute.Location = new System.Drawing.Point(33, 41);
+            this.Btn_backToRoute.Location = new System.Drawing.Point(32, 18);
             this.Btn_backToRoute.Name = "Btn_backToRoute";
             this.Btn_backToRoute.Size = new System.Drawing.Size(75, 60);
             this.Btn_backToRoute.TabIndex = 12;
@@ -112,44 +100,44 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(84, 305);
+            this.label2.Location = new System.Drawing.Point(84, 293);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 35);
+            this.label2.Size = new System.Drawing.Size(159, 33);
             this.label2.TabIndex = 13;
             this.label2.Text = "怎么去下一站";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(85, 246);
+            this.label4.Location = new System.Drawing.Point(84, 233);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 35);
+            this.label4.Size = new System.Drawing.Size(111, 33);
             this.label4.TabIndex = 14;
             this.label4.Text = "离开时间";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(84, 188);
+            this.label5.Location = new System.Drawing.Point(83, 175);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 35);
+            this.label5.Size = new System.Drawing.Size(111, 33);
             this.label5.TabIndex = 15;
             this.label5.Text = "到达时间";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(84, 128);
+            this.label6.Location = new System.Drawing.Point(84, 117);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 35);
+            this.label6.Size = new System.Drawing.Size(63, 33);
             this.label6.TabIndex = 16;
             this.label6.Text = "地点";
             // 
@@ -157,7 +145,7 @@
             // 
             this.Txtbox_site.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtbox_site.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Txtbox_site.Location = new System.Drawing.Point(287, 128);
+            this.Txtbox_site.Location = new System.Drawing.Point(286, 117);
             this.Txtbox_site.Name = "Txtbox_site";
             this.Txtbox_site.Size = new System.Drawing.Size(213, 36);
             this.Txtbox_site.TabIndex = 17;
@@ -166,7 +154,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.Location = new System.Drawing.Point(287, 304);
+            this.textBox3.Location = new System.Drawing.Point(286, 290);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(213, 36);
             this.textBox3.TabIndex = 20;
@@ -175,7 +163,7 @@
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("方正幼线简体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(287, 188);
+            this.dateTimePicker1.Location = new System.Drawing.Point(286, 175);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 31);
             this.dateTimePicker1.TabIndex = 21;
@@ -184,7 +172,7 @@
             // 
             this.dateTimePicker2.CalendarFont = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Font = new System.Drawing.Font("方正幼线简体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(287, 246);
+            this.dateTimePicker2.Location = new System.Drawing.Point(286, 233);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(213, 31);
             this.dateTimePicker2.TabIndex = 22;
@@ -196,7 +184,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(90, 364);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 338);
+            this.groupBox1.Size = new System.Drawing.Size(655, 339);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "待办事项";
@@ -222,19 +210,12 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(527, 248);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // TodoflowLayoutPanel1
+            // TodoflowLayoutPanel5
             // 
-            this.TodoflowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.TodoflowLayoutPanel1.Name = "TodoflowLayoutPanel1";
-            this.TodoflowLayoutPanel1.Size = new System.Drawing.Size(521, 45);
-            this.TodoflowLayoutPanel1.TabIndex = 0;
-            // 
-            // TodoflowLayoutPanel3
-            // 
-            this.TodoflowLayoutPanel3.Location = new System.Drawing.Point(3, 105);
-            this.TodoflowLayoutPanel3.Name = "TodoflowLayoutPanel3";
-            this.TodoflowLayoutPanel3.Size = new System.Drawing.Size(521, 42);
-            this.TodoflowLayoutPanel3.TabIndex = 2;
+            this.TodoflowLayoutPanel5.Location = new System.Drawing.Point(3, 203);
+            this.TodoflowLayoutPanel5.Name = "TodoflowLayoutPanel5";
+            this.TodoflowLayoutPanel5.Size = new System.Drawing.Size(521, 42);
+            this.TodoflowLayoutPanel5.TabIndex = 3;
             // 
             // TodoflowLayoutPanel4
             // 
@@ -243,12 +224,12 @@
             this.TodoflowLayoutPanel4.Size = new System.Drawing.Size(521, 42);
             this.TodoflowLayoutPanel4.TabIndex = 2;
             // 
-            // TodoflowLayoutPanel5
+            // TodoflowLayoutPanel3
             // 
-            this.TodoflowLayoutPanel5.Location = new System.Drawing.Point(3, 203);
-            this.TodoflowLayoutPanel5.Name = "TodoflowLayoutPanel5";
-            this.TodoflowLayoutPanel5.Size = new System.Drawing.Size(521, 42);
-            this.TodoflowLayoutPanel5.TabIndex = 3;
+            this.TodoflowLayoutPanel3.Location = new System.Drawing.Point(3, 105);
+            this.TodoflowLayoutPanel3.Name = "TodoflowLayoutPanel3";
+            this.TodoflowLayoutPanel3.Size = new System.Drawing.Size(521, 42);
+            this.TodoflowLayoutPanel3.TabIndex = 2;
             // 
             // TodoflowLayoutPanel2
             // 
@@ -257,9 +238,28 @@
             this.TodoflowLayoutPanel2.Size = new System.Drawing.Size(521, 45);
             this.TodoflowLayoutPanel2.TabIndex = 1;
             // 
+            // TodoflowLayoutPanel1
+            // 
+            this.TodoflowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.TodoflowLayoutPanel1.Name = "TodoflowLayoutPanel1";
+            this.TodoflowLayoutPanel1.Size = new System.Drawing.Size(521, 45);
+            this.TodoflowLayoutPanel1.TabIndex = 0;
+            // 
+            // Btn_addSite
+            // 
+            this.Btn_addSite.FlatAppearance.BorderSize = 0;
+            this.Btn_addSite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_addSite.Image = ((System.Drawing.Image)(resources.GetObject("Btn_addSite.Image")));
+            this.Btn_addSite.Location = new System.Drawing.Point(754, 24);
+            this.Btn_addSite.Name = "Btn_addSite";
+            this.Btn_addSite.Size = new System.Drawing.Size(55, 54);
+            this.Btn_addSite.TabIndex = 24;
+            this.Btn_addSite.UseVisualStyleBackColor = true;
+            // 
             // UC_SiteInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.Btn_addSite);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -270,13 +270,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Btn_backToRoute);
-            this.Controls.Add(this.pictureBox_add1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "UC_SiteInfo";
             this.Size = new System.Drawing.Size(840, 750);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -286,8 +284,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox_add1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -307,5 +303,6 @@
         private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel3;
         private System.Windows.Forms.Panel TodoflowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel2;
+        private System.Windows.Forms.Button Btn_addSite;
     }
 }

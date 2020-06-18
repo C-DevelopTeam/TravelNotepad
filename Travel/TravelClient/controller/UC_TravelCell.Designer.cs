@@ -77,6 +77,7 @@
             this.Btn_TravelTitle.TabIndex = 11;
             this.Btn_TravelTitle.Text = "旅行标题";
             this.Btn_TravelTitle.UseVisualStyleBackColor = true;
+            this.Btn_TravelTitle.Click += new System.EventHandler(this.Btn_TravelTitle_Click);
             // 
             // UC_TravelCell
             // 

@@ -42,6 +42,7 @@ namespace TravelClient.controller
                 label2.Font = titleFont;
                 label3.Font = titleFont;
                 label4.Font = titleFont;
+                lbl_ID.Font = titleFont;
                 lblUserId.Font = titleFont;
                 btnCommit.Font = titleFont;
             }

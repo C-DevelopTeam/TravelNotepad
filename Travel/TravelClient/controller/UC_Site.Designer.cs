@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Site));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_ToSiteInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -55,23 +55,24 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // button1
+            // Btn_ToSiteInfo
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(58, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "地点";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_ToSiteInfo.FlatAppearance.BorderSize = 0;
+            this.Btn_ToSiteInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ToSiteInfo.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_ToSiteInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Btn_ToSiteInfo.Location = new System.Drawing.Point(58, 137);
+            this.Btn_ToSiteInfo.Name = "Btn_ToSiteInfo";
+            this.Btn_ToSiteInfo.Size = new System.Drawing.Size(75, 40);
+            this.Btn_ToSiteInfo.TabIndex = 3;
+            this.Btn_ToSiteInfo.Text = "地点";
+            this.Btn_ToSiteInfo.UseVisualStyleBackColor = true;
+            this.Btn_ToSiteInfo.Click += new System.EventHandler(this.Btn_ToSiteInfo_Click);
             // 
             // UC_Site
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_ToSiteInfo);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UC_Site";
@@ -86,6 +87,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_ToSiteInfo;
     }
 }
