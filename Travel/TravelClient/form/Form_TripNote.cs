@@ -58,5 +58,11 @@ namespace TravelClient.form
             UC_TravelList uc_Present = new UC_TravelList();
             AddControlsToPanel(uc_Present);
         }
+
+        private void Btn_presentTravel_Click(object sender, EventArgs e)
+        {
+            UC_AllSites uc_allsite = new UC_AllSites();
+            AddControlsToPanel(uc_allsite);
+        }
     }
 }

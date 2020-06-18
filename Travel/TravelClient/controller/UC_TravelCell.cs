@@ -12,15 +12,30 @@ namespace TravelClient.controller
 {
     public partial class UC_TravelCell : UserControl
     {
+        long travelID;
+
+        [EditorBrowsable(EditorBrowsableState.Always)]
+        [Browsable(true)]
+        public delegate void DelegateForTravelcell(object sender, EventArgs e);
+        public event DelegateForTravelcell U_cellClick;
+
         public UC_TravelCell()
         {
             InitializeComponent();
         }
 
-        private void Btn_TravelTitle_Click(object sender, EventArgs e)
+        public UC_TravelCell(long ID)
         {
-            
+            InitializeComponent();
+            travelID = ID;
         }
 
+        private void Btn_TravelTitle_Click(object sender, EventArgs e)
+        {
+            if(U_cellClick!=null)
+            {
+                U_cellClick(sender, e);
+            }
+        }
     }
 }

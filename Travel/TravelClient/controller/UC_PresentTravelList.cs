@@ -17,13 +17,28 @@ namespace TravelClient.controller
             InitializeComponent();
             UC_TravelCell uc_cell = new UC_TravelCell();
             AddControlsToPanel(uc_cell, PanelCell1);
+            
         }
+
+        private void AddCellInfoToPanel(Control c, Panel panel)
+        {
+            c.Dock = DockStyle.Fill;
+            panel.Controls.Clear();
+            panel.Controls.Add(c);
+        }
+
+       
 
         private void AddControlsToPanel(Control c,Panel panel)
         {
             c.Dock = DockStyle.Fill;
             panel.Controls.Clear();
             panel.Controls.Add(c);
+        }
+
+        private void Btn_addTravel_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
