@@ -78,7 +78,8 @@
             // 
             // UC_TravelCell
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Btn_deleteTravel);
             this.Controls.Add(this.Lbl_TravelTitle);

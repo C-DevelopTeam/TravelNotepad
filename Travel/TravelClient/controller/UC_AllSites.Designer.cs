@@ -35,13 +35,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Sitepanel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.Sitepanel2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -54,10 +58,6 @@
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
@@ -94,11 +94,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.Sitepanel1.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Sitepanel2.SuspendLayout();
             this.Sitepanel3.SuspendLayout();
             this.Sitepanel4.SuspendLayout();
-            this.panel21.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel33.SuspendLayout();
@@ -182,26 +182,36 @@
             this.Sitepanel1.Size = new System.Drawing.Size(190, 190);
             this.Sitepanel1.TabIndex = 14;
             // 
-            // panel6
+            // panel21
             // 
-            this.panel6.Location = new System.Drawing.Point(197, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 200);
-            this.panel6.TabIndex = 1;
+            this.panel21.Controls.Add(this.panel22);
+            this.panel21.Controls.Add(this.panel23);
+            this.panel21.Controls.Add(this.panel24);
+            this.panel21.Location = new System.Drawing.Point(0, 196);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(190, 190);
+            this.panel21.TabIndex = 16;
             // 
-            // panel7
+            // panel22
             // 
-            this.panel7.Location = new System.Drawing.Point(197, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 200);
-            this.panel7.TabIndex = 1;
+            this.panel22.Location = new System.Drawing.Point(197, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(200, 200);
+            this.panel22.TabIndex = 1;
             // 
-            // panel8
+            // panel23
             // 
-            this.panel8.Location = new System.Drawing.Point(197, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 200);
-            this.panel8.TabIndex = 1;
+            this.panel23.Location = new System.Drawing.Point(197, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(200, 200);
+            this.panel23.TabIndex = 1;
+            // 
+            // panel24
+            // 
+            this.panel24.Location = new System.Drawing.Point(197, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(200, 200);
+            this.panel24.TabIndex = 1;
             // 
             // panel1
             // 
@@ -233,6 +243,27 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 200);
             this.panel4.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(197, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 200);
+            this.panel6.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(197, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 200);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(197, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(200, 200);
+            this.panel8.TabIndex = 1;
             // 
             // Sitepanel2
             // 
@@ -326,37 +357,6 @@
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(200, 200);
             this.panel20.TabIndex = 1;
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.panel22);
-            this.panel21.Controls.Add(this.panel23);
-            this.panel21.Controls.Add(this.panel24);
-            this.panel21.Location = new System.Drawing.Point(0, 196);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(190, 190);
-            this.panel21.TabIndex = 16;
-            // 
-            // panel22
-            // 
-            this.panel22.Location = new System.Drawing.Point(197, 0);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(200, 200);
-            this.panel22.TabIndex = 1;
-            // 
-            // panel23
-            // 
-            this.panel23.Location = new System.Drawing.Point(197, 0);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(200, 200);
-            this.panel23.TabIndex = 1;
-            // 
-            // panel24
-            // 
-            this.panel24.Location = new System.Drawing.Point(197, 0);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(200, 200);
-            this.panel24.TabIndex = 1;
             // 
             // panel25
             // 
@@ -608,8 +608,8 @@
             // 
             // UC_AllSites
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pictureBox_add1);
             this.Controls.Add(this.pictureBox1);
@@ -621,11 +621,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.Sitepanel1.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.Sitepanel2.ResumeLayout(false);
             this.Sitepanel3.ResumeLayout(false);
             this.Sitepanel4.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
             this.panel29.ResumeLayout(false);
             this.panel33.ResumeLayout(false);

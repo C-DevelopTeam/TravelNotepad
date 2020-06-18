@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TravelClient.controller
 {
-    public partial class UC_PresentTravelList : UserControl
+    public partial class UC_TravelList : UserControl
     {
-        public UC_PresentTravelList()
+        public UC_TravelList()
         {
             InitializeComponent();
             UC_TravelCell uc_cell = new UC_TravelCell();
