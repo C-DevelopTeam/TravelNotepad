@@ -20,9 +20,11 @@ namespace TravelClient.controller
     public partial class UC_Personalinfo : UserControl
     {
         private string baseUrl = "https://localhost:5001/api/user";
-        public UC_Personalinfo()
+        private string Uid { get; }
+        public UC_Personalinfo(string uid)
         {
             InitializeComponent();
+            this.Uid = uid;
             SetFont();
             InitInfo();
         }
@@ -42,7 +44,6 @@ namespace TravelClient.controller
                 label2.Font = titleFont;
                 label3.Font = titleFont;
                 label4.Font = titleFont;
-                lbl_ID.Font = titleFont;
                 lblUserId.Font = titleFont;
                 btnCommit.Font = titleFont;
             }
@@ -55,7 +56,7 @@ namespace TravelClient.controller
         private async void InitInfo()
         {
             //初始化相关信息
-            string url = baseUrl + "/get?uid="+0;
+            string url = baseUrl + "/get?uid=" + this.Uid; 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(User));
             Client client = new Client();
             try
@@ -79,14 +80,14 @@ namespace TravelClient.controller
         private async void BtnCommit_Click(object sender, EventArgs e)
         {
             //进行代码提交
-            string uid = lblUserId.Text;
-            string url = baseUrl + "/update?uid=" + uid;
+            string id = lblUserId.Text;
+            string url = baseUrl + "/update?uid=" + id;
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(User));
             Client client = new Client();
             try
             {
                 string data = "";
-                HttpResponseMessage result = await client.Get(baseUrl + "/get?uid=" + uid);
+                HttpResponseMessage result = await client.Get(baseUrl + "/get?uid=" + id);
                 if (result.IsSuccessStatusCode)
                 {
                     User user = (User)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
