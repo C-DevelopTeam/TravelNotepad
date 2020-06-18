@@ -20,7 +20,7 @@ namespace TravelApi.Controllers
         }
 
         // POST: api/travel
-        [HttpPost("/")]
+        [HttpPost]
         public ActionResult<Travel> AddTravel(Travel travel)
         {
             try
@@ -44,14 +44,14 @@ namespace TravelApi.Controllers
             return NoContent();
         }
 
-        [HttpGet("/get")]
+        [HttpGet("get")]
         public ActionResult<List<Travel>> GetTravel(int uid)
         {
             var query = _travelService.GetByUid(uid);
             return query.ToList();
         }
 
-        [HttpPut("/update")]
+        [HttpPut("update")]
         public ActionResult<Travel> UpdateTravel(long travelId, Travel travel)
         {
             if(travelId != travel.TravelId)
@@ -71,7 +71,7 @@ namespace TravelApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("/delete")]
+        [HttpDelete("delete")]
         public ActionResult DeleteTravel(long travelId)
         {
             try

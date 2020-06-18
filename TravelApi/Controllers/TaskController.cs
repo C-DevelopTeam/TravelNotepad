@@ -43,7 +43,7 @@ namespace TravelApi.Controllers
         }
 
         //根据地点id获取待办
-        [HttpGet("/get")]
+        [HttpGet("get")]
         public ActionResult<List<Task>> GetRoute(long routeId)
         {
             IQueryable<Task> query = _taskService.GetByRouteId(routeId);
@@ -55,7 +55,7 @@ namespace TravelApi.Controllers
         }
 
         //更该待办信息
-        [HttpPut("/update")]
+        [HttpPut("update")]
         public ActionResult<Task> UpdateRoute(long taskId, Task task)
         {
             if (taskId != task.TaskId)
@@ -76,7 +76,7 @@ namespace TravelApi.Controllers
         }
 
         //按照id删除待办
-        [HttpDelete("/delete")]
+        [HttpDelete("delete")]
         public ActionResult DeleteRoute(long taskId)
         {
             try

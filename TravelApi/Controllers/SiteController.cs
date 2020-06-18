@@ -17,7 +17,7 @@ namespace TravelApi.Controllers
             this._siteService = siteService;
         }
 
-        [HttpPost("/")]
+        [HttpPost]
         public ActionResult<Site> AddSite(Site site)
         {
             try

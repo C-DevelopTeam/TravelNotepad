@@ -29,7 +29,7 @@ namespace TravelApi.Controllers
             this._fileSizeLimit = config.GetValue<long>("fileSizeLimit");
         }
 
-        [HttpPost("/upload")]
+        [HttpPost("upload")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Upload(long diaryId)
         {
@@ -95,7 +95,7 @@ namespace TravelApi.Controllers
         }
 
 
-        [HttpGet("/download")]
+        [HttpGet("download")]
         public async Task<IActionResult> Download(string fileName)
         {
             if(! Directory.Exists(_rootPath))
