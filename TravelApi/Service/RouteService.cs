@@ -6,6 +6,9 @@ namespace TravelApi.Service
 {
     public interface IRouteService : IEntityService<Route>
     {
+        IQueryable<Route> GetByTravelIdOrderStartTime(long travelId);
+        IQueryable<Route> GetByTravelId(long travelId);
+        Route GetById(long routeId);
     }
 
     public class RouteService : EntityService<Route>, IRouteService

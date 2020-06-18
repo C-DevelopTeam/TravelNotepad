@@ -6,6 +6,8 @@ namespace TravelApi.Service
 {
     public interface IUserService : IEntityService<User>
     {
+        IQueryable<User> SelectAll();
+        User GetById(int uid);
     }
 
     public class UserService : EntityService<User>, IUserService

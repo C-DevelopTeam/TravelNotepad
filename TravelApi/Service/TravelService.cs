@@ -6,6 +6,9 @@ namespace TravelApi.Service
 {
     public interface ITravelService : IEntityService<Travel>
     {
+        IQueryable<Travel> GetTravelByDate(string date);
+        Travel GetById(long? travelId);
+        IQueryable<Travel> GetByUid(int uid);
     }
 
     public class TravelService : EntityService<Travel>, ITravelService

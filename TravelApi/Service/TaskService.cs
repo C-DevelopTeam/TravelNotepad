@@ -6,6 +6,8 @@ namespace TravelApi.Service
 {
     public interface ITaskService : IEntityService<Task>
     {
+        Task GetById(long taskId);
+        IQueryable<Task> GetByRouteId(long routeId);
     }
 
     public class TaskService : EntityService<Task>, ITaskService
