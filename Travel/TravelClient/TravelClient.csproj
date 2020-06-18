@@ -49,6 +49,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\UC_AllSites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_AllSites.Designer.cs">
+      <DependentUpon>UC_AllSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_PresentTravelList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_PresentTravelList.Designer.cs">
+      <DependentUpon>UC_PresentTravelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_Site.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_Site.Designer.cs">
+      <DependentUpon>UC_Site.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_SiteInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_SiteInfo.Designer.cs">
+      <DependentUpon>UC_SiteInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_TravelCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_TravelCell.Designer.cs">
+      <DependentUpon>UC_TravelCell.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Form_MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +105,21 @@
     <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="controller\UC_AllSites.resx">
+      <DependentUpon>UC_AllSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_PresentTravelList.resx">
+      <DependentUpon>UC_PresentTravelList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_Site.resx">
+      <DependentUpon>UC_Site.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_SiteInfo.resx">
+      <DependentUpon>UC_SiteInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_TravelCell.resx">
+      <DependentUpon>UC_TravelCell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Form_MainPage.resx">
       <DependentUpon>Form_MainPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,7 +156,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="controller\" />
     <Folder Include="utils\" />
   </ItemGroup>
   <ItemGroup>

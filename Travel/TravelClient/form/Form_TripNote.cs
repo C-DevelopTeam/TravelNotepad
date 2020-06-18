@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelClient.controller;
 
 namespace TravelClient.form
 {
@@ -43,6 +44,19 @@ namespace TravelClient.form
         {
             formPoint.X = e.X;
             formPoint.Y = e.Y;
+        }
+
+        private void AddControlsToPanel(Control c)
+        {
+            c.Dock = DockStyle.Fill;
+            panelControl.Controls.Clear();
+            panelControl.Controls.Add(c);
+        }
+
+        private void Btn_MyTravel_Click(object sender, EventArgs e)
+        {
+            UC_PresentTravelList uc_Present = new UC_PresentTravelList();
+            AddControlsToPanel(uc_Present);
         }
     }
 }
