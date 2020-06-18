@@ -56,9 +56,19 @@ namespace TravelClient.form
 
         private void button6_Click(object sender, EventArgs e)
         {
-            using (Form_TripNote tn = new Form_TripNote())
+            if (textBox1.Text.Length == 0 || textBox1.Text == "单行输入")
+                MessageBox.Show("请输入用户名!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+               if (textBox2.Text.Length == 0 || textBox2.Text == "单行输入")
+                MessageBox.Show("请输入密码!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                tn.ShowDialog();
+                MessageBox.Show("注册成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (Form_TripNote tn = new Form_TripNote())
+                {
+                    tn.ShowDialog();
+                    this.Dispose();
+                }
             }
         }
 

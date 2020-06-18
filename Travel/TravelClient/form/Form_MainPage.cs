@@ -14,6 +14,8 @@ namespace TravelClient.form
 {
     public partial class Form_MainPage : Form
     {
+        private Point formPoint = new Point();
+
         private Point mousePoint = new Point();
 
         public Form_MainPage()
@@ -65,13 +67,38 @@ namespace TravelClient.form
 
         private void button6_Click(object sender, EventArgs e)
         {
-            using (Form_TripNote tn = new Form_TripNote())
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+
+            if (username.Length == 0 || username == "单行输入")
             {
-                tn.changePanel = tn.AddControlsToPanel;
-                this.Hide();
-                tn.ShowDialog();
-                this.Show();
+                DialogResult result = MessageBox.Show("用户名为空，是否注册新用户？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    using (Form_Register reg = new Form_Register())
+                    {
+                        this.Hide();
+                        reg.ShowDialog();
+                        this.Show();
+                    }
+                }
             }
+            else
+            {
+                if (password.Length == 0 || password == "单行输入")
+                    MessageBox.Show("请输入密码！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    using (Form_TripNote tn = new Form_TripNote())
+                    {
+                        this.Hide();
+                        tn.ShowDialog();
+                        this.Show();
+                    }
+                }
+            }
+
+
         }
 
         private void Picture_MouseDown(object sender, MouseEventArgs e)
@@ -89,6 +116,27 @@ namespace TravelClient.form
                 this.Top = Control.MousePosition.Y - mousePoint.Y;
                 this.Left = Control.MousePosition.X - mousePoint.X;
             }
+        }
+
+        private void Form_MainPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_MainPage_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point myPosittion = MousePosition;
+                myPosittion.Offset(-formPoint.X, -formPoint.Y);
+                Location = myPosittion;
+            }
+        }
+
+        private void Form_MainPage_MouseDown(object sender, MouseEventArgs e)
+        {
+            formPoint.X = e.X;
+            formPoint.Y = e.Y;
         }
     }
 }
