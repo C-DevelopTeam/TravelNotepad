@@ -65,7 +65,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(223, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 24);
+            this.label1.Size = new System.Drawing.Size(155, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "新用户注册";
             // 
@@ -76,7 +76,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(86, 192);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 18);
+            this.label2.Size = new System.Drawing.Size(78, 26);
             this.label2.TabIndex = 6;
             this.label2.Text = "用户名";
             // 
@@ -87,7 +87,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(86, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 18);
+            this.label3.Size = new System.Drawing.Size(56, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "密码";
             // 
@@ -98,7 +98,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(86, 319);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 18);
+            this.label4.Size = new System.Drawing.Size(56, 26);
             this.label4.TabIndex = 6;
             this.label4.Text = "性别";
             // 
@@ -109,7 +109,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(86, 392);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 18);
+            this.label5.Size = new System.Drawing.Size(100, 26);
             this.label5.TabIndex = 6;
             this.label5.Text = "个人介绍";
             // 
@@ -120,7 +120,7 @@
             this.textBox1.Location = new System.Drawing.Point(230, 192);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 24);
+            this.textBox1.Size = new System.Drawing.Size(230, 32);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
@@ -130,7 +130,7 @@
             this.textBox2.Location = new System.Drawing.Point(230, 255);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 24);
+            this.textBox2.Size = new System.Drawing.Size(230, 32);
             this.textBox2.TabIndex = 7;
             this.textBox2.UseSystemPasswordChar = true;
             // 
@@ -139,7 +139,7 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
+            this.listBox1.ItemHeight = 26;
             this.listBox1.Items.AddRange(new object[] {
             "男",
             "女",
@@ -147,7 +147,7 @@
             this.listBox1.Location = new System.Drawing.Point(230, 319);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(96, 22);
+            this.listBox1.Size = new System.Drawing.Size(96, 30);
             this.listBox1.TabIndex = 8;
             // 
             // richTextBox1
@@ -192,7 +192,7 @@
             this.label6.ForeColor = System.Drawing.Color.Snow;
             this.label6.Location = new System.Drawing.Point(96, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 29);
+            this.label6.Size = new System.Drawing.Size(161, 40);
             this.label6.TabIndex = 11;
             this.label6.Text = "MY TRIP";
             // 

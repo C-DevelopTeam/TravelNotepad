@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelClient.controller;
+using TravelClient.form;
 
 namespace TravelClient.controller
 {
     public partial class UC_AllSites : UserControl
     {
+        ChangePanel changePanel;
         public UC_AllSites()
         {
             InitializeComponent();
@@ -20,10 +22,11 @@ namespace TravelClient.controller
             AddControlsToPanel(uc_site, Sitepanel1);
         }
 
-        public UC_AllSites(long travelID)
+        public UC_AllSites(ChangePanel changePanel, long travelID=-1)
         {
             InitializeComponent();
-            UC_Site uc_site = new UC_Site();
+            this.changePanel = changePanel;
+            UC_Site uc_site = new UC_Site(this.changePanel);
             AddControlsToPanel(uc_site, Sitepanel1);
         }
 

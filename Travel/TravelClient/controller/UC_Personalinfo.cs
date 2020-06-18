@@ -31,13 +31,14 @@ namespace TravelClient.controller
                 PrivateFontCollection font = new PrivateFontCollection();
                 font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
 
-                Font titleFont = new Font(font.Families[0], 18F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont = new Font(font.Families[0], 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
                 //设置窗体控件字体，哪些控件要更改都写到下面
                 label1.Font = titleFont;
                 label2.Font = titleFont;
                 label3.Font = titleFont;
                 label4.Font = titleFont;
+                lbl_ID.Font = titleFont;
                 lblUserId.Font = titleFont;
                 btnCommit.Font = titleFont;
             }

@@ -12,9 +12,12 @@ using TravelClient.controller;
 
 namespace TravelClient.form
 {
+    public delegate void ChangePanel(Control c);
+
     public partial class Form_TripNote : Form
     {
         private Point formPoint = new Point();
+        public ChangePanel changePanel;
 
         public Form_TripNote()
         {
@@ -31,16 +34,16 @@ namespace TravelClient.form
                 font.AddFontFile(AppPath + @"\font\JOKERMAN.TTF");//字体的路径及名字
                 font.AddFontFile(AppPath + @"\font\SF-Pro-Text-Medium.otf");
 
-                Font jokermanFont25 = new Font(font.Families[0], 25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-                Font titleFont15 = new Font(font.Families[1], 15F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                Font jokermanFont16 = new Font(font.Families[0], 16F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont11 = new Font(font.Families[1], 11F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
 
                 //设置窗体控件字体，哪些控件要更改都写到下面
-                Lbl_mytrip.Font = jokermanFont25;
-                Btn_MyTravel.Font = titleFont15;
-                Btn_NoteSharing.Font = titleFont15;
-                Btn_PersonalInfo.Font = titleFont15;
-                Btn_presentTravel.Font = titleFont15;
-                Btn_TravelNote.Font = titleFont15;
+                Lbl_mytrip.Font = jokermanFont16;
+                Btn_MyTravel.Font = titleFont11;
+                Btn_NoteSharing.Font = titleFont11;
+                Btn_PersonalInfo.Font = titleFont11;
+                Btn_presentTravel.Font = titleFont11;
+                Btn_TravelNote.Font = titleFont11;
             }
             catch
             {
@@ -74,16 +77,17 @@ namespace TravelClient.form
             formPoint.Y = e.Y;
         }
 
-        private void AddControlsToPanel(Control c)
+        public void AddControlsToPanel(Control c)
         {
             c.Dock = DockStyle.Fill;
             panelControl.Controls.Clear();
             panelControl.Controls.Add(c);
         }
 
+
         private void Btn_MyTravel_Click(object sender, EventArgs e)
         {
-            UC_TravelList uc_Present = new UC_TravelList();
+            UC_TravelList uc_Present = new UC_TravelList(changePanel);
             AddControlsToPanel(uc_Present);
         }
 
@@ -96,7 +100,7 @@ namespace TravelClient.form
 
         private void Btn_presentTravel_Click(object sender, EventArgs e)
         {
-            UC_AllSites uc_allsite = new UC_AllSites();
+            UC_AllSites uc_allsite = new UC_AllSites(changePanel);
             AddControlsToPanel(uc_allsite);
         }
     }

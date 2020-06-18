@@ -37,15 +37,17 @@
             this.lblUserId = new System.Windows.Forms.Label();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.btnCommit = new System.Windows.Forms.Button();
+            this.lbl_ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(138, 82);
+            this.label1.Location = new System.Drawing.Point(113, 88);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(44, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID：";
             // 
@@ -53,9 +55,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(138, 164);
+            this.label2.Location = new System.Drawing.Point(113, 168);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(62, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "昵称：";
             // 
@@ -63,9 +66,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(138, 256);
+            this.label3.Location = new System.Drawing.Point(113, 254);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "性别：";
             // 
@@ -73,36 +77,40 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(138, 354);
+            this.label4.Location = new System.Drawing.Point(113, 334);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(62, 18);
             this.label4.TabIndex = 0;
             this.label4.Text = "介绍：";
             // 
             // tbUserName
             // 
             this.tbUserName.Font = new System.Drawing.Font("宋体", 15F);
-            this.tbUserName.Location = new System.Drawing.Point(217, 164);
+            this.tbUserName.Location = new System.Drawing.Point(238, 154);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(184, 30);
+            this.tbUserName.Size = new System.Drawing.Size(274, 42);
             this.tbUserName.TabIndex = 1;
             // 
             // tbDescription
             // 
             this.tbDescription.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbDescription.Location = new System.Drawing.Point(217, 351);
+            this.tbDescription.Location = new System.Drawing.Point(238, 334);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(386, 179);
+            this.tbDescription.Size = new System.Drawing.Size(451, 190);
             this.tbDescription.TabIndex = 1;
             // 
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
             this.lblUserId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblUserId.Location = new System.Drawing.Point(215, 73);
+            this.lblUserId.Location = new System.Drawing.Point(322, 110);
+            this.lblUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(0, 12);
+            this.lblUserId.Size = new System.Drawing.Size(0, 18);
             this.lblUserId.TabIndex = 0;
             // 
             // cbGender
@@ -113,27 +121,40 @@
             "男",
             "女",
             "未知"});
-            this.cbGender.Location = new System.Drawing.Point(217, 256);
+            this.cbGender.Location = new System.Drawing.Point(238, 235);
+            this.cbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(184, 35);
+            this.cbGender.Size = new System.Drawing.Size(274, 47);
             this.cbGender.TabIndex = 2;
             // 
             // btnCommit
             // 
             this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.btnCommit.ForeColor = System.Drawing.Color.White;
-            this.btnCommit.Location = new System.Drawing.Point(328, 568);
+            this.btnCommit.ForeColor = System.Drawing.Color.Snow;
+            this.btnCommit.Location = new System.Drawing.Point(335, 583);
+            this.btnCommit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCommit.Name = "btnCommit";
-            this.btnCommit.Size = new System.Drawing.Size(158, 65);
+            this.btnCommit.Size = new System.Drawing.Size(165, 60);
             this.btnCommit.TabIndex = 3;
             this.btnCommit.Text = "确认修改";
             this.btnCommit.UseVisualStyleBackColor = false;
             this.btnCommit.Click += new System.EventHandler(this.BtnCommit_Click);
             // 
+            // lbl_ID
+            // 
+            this.lbl_ID.AutoSize = true;
+            this.lbl_ID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_ID.Location = new System.Drawing.Point(235, 87);
+            this.lbl_ID.Name = "lbl_ID";
+            this.lbl_ID.Size = new System.Drawing.Size(62, 18);
+            this.lbl_ID.TabIndex = 4;
+            this.lbl_ID.Text = "label5";
+            // 
             // UC_Personalinfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_ID);
             this.Controls.Add(this.btnCommit);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.tbDescription);
@@ -143,6 +164,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UC_Personalinfo";
             this.Size = new System.Drawing.Size(840, 750);
             this.ResumeLayout(false);
@@ -161,5 +183,6 @@
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Button btnCommit;
+        private System.Windows.Forms.Label lbl_ID;
     }
 }
