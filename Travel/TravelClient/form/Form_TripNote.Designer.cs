@@ -37,7 +37,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.Btn_MyTravel = new System.Windows.Forms.Button();
             this.Btn_presentTravel = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelControl = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,6 +153,7 @@
             this.Btn_MyTravel.Text = "我的旅程";
             this.Btn_MyTravel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_MyTravel.UseVisualStyleBackColor = false;
+            this.Btn_MyTravel.Click += new System.EventHandler(this.Btn_MyTravel_Click);
             // 
             // Btn_presentTravel
             // 
@@ -172,15 +173,15 @@
             this.Btn_presentTravel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_presentTravel.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // panelControl
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(260, 48);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(840, 752);
-            this.panel2.TabIndex = 1;
+            this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.panelControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl.Location = new System.Drawing.Point(260, 50);
+            this.panelControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl.Name = "panelControl";
+            this.panelControl.Size = new System.Drawing.Size(840, 750);
+            this.panelControl.TabIndex = 1;
             // 
             // button6
             // 
@@ -202,7 +203,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1100, 800);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -225,7 +226,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button Btn_MyTravel;
         private System.Windows.Forms.Button Btn_presentTravel;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lbl_mytrip;
