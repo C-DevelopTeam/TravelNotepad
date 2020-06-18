@@ -32,9 +32,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_mytrip = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_PersonalInfo = new System.Windows.Forms.Button();
+            this.Btn_NoteSharing = new System.Windows.Forms.Button();
+            this.Btn_TravelNote = new System.Windows.Forms.Button();
             this.Btn_MyTravel = new System.Windows.Forms.Button();
             this.Btn_presentTravel = new System.Windows.Forms.Button();
             this.panelControl = new System.Windows.Forms.Panel();
@@ -48,9 +48,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Lbl_mytrip);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.Btn_PersonalInfo);
+            this.panel1.Controls.Add(this.Btn_NoteSharing);
+            this.panel1.Controls.Add(this.Btn_TravelNote);
             this.panel1.Controls.Add(this.Btn_MyTravel);
             this.panel1.Controls.Add(this.Btn_presentTravel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -82,59 +82,59 @@
             this.Lbl_mytrip.TabIndex = 6;
             this.Lbl_mytrip.Text = "MY TRIP";
             // 
-            // button5
+            // Btn_PersonalInfo
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(23, 362);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(222, 48);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "个人信息";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
+            this.Btn_PersonalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
+            this.Btn_PersonalInfo.FlatAppearance.BorderSize = 0;
+            this.Btn_PersonalInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_PersonalInfo.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_PersonalInfo.ForeColor = System.Drawing.Color.White;
+            this.Btn_PersonalInfo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_PersonalInfo.Image")));
+            this.Btn_PersonalInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_PersonalInfo.Location = new System.Drawing.Point(23, 362);
+            this.Btn_PersonalInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_PersonalInfo.Name = "Btn_PersonalInfo";
+            this.Btn_PersonalInfo.Size = new System.Drawing.Size(222, 48);
+            this.Btn_PersonalInfo.TabIndex = 1;
+            this.Btn_PersonalInfo.Text = "个人信息";
+            this.Btn_PersonalInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_PersonalInfo.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // Btn_NoteSharing
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(23, 306);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(222, 48);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "日志圈";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.Btn_NoteSharing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
+            this.Btn_NoteSharing.FlatAppearance.BorderSize = 0;
+            this.Btn_NoteSharing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_NoteSharing.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_NoteSharing.ForeColor = System.Drawing.Color.White;
+            this.Btn_NoteSharing.Image = ((System.Drawing.Image)(resources.GetObject("Btn_NoteSharing.Image")));
+            this.Btn_NoteSharing.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_NoteSharing.Location = new System.Drawing.Point(23, 306);
+            this.Btn_NoteSharing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_NoteSharing.Name = "Btn_NoteSharing";
+            this.Btn_NoteSharing.Size = new System.Drawing.Size(222, 48);
+            this.Btn_NoteSharing.TabIndex = 1;
+            this.Btn_NoteSharing.Text = "日志圈";
+            this.Btn_NoteSharing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_NoteSharing.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // Btn_TravelNote
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(23, 250);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(222, 48);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "旅行日志";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.Btn_TravelNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
+            this.Btn_TravelNote.FlatAppearance.BorderSize = 0;
+            this.Btn_TravelNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_TravelNote.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_TravelNote.ForeColor = System.Drawing.Color.White;
+            this.Btn_TravelNote.Image = ((System.Drawing.Image)(resources.GetObject("Btn_TravelNote.Image")));
+            this.Btn_TravelNote.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_TravelNote.Location = new System.Drawing.Point(23, 250);
+            this.Btn_TravelNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_TravelNote.Name = "Btn_TravelNote";
+            this.Btn_TravelNote.Size = new System.Drawing.Size(222, 48);
+            this.Btn_TravelNote.TabIndex = 1;
+            this.Btn_TravelNote.Text = "旅行日志";
+            this.Btn_TravelNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_TravelNote.UseVisualStyleBackColor = false;
             // 
             // Btn_MyTravel
             // 
@@ -198,8 +198,8 @@
             // 
             // Form_TripNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1100, 800);
             this.Controls.Add(this.button6);
@@ -221,9 +221,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Btn_PersonalInfo;
+        private System.Windows.Forms.Button Btn_NoteSharing;
+        private System.Windows.Forms.Button Btn_TravelNote;
         private System.Windows.Forms.Button Btn_MyTravel;
         private System.Windows.Forms.Button Btn_presentTravel;
         private System.Windows.Forms.Panel panelControl;

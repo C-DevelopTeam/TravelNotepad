@@ -55,7 +55,7 @@ namespace TravelClient.form
 
         private void Btn_MyTravel_Click(object sender, EventArgs e)
         {
-            UC_PresentTravelList uc_Present = new UC_PresentTravelList();
+            UC_TravelList uc_Present = new UC_TravelList();
             AddControlsToPanel(uc_Present);
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace TravelClient.controller
 {
-    partial class UC_PresentTravelList
+    partial class UC_TravelList
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_PresentTravelList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TravelList));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.PanelCell2 = new System.Windows.Forms.Panel();
             this.PanelCell1 = new System.Windows.Forms.Panel();
+            this.PanelCell2 = new System.Windows.Forms.Panel();
             this.PanelCell3 = new System.Windows.Forms.Panel();
             this.PanelCell4 = new System.Windows.Forms.Panel();
             this.PanelCell5 = new System.Windows.Forms.Panel();
@@ -56,19 +56,19 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(840, 585);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // PanelCell2
-            // 
-            this.PanelCell2.Location = new System.Drawing.Point(3, 119);
-            this.PanelCell2.Name = "PanelCell2";
-            this.PanelCell2.Size = new System.Drawing.Size(837, 110);
-            this.PanelCell2.TabIndex = 0;
-            // 
             // PanelCell1
             // 
             this.PanelCell1.Location = new System.Drawing.Point(3, 3);
             this.PanelCell1.Name = "PanelCell1";
             this.PanelCell1.Size = new System.Drawing.Size(837, 110);
             this.PanelCell1.TabIndex = 1;
+            // 
+            // PanelCell2
+            // 
+            this.PanelCell2.Location = new System.Drawing.Point(3, 119);
+            this.PanelCell2.Name = "PanelCell2";
+            this.PanelCell2.Size = new System.Drawing.Size(837, 110);
+            this.PanelCell2.TabIndex = 0;
             // 
             // PanelCell3
             // 
@@ -133,16 +133,17 @@
             this.pictureBox_add1.TabIndex = 7;
             this.pictureBox_add1.TabStop = false;
             // 
-            // UC_PresentTravelList
+            // UC_TravelList
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.Controls.Add(this.pictureBox_add1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "UC_PresentTravelList";
+            this.Name = "UC_TravelList";
             this.Size = new System.Drawing.Size(840, 750);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
