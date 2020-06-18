@@ -55,6 +55,12 @@
     <Compile Include="controller\UC_AllSites.Designer.cs">
       <DependentUpon>UC_AllSites.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\UC_Personalinfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_Personalinfo.Designer.cs">
+      <DependentUpon>UC_Personalinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\UC_PresentTravelList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,8 +123,12 @@
     <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\Client.cs" />
     <EmbeddedResource Include="controller\UC_AllSites.resx">
       <DependentUpon>UC_AllSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_Personalinfo.resx">
+      <DependentUpon>UC_Personalinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_PresentTravelList.resx">
       <DependentUpon>UC_PresentTravelList.cs</DependentUpon>
@@ -157,6 +167,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.manifest" />
+    <None Include="bin\Debug\font\JOKERMAN.TTF" />
+    <None Include="bin\Debug\font\SF-Pro-Text-Medium.otf" />
+    <None Include="bin\Debug\font\造字工房映力黑规体.otf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -173,10 +186,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="utils\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="bin\Debug\font\字体.txt" />
     <Content Include="static\font\字体.txt" />
     <Content Include="static\image\forward.png" />
     <Content Include="static\image\forward_2.png" />

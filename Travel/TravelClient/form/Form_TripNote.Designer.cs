@@ -74,11 +74,11 @@
             // Lbl_mytrip
             // 
             this.Lbl_mytrip.AutoSize = true;
-            this.Lbl_mytrip.Font = new System.Drawing.Font("Jokerman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_mytrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_mytrip.ForeColor = System.Drawing.Color.Snow;
             this.Lbl_mytrip.Location = new System.Drawing.Point(99, 59);
             this.Lbl_mytrip.Name = "Lbl_mytrip";
-            this.Lbl_mytrip.Size = new System.Drawing.Size(155, 47);
+            this.Lbl_mytrip.Size = new System.Drawing.Size(101, 26);
             this.Lbl_mytrip.TabIndex = 6;
             this.Lbl_mytrip.Text = "MY TRIP";
             // 
@@ -87,7 +87,7 @@
             this.Btn_PersonalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.Btn_PersonalInfo.FlatAppearance.BorderSize = 0;
             this.Btn_PersonalInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_PersonalInfo.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_PersonalInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_PersonalInfo.ForeColor = System.Drawing.Color.White;
             this.Btn_PersonalInfo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_PersonalInfo.Image")));
             this.Btn_PersonalInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -99,13 +99,14 @@
             this.Btn_PersonalInfo.Text = "个人信息";
             this.Btn_PersonalInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_PersonalInfo.UseVisualStyleBackColor = false;
+            this.Btn_PersonalInfo.Click += new System.EventHandler(this.Btn_PersonalInfo_Click);
             // 
             // Btn_NoteSharing
             // 
             this.Btn_NoteSharing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.Btn_NoteSharing.FlatAppearance.BorderSize = 0;
             this.Btn_NoteSharing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_NoteSharing.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_NoteSharing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_NoteSharing.ForeColor = System.Drawing.Color.White;
             this.Btn_NoteSharing.Image = ((System.Drawing.Image)(resources.GetObject("Btn_NoteSharing.Image")));
             this.Btn_NoteSharing.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -123,7 +124,7 @@
             this.Btn_TravelNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.Btn_TravelNote.FlatAppearance.BorderSize = 0;
             this.Btn_TravelNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_TravelNote.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_TravelNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_TravelNote.ForeColor = System.Drawing.Color.White;
             this.Btn_TravelNote.Image = ((System.Drawing.Image)(resources.GetObject("Btn_TravelNote.Image")));
             this.Btn_TravelNote.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,7 +142,7 @@
             this.Btn_MyTravel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.Btn_MyTravel.FlatAppearance.BorderSize = 0;
             this.Btn_MyTravel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MyTravel.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_MyTravel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_MyTravel.ForeColor = System.Drawing.Color.White;
             this.Btn_MyTravel.Image = ((System.Drawing.Image)(resources.GetObject("Btn_MyTravel.Image")));
             this.Btn_MyTravel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -160,7 +161,7 @@
             this.Btn_presentTravel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.Btn_presentTravel.FlatAppearance.BorderSize = 0;
             this.Btn_presentTravel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_presentTravel.Font = new System.Drawing.Font("SF Pro Text", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_presentTravel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_presentTravel.ForeColor = System.Drawing.Color.White;
             this.Btn_presentTravel.Image = ((System.Drawing.Image)(resources.GetObject("Btn_presentTravel.Image")));
             this.Btn_presentTravel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -61,86 +61,85 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(223, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 38);
+            this.label1.Size = new System.Drawing.Size(105, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "新用户注册";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(86, 192);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 30);
+            this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "用户名";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(86, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 30);
+            this.label3.Size = new System.Drawing.Size(38, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "密码";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(86, 319);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 30);
+            this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 6;
             this.label4.Text = "性别";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(86, 392);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 30);
+            this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 6;
             this.label5.Text = "个人介绍";
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("SF Pro Text", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox1.Location = new System.Drawing.Point(230, 192);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 34);
+            this.textBox1.Size = new System.Drawing.Size(230, 24);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("SF Pro Text", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox2.Location = new System.Drawing.Point(230, 255);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 34);
+            this.textBox2.Size = new System.Drawing.Size(230, 24);
             this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "单行输入";
             this.textBox2.UseSystemPasswordChar = true;
             // 
             // listBox1
             // 
-            this.listBox1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 30;
+            this.listBox1.ItemHeight = 18;
             this.listBox1.Items.AddRange(new object[] {
             "男",
             "女",
@@ -148,12 +147,12 @@
             this.listBox1.Location = new System.Drawing.Point(230, 319);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(96, 34);
+            this.listBox1.Size = new System.Drawing.Size(96, 22);
             this.listBox1.TabIndex = 8;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("SF Pro Text", 9F, System.Drawing.FontStyle.Bold);
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.richTextBox1.Location = new System.Drawing.Point(230, 392);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -165,7 +164,7 @@
             // Btn_Register
             // 
             this.Btn_Register.BackColor = System.Drawing.Color.Snow;
-            this.Btn_Register.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_Register.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Btn_Register.Location = new System.Drawing.Point(269, 547);
             this.Btn_Register.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -189,11 +188,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Jokerman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Snow;
             this.label6.Location = new System.Drawing.Point(96, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 52);
+            this.label6.Size = new System.Drawing.Size(110, 29);
             this.label6.TabIndex = 11;
             this.label6.Text = "MY TRIP";
             // 
