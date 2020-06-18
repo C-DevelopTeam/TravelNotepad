@@ -172,6 +172,7 @@
             this.Btn_presentTravel.Text = "当前旅程";
             this.Btn_presentTravel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_presentTravel.UseVisualStyleBackColor = false;
+            this.Btn_presentTravel.Click += new System.EventHandler(this.Btn_presentTravel_Click);
             // 
             // panelControl
             // 
@@ -198,8 +199,7 @@
             // 
             // Form_TripNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1100, 800);
             this.Controls.Add(this.button6);

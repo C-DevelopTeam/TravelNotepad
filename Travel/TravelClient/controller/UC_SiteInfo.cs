@@ -15,6 +15,8 @@ namespace TravelClient.controller
         public UC_SiteInfo()
         {
             InitializeComponent();
+            UC_Todo uc_todo = new UC_Todo();
+            AddControlsToPanel(uc_todo,TodoflowLayoutPanel1);
         }
 
         private void Btn_backToRoute_Click(object sender, EventArgs e)
@@ -22,6 +24,15 @@ namespace TravelClient.controller
 
         }
 
- 
+
+
+        private void AddControlsToPanel(Control c, Panel panel)
+        {
+            c.Dock = DockStyle.Fill;
+            panel.Controls.Clear();
+            panel.Controls.Add(c);
+        }
+
+
     }
 }

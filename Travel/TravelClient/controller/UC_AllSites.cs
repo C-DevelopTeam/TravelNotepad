@@ -20,6 +20,13 @@ namespace TravelClient.controller
             AddControlsToPanel(uc_site, Sitepanel1);
         }
 
+        public UC_AllSites(long travelID)
+        {
+            InitializeComponent();
+            UC_Site uc_site = new UC_Site();
+            AddControlsToPanel(uc_site, Sitepanel1);
+        }
+
         private void AddControlsToPanel(Control c, Panel panel)
         {
             c.Dock = DockStyle.Fill;

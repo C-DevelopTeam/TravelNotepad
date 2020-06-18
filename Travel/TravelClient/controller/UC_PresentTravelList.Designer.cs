@@ -36,12 +36,11 @@
             this.PanelCell4 = new System.Windows.Forms.Panel();
             this.PanelCell5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.MyTrip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_add1 = new System.Windows.Forms.PictureBox();
+            this.Btn_addTravel = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -100,16 +99,16 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             // 
-            // label3
+            // MyTrip
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(131, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 60);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "我的旅程";
+            this.MyTrip.AutoSize = true;
+            this.MyTrip.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MyTrip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.MyTrip.Location = new System.Drawing.Point(131, 28);
+            this.MyTrip.Name = "MyTrip";
+            this.MyTrip.Size = new System.Drawing.Size(183, 54);
+            this.MyTrip.TabIndex = 5;
+            this.MyTrip.Text = "我的旅程";
             // 
             // pictureBox1
             // 
@@ -122,32 +121,31 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox_add1
+            // Btn_addTravel
             // 
-            this.pictureBox_add1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_add1.Image")));
-            this.pictureBox_add1.InitialImage = null;
-            this.pictureBox_add1.Location = new System.Drawing.Point(743, 20);
-            this.pictureBox_add1.Name = "pictureBox_add1";
-            this.pictureBox_add1.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox_add1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_add1.TabIndex = 7;
-            this.pictureBox_add1.TabStop = false;
+            this.Btn_addTravel.FlatAppearance.BorderSize = 0;
+            this.Btn_addTravel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_addTravel.Image = ((System.Drawing.Image)(resources.GetObject("Btn_addTravel.Image")));
+            this.Btn_addTravel.Location = new System.Drawing.Point(751, 28);
+            this.Btn_addTravel.Name = "Btn_addTravel";
+            this.Btn_addTravel.Size = new System.Drawing.Size(59, 54);
+            this.Btn_addTravel.TabIndex = 8;
+            this.Btn_addTravel.UseVisualStyleBackColor = true;
+            this.Btn_addTravel.Click += new System.EventHandler(this.Btn_addTravel_Click);
             // 
             // UC_TravelList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.Controls.Add(this.pictureBox_add1);
+            this.Controls.Add(this.Btn_addTravel);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.MyTrip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UC_TravelList";
             this.Size = new System.Drawing.Size(840, 750);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,8 +160,8 @@
         private System.Windows.Forms.Panel PanelCell4;
         private System.Windows.Forms.Panel PanelCell5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label MyTrip;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox_add1;
+        private System.Windows.Forms.Button Btn_addTravel;
     }
 }
