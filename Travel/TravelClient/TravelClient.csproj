@@ -79,6 +79,12 @@
     <Compile Include="controller\UC_SiteInfo.Designer.cs">
       <DependentUpon>UC_SiteInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\UC_Todo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_Todo.Designer.cs">
+      <DependentUpon>UC_Todo.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\UC_TravelCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="form\Form_MainPage.Designer.cs">
       <DependentUpon>Form_MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Form_NewTravel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Form_NewTravel.Designer.cs">
+      <DependentUpon>Form_NewTravel.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Form_Register.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="controller\UC_SiteInfo.resx">
       <DependentUpon>UC_SiteInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_Todo.resx">
+      <DependentUpon>UC_Todo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_TravelCell.resx">
       <DependentUpon>UC_TravelCell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Form_MainPage.resx">
       <DependentUpon>Form_MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Form_NewTravel.resx">
+      <DependentUpon>Form_NewTravel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Form_Register.resx">
       <DependentUpon>Form_Register.cs</DependentUpon>

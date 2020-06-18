@@ -92,6 +92,7 @@ namespace TravelClient.form
         {
             UC_Personalinfo uc_Personalinfo = new UC_Personalinfo();
             AddControlsToPanel(uc_Personalinfo);
+        }
 
         private void Btn_presentTravel_Click(object sender, EventArgs e)
         {
