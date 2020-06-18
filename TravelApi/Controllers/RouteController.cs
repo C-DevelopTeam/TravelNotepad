@@ -20,7 +20,7 @@ namespace TravelApi.Controllers
         }
 
         //新建路线
-        [HttpPost("/")]
+        [HttpPost]
         public ActionResult<Route> AddRoute(Route route)
         {
             try
@@ -44,7 +44,7 @@ namespace TravelApi.Controllers
         }
 
         //根据旅游id获取路线
-        [HttpGet("/get")]
+        [HttpGet("get")]
         public ActionResult<List<Route>> GetRoute(long travelId)
         {
             IQueryable<Route> query = _routeService.GetByTravelId(travelId);
@@ -56,7 +56,7 @@ namespace TravelApi.Controllers
         }
 
         //更该路线信息
-        [HttpPut("/update")]
+        [HttpPut("update")]
         public ActionResult<Route> UpdateRoute(long routeId, Route route)
         {
             if (routeId != route.RouteId)
@@ -77,7 +77,7 @@ namespace TravelApi.Controllers
         }
 
         //按照id删除路线
-        [HttpDelete("/delete")]
+        [HttpDelete("delete")]
         public ActionResult DeleteRoute(long[] routeIds)
         {
             try

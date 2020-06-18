@@ -19,7 +19,7 @@ namespace TravelApi.Controllers
         }
 
         //获取分享动态
-        [HttpGet("/get")]
+        [HttpGet("get")]
         public ActionResult<List<Diary>> GetBlogShared()
         {
             IQueryable<Diary> query = _diaryService.GetByShare();

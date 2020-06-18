@@ -25,7 +25,7 @@ namespace TravelApi.Controllers
             this._routeService = routeService;
         }
 
-        [HttpPost("/")]
+        [HttpPost]
         public ActionResult<Diary> AddDiary(Diary diary)
         {
             try
@@ -49,7 +49,7 @@ namespace TravelApi.Controllers
             return NoContent();
         }
 
-        [HttpGet("/get")]
+        [HttpGet("get")]
         public ActionResult<List<Object>> GetDairy(long diaryId)
         {
             List<Object> result = new List<object>();
@@ -82,7 +82,7 @@ namespace TravelApi.Controllers
             }
         }
 
-        [HttpPut("/update")]
+        [HttpPut("update")]
         public ActionResult<Diary> UpdateDiary(long dairyId, Diary diary)
         {
             if(dairyId != diary.DiaryId)
@@ -102,7 +102,7 @@ namespace TravelApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("/delete")]
+        [HttpDelete("delete")]
         public ActionResult DeleteDiary(long diaryId)
         {
             try
