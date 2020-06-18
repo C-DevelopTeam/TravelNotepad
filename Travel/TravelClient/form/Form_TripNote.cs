@@ -94,7 +94,8 @@ namespace TravelClient.form
 
         private void Btn_PersonalInfo_Click(object sender, EventArgs e)
         {
-            UC_Personalinfo uc_Personalinfo = new UC_Personalinfo();
+            //此处uid应该是从mainPage传输过来，现在整体尚未搭建完毕，先暂定为0
+            UC_Personalinfo uc_Personalinfo = new UC_Personalinfo(uid:"0");
             AddControlsToPanel(uc_Personalinfo);
         }
 

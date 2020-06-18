@@ -8,17 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Xml;
+using TravelClient.utils;
+using System.Xml.Serialization;
+using TravelClient.Models;
+using System.Net.Http;
+using System.IO;
 
 namespace TravelClient.controller
 {
     public partial class UC_Personalinfo : UserControl
     {
-        public UC_Personalinfo()
+        private string baseUrl = "https://localhost:5001/api/user";
+        private string Uid { get; }
+        public UC_Personalinfo(string uid)
         {
             InitializeComponent();
+            this.Uid = uid;
             SetFont();
             InitInfo();
         }
@@ -38,7 +44,6 @@ namespace TravelClient.controller
                 label2.Font = titleFont;
                 label3.Font = titleFont;
                 label4.Font = titleFont;
-                lbl_ID.Font = titleFont;
                 lblUserId.Font = titleFont;
                 btnCommit.Font = titleFont;
             }
@@ -48,23 +53,65 @@ namespace TravelClient.controller
             }
         }
 
-        private void InitInfo()
+        private async void InitInfo()
         {
             //初始化相关信息
-
+            string url = baseUrl + "/get?uid=" + this.Uid; 
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(User));
+            Client client = new Client();
+            try
+            {
+                HttpResponseMessage result = await client.Get(url);
+                if (result.IsSuccessStatusCode)
+                {
+                    User user = (User)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                    lblUserId.Text = user.Uid.ToString("00000");
+                    tbUserName.Text = user.Uname;
+                    cbGender.Text = user.Sex;
+                    tbDescription.Text = user.Introduction;
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
-        private void BtnCommit_Click(object sender, EventArgs e)
+        private async void BtnCommit_Click(object sender, EventArgs e)
         {
             //进行代码提交
-            string baseUrl = "https://localhost:5001/api/todo";
+            string id = lblUserId.Text;
+            string url = baseUrl + "/update?uid=" + id;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(User));
+            Client client = new Client();
+            try
+            {
+                string data = "";
+                HttpResponseMessage result = await client.Get(baseUrl + "/get?uid=" + id);
+                if (result.IsSuccessStatusCode)
+                {
+                    User user = (User)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                    user.Uname = tbUserName.Text;
+                    user.Sex = cbGender.Text;
+                    user.Introduction = tbDescription.Text;
 
-            var handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback = delegate { return true; };
-            HttpClient client = new HttpClient(handler);
+                    using(StringWriter sw = new StringWriter())
+                    {
+                        xmlSerializer.Serialize(sw, user);
+                        data = sw.ToString();
+                    }
 
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xml"));
+                    result = await client.Put(url, data);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
