@@ -12,12 +12,12 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class DiaryController : ControllerBase
     {
-        private readonly DiaryService _diaryService;
-        private readonly SiteService _siteService;
-        private readonly TravelService _travelService;
-        private readonly RouteService _routeService;
+        private readonly IDiaryService _diaryService;
+        private readonly ISiteService _siteService;
+        private readonly ITravelService _travelService;
+        private readonly IRouteService _routeService;
 
-        public DiaryController(DiaryService diaryService, SiteService siteService, TravelService travelService, RouteService routeService)
+        public DiaryController(IDiaryService diaryService, ISiteService siteService, ITravelService travelService, IRouteService routeService)
         {
             this._diaryService = diaryService;
             this._siteService = siteService;

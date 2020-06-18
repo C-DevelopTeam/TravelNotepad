@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using TravelApi.Dao;
+using TravelApi.Service;
 
 namespace TravelApi
 {
@@ -32,6 +33,12 @@ namespace TravelApi
             .UseMySql(Configuration.GetConnectionString("travelDataBase"),
             mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 30), ServerType.MySql)
             ));
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IDiaryService, DiaryService>();
+            services.AddTransient<IRouteService, RouteService>();
+            services.AddTransient<ISiteService, SiteService>();
+            services.AddTransient<ITaskService, TaskService>();
+            services.AddTransient<ITravelService, TravelService>();
             services.AddControllers().AddXmlSerializerFormatters();
         }
 

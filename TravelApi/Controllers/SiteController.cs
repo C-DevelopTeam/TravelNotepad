@@ -10,9 +10,9 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class SiteController : ControllerBase
     {
-        private readonly SiteService _siteService;
+        private readonly ISiteService _siteService;
 
-        public SiteController(SiteService siteService)
+        public SiteController(ISiteService siteService)
         {
             this._siteService = siteService;
         }

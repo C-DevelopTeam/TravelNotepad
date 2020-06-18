@@ -11,9 +11,9 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class BloggerController : ControllerBase
     {
-        private readonly DiaryService _diaryService;
+        private readonly IDiaryService _diaryService;
 
-        public BloggerController(DiaryService diaryService)
+        public BloggerController(IDiaryService diaryService)
         {
             this._diaryService = diaryService;
         }

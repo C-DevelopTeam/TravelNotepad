@@ -16,13 +16,13 @@ namespace TravelApi.Controllers
     [Route("api/[controller]")]
     public class FileController : ControllerBase
     {
-        private readonly DiaryService _diaryService;
+        private readonly IDiaryService _diaryService;
         private readonly long _fileSizeLimit;
         private readonly string[] _permittedExtensions = {".jpg", ".gif", ".jpeg", ".png"};
         private readonly string _rootPath;
         private static readonly FormOptions _defaultFormOptions = new FormOptions();
 
-        public FileController(DiaryService diaryService, IConfiguration config)
+        public FileController(IDiaryService diaryService, IConfiguration config)
         {
             this._diaryService = diaryService;
             this._rootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, config.GetValue<string>("StoredFileFolder"));

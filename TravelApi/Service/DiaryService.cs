@@ -6,6 +6,9 @@ namespace TravelApi.Service
 {
     public interface IDiaryService : IEntityService<Diary>
     {
+        IQueryable<Diary> GetDiaryByDate(string date);
+        IQueryable<Diary> GetByShare();
+        Diary GetById(long diaryId);
     }
 
     public class DiaryService : EntityService<Diary>, IDiaryService

@@ -11,15 +11,15 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class UserController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
-        public UserController(UserService userService)
+        public UserController(IUserService userService)
         {
             this._userService = userService;
         }
 
         //注册
-        [HttpPost("/register")]
+        [HttpPost("register")]
         public ActionResult<User> AddUser(User user)
         {
             try{
@@ -42,7 +42,7 @@ namespace TravelApi.Controllers
         }
 
         //获取个人信息
-        [HttpGet("/get")]
+        [HttpGet("get")]
         public ActionResult<User> GetUserInfo(int uid)
         {
             var user = _userService.GetById(uid);
@@ -54,7 +54,7 @@ namespace TravelApi.Controllers
         }
 
         //更新个人信息
-        [HttpPut("/update")]
+        [HttpPut("update")]
         public ActionResult<User> UpdateRoute(int uid, User user)
         {
             if (uid != user.Uid)
@@ -75,7 +75,7 @@ namespace TravelApi.Controllers
         }
 
         //登录
-        [HttpPut("/login")]
+        [HttpPut("login")]
         public ActionResult<User> userLogin(int uid, string password)
         {
             try
@@ -97,6 +97,6 @@ namespace TravelApi.Controllers
                 return BadRequest(error);
             }
             return NoContent();
-        }        
+        }      
     }
 }

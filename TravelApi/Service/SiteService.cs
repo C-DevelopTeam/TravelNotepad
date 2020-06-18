@@ -6,6 +6,7 @@ namespace TravelApi.Service
 {
     public interface ISiteService : IEntityService<Site>
     {
+        Site GetById(string siteId);
     }
 
     public class SiteService : EntityService<Site>, ISiteService

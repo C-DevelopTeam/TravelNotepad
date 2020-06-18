@@ -12,9 +12,9 @@ namespace TravelApi.Controllers
     [Produces("application/xml")]
     public class RouteController : ControllerBase
     {
-        private readonly RouteService _routeService;
+        private readonly IRouteService _routeService;
 
-        public RouteController(RouteService routeService)
+        public RouteController(IRouteService routeService)
         {
             this._routeService = routeService;
         }
