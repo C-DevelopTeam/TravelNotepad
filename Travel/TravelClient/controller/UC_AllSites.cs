@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,9 @@ namespace TravelClient.controller
     {
         ChangePanel changePanel;
         public UC_AllSites()
-        {
+        { 
             InitializeComponent();
+            SetFont();
             UC_Site uc_site = new UC_Site();
             AddControlsToPanel(uc_site, Sitepanel1);
         }
@@ -35,6 +37,25 @@ namespace TravelClient.controller
             c.Dock = DockStyle.Fill;
             panel.Controls.Clear();
             panel.Controls.Add(c);
+        }
+
+        public void SetFont()
+        {
+            string AppPath = Application.StartupPath;
+            try
+            {
+                PrivateFontCollection font = new PrivateFontCollection();
+                font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
+                Font titleFont20 = new Font(font.Families[0], 20F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+
+                //设置窗体控件字体，哪些控件要更改都写到下面
+                Lbl_title.Font = titleFont20;
+
+            }
+            catch
+            {
+                MessageBox.Show("字体不存在或加载失败\n程序将以默认字体显示", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

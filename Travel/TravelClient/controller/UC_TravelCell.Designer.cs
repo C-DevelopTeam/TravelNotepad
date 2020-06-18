@@ -50,7 +50,7 @@
             this.Btn_deleteTravel.FlatAppearance.BorderSize = 0;
             this.Btn_deleteTravel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_deleteTravel.Image = ((System.Drawing.Image)(resources.GetObject("Btn_deleteTravel.Image")));
-            this.Btn_deleteTravel.Location = new System.Drawing.Point(732, 33);
+            this.Btn_deleteTravel.Location = new System.Drawing.Point(735, 31);
             this.Btn_deleteTravel.Name = "Btn_deleteTravel";
             this.Btn_deleteTravel.Size = new System.Drawing.Size(59, 53);
             this.Btn_deleteTravel.TabIndex = 3;
@@ -69,11 +69,11 @@
             // 
             this.Btn_TravelTitle.FlatAppearance.BorderSize = 0;
             this.Btn_TravelTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_TravelTitle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_TravelTitle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_TravelTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Btn_TravelTitle.Location = new System.Drawing.Point(140, 33);
+            this.Btn_TravelTitle.Location = new System.Drawing.Point(115, 33);
             this.Btn_TravelTitle.Name = "Btn_TravelTitle";
-            this.Btn_TravelTitle.Size = new System.Drawing.Size(161, 47);
+            this.Btn_TravelTitle.Size = new System.Drawing.Size(144, 42);
             this.Btn_TravelTitle.TabIndex = 11;
             this.Btn_TravelTitle.Text = "旅行标题";
             this.Btn_TravelTitle.UseVisualStyleBackColor = true;

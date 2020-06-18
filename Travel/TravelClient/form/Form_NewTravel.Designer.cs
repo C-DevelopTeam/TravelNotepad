@@ -33,13 +33,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Lbl_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_close = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Lbl_tip1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Lbl_tip2 = new System.Windows.Forms.Label();
             this.Btn_ConfirmToCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,16 +76,16 @@
             this.panel4.Size = new System.Drawing.Size(563, 16);
             this.panel4.TabIndex = 3;
             // 
-            // label1
+            // Lbl_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(240, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 49);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "新建旅程";
+            this.Lbl_title.AutoSize = true;
+            this.Lbl_title.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Lbl_title.Location = new System.Drawing.Point(240, 71);
+            this.Lbl_title.Name = "Lbl_title";
+            this.Lbl_title.Size = new System.Drawing.Size(166, 49);
+            this.Lbl_title.TabIndex = 4;
+            this.Lbl_title.Text = "新建旅程";
             // 
             // pictureBox1
             // 
@@ -109,16 +109,16 @@
             this.Btn_close.UseVisualStyleBackColor = true;
             this.Btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
-            // label2
+            // Lbl_tip1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(154, 142);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 33);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "给你的旅程起个标题吧！";
+            this.Lbl_tip1.AutoSize = true;
+            this.Lbl_tip1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_tip1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Lbl_tip1.Location = new System.Drawing.Point(154, 142);
+            this.Lbl_tip1.Name = "Lbl_tip1";
+            this.Lbl_tip1.Size = new System.Drawing.Size(279, 33);
+            this.Lbl_tip1.TabIndex = 7;
+            this.Lbl_tip1.Text = "给你的旅程起个标题吧！";
             // 
             // textBox1
             // 
@@ -136,16 +136,16 @@
             this.textBox2.Size = new System.Drawing.Size(100, 36);
             this.textBox2.TabIndex = 9;
             // 
-            // label3
+            // Lbl_tip2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(138, 250);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 33);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "你要去的城市是";
+            this.Lbl_tip2.AutoSize = true;
+            this.Lbl_tip2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_tip2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Lbl_tip2.Location = new System.Drawing.Point(138, 250);
+            this.Lbl_tip2.Name = "Lbl_tip2";
+            this.Lbl_tip2.Size = new System.Drawing.Size(183, 33);
+            this.Lbl_tip2.TabIndex = 10;
+            this.Lbl_tip2.Text = "你要去的城市是";
             // 
             // Btn_ConfirmToCreate
             // 
@@ -165,13 +165,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(587, 404);
             this.Controls.Add(this.Btn_ConfirmToCreate);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Lbl_tip2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Lbl_tip1);
             this.Controls.Add(this.Btn_close);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Lbl_title);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -191,13 +191,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Btn_close;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Lbl_tip1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Lbl_tip2;
         private System.Windows.Forms.Button Btn_ConfirmToCreate;
     }
 }

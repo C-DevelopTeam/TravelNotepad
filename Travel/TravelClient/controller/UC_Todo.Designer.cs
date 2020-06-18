@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Todo));
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Cbx_todo = new System.Windows.Forms.CheckBox();
             this.Btn_deleteTodo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // Cbx_todo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.checkBox1.Location = new System.Drawing.Point(16, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(139, 33);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "待办内容";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Cbx_todo.AutoSize = true;
+            this.Cbx_todo.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbx_todo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Cbx_todo.Location = new System.Drawing.Point(27, 7);
+            this.Cbx_todo.Name = "Cbx_todo";
+            this.Cbx_todo.Size = new System.Drawing.Size(139, 33);
+            this.Cbx_todo.TabIndex = 0;
+            this.Cbx_todo.Text = "待办内容";
+            this.Cbx_todo.UseVisualStyleBackColor = true;
             // 
             // Btn_deleteTodo
             // 
             this.Btn_deleteTodo.FlatAppearance.BorderSize = 0;
             this.Btn_deleteTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_deleteTodo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_deleteTodo.Image")));
-            this.Btn_deleteTodo.Location = new System.Drawing.Point(460, 0);
+            this.Btn_deleteTodo.Location = new System.Drawing.Point(361, 7);
             this.Btn_deleteTodo.Name = "Btn_deleteTodo";
-            this.Btn_deleteTodo.Size = new System.Drawing.Size(44, 45);
+            this.Btn_deleteTodo.Size = new System.Drawing.Size(43, 33);
             this.Btn_deleteTodo.TabIndex = 1;
             this.Btn_deleteTodo.UseVisualStyleBackColor = true;
             // 
@@ -61,7 +61,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Btn_deleteTodo);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.Cbx_todo);
             this.Name = "UC_Todo";
             this.Size = new System.Drawing.Size(521, 45);
             this.ResumeLayout(false);
@@ -71,7 +71,7 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox Cbx_todo;
         private System.Windows.Forms.Button Btn_deleteTodo;
     }
 }

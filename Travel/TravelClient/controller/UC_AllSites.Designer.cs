@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AllSites));
             this.pictureBox_add1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Lbl_title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Sitepanel1 = new System.Windows.Forms.Panel();
@@ -131,16 +131,16 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // Lbl_title
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(130, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 54);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "xx—路线总览";
+            this.Lbl_title.AutoSize = true;
+            this.Lbl_title.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Lbl_title.Location = new System.Drawing.Point(130, 42);
+            this.Lbl_title.Name = "Lbl_title";
+            this.Lbl_title.Size = new System.Drawing.Size(289, 54);
+            this.Lbl_title.TabIndex = 9;
+            this.Lbl_title.Text = "xx—路线总览";
             // 
             // label1
             // 
@@ -612,7 +612,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pictureBox_add1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Lbl_title);
             this.Controls.Add(this.label1);
             this.Name = "UC_AllSites";
             this.Size = new System.Drawing.Size(840, 750);
@@ -642,7 +642,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox_add1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Lbl_title;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel Sitepanel1;
