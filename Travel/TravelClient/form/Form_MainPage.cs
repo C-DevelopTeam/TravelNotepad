@@ -31,15 +31,15 @@ namespace TravelClient.form
                 font.AddFontFile(AppPath + @"\font\JOKERMAN.TTF");//字体的路径及名字
                 font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
 
-                Font jokermanFont35 = new Font(font.Families[0], 35F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-                Font titleFont15 = new Font(font.Families[1], 15F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
+                Font jokermanFont22 = new Font(font.Families[0], 22F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont12 = new Font(font.Families[1], 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
                 Font titleFont10 = new Font(font.Families[1], 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
                 //设置窗体控件字体，哪些控件要更改都写到下面
-                label1.Font = titleFont15;
-                label2.Font = titleFont15;
-                label3.Font = jokermanFont35;
-                button6.Font = titleFont15;
+                label1.Font = titleFont12;
+                label2.Font = titleFont12;
+                label3.Font = jokermanFont22;
+                button6.Font = titleFont12;
                 button1.Font = titleFont10;
             }
             catch
@@ -67,6 +67,7 @@ namespace TravelClient.form
         {
             using (Form_TripNote tn = new Form_TripNote())
             {
+                tn.changePanel = tn.AddControlsToPanel;
                 this.Hide();
                 tn.ShowDialog();
                 this.Show();

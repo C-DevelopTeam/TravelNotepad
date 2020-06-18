@@ -35,7 +35,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_close = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -97,16 +97,17 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // Btn_close
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(532, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 38);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_close.FlatAppearance.BorderSize = 0;
+            this.Btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_close.Image = ((System.Drawing.Image)(resources.GetObject("Btn_close.Image")));
+            this.Btn_close.Location = new System.Drawing.Point(532, 16);
+            this.Btn_close.Name = "Btn_close";
+            this.Btn_close.Size = new System.Drawing.Size(38, 38);
+            this.Btn_close.TabIndex = 6;
+            this.Btn_close.UseVisualStyleBackColor = true;
+            this.Btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
             // label2
             // 
@@ -157,6 +158,7 @@
             this.Btn_ConfirmToCreate.TabIndex = 11;
             this.Btn_ConfirmToCreate.Text = "确认创建";
             this.Btn_ConfirmToCreate.UseVisualStyleBackColor = false;
+            this.Btn_ConfirmToCreate.Click += new System.EventHandler(this.Btn_ConfirmToCreate_Click);
             // 
             // Form_NewTravel
             // 
@@ -167,7 +169,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_close);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
@@ -191,7 +193,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_close;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
