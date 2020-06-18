@@ -48,7 +48,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(116, 187);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.Size = new System.Drawing.Size(71, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "用户ID";
             // 
@@ -59,7 +59,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(116, 253);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 20);
+            this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "密码";
             // 
@@ -70,7 +70,7 @@
             this.textBox1.Location = new System.Drawing.Point(234, 187);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 26);
+            this.textBox1.Size = new System.Drawing.Size(234, 30);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
@@ -80,7 +80,7 @@
             this.textBox2.Location = new System.Drawing.Point(234, 253);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 26);
+            this.textBox2.Size = new System.Drawing.Size(234, 30);
             this.textBox2.TabIndex = 2;
             this.textBox2.UseSystemPasswordChar = true;
             // 
@@ -134,7 +134,7 @@
             this.label3.ForeColor = System.Drawing.Color.Snow;
             this.label3.Location = new System.Drawing.Point(251, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 36);
+            this.label3.Size = new System.Drawing.Size(168, 42);
             this.label3.TabIndex = 4;
             this.label3.Text = "MY TRIP";
             // 
@@ -166,6 +166,9 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form_MainPage";
             this.Text = "Form_MainPage";
+            this.Load += new System.EventHandler(this.Form_MainPage_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MainPage_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form_MainPage_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
