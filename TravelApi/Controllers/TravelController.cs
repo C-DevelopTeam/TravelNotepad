@@ -8,7 +8,7 @@ using TravelApi.Models;
 namespace TravelApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller")]
+    [Route("api/[controller]")]
     [Produces("application/xml")]
     public class TravelController : ControllerBase
     {

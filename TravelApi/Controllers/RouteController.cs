@@ -78,17 +78,14 @@ namespace TravelApi.Controllers
 
         //按照id删除路线
         [HttpDelete("delete")]
-        public ActionResult DeleteRoute(long[] routeIds)
+        public ActionResult DeleteRoute(long routeId)
         {
             try
             {
-                for (int i = 0; i < routeIds.Length; i++)
+                var route = _routeService.GetById(routeId);
+                if (route != null)
                 {
-                    var route = _routeService.GetById(routeIds[i]);
-                    if (route != null)
-                    {
-                        _routeService.Delete(route);
-                    }
+                     _routeService.Delete(route);
                 }
             }
             catch (Exception e)
