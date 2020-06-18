@@ -36,7 +36,7 @@
             this.PanelCell4 = new System.Windows.Forms.Panel();
             this.PanelCell5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.MyTrip = new System.Windows.Forms.Label();
+            this.Lbl_MyTrip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_addTravel = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
@@ -99,16 +99,16 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             // 
-            // MyTrip
+            // Lbl_MyTrip
             // 
-            this.MyTrip.AutoSize = true;
-            this.MyTrip.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MyTrip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.MyTrip.Location = new System.Drawing.Point(131, 28);
-            this.MyTrip.Name = "MyTrip";
-            this.MyTrip.Size = new System.Drawing.Size(183, 54);
-            this.MyTrip.TabIndex = 5;
-            this.MyTrip.Text = "我的旅程";
+            this.Lbl_MyTrip.AutoSize = true;
+            this.Lbl_MyTrip.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_MyTrip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Lbl_MyTrip.Location = new System.Drawing.Point(131, 28);
+            this.Lbl_MyTrip.Name = "Lbl_MyTrip";
+            this.Lbl_MyTrip.Size = new System.Drawing.Size(183, 54);
+            this.Lbl_MyTrip.TabIndex = 5;
+            this.Lbl_MyTrip.Text = "我的旅程";
             // 
             // pictureBox1
             // 
@@ -139,7 +139,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.Controls.Add(this.Btn_addTravel);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.MyTrip);
+            this.Controls.Add(this.Lbl_MyTrip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UC_TravelList";
@@ -160,7 +160,7 @@
         private System.Windows.Forms.Panel PanelCell4;
         private System.Windows.Forms.Panel PanelCell5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label MyTrip;
+        private System.Windows.Forms.Label Lbl_MyTrip;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Btn_addTravel;
     }
