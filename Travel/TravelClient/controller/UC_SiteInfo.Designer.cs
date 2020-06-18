@@ -43,10 +43,16 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.TodoflowLayoutPanel1 = new System.Windows.Forms.Panel();
+            this.TodoflowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TodoflowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TodoflowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TodoflowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox_add1
@@ -106,44 +112,44 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(84, 345);
+            this.label2.Location = new System.Drawing.Point(84, 305);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 38);
+            this.label2.Size = new System.Drawing.Size(171, 35);
             this.label2.TabIndex = 13;
             this.label2.Text = "怎么去下一站";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(84, 276);
+            this.label4.Location = new System.Drawing.Point(85, 246);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 38);
+            this.label4.Size = new System.Drawing.Size(119, 35);
             this.label4.TabIndex = 14;
             this.label4.Text = "离开时间";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(84, 207);
+            this.label5.Location = new System.Drawing.Point(84, 188);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 38);
+            this.label5.Size = new System.Drawing.Size(119, 35);
             this.label5.TabIndex = 15;
             this.label5.Text = "到达时间";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(84, 143);
+            this.label6.Location = new System.Drawing.Point(84, 128);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 38);
+            this.label6.Size = new System.Drawing.Size(67, 35);
             this.label6.TabIndex = 16;
             this.label6.Text = "地点";
             // 
@@ -151,7 +157,7 @@
             // 
             this.Txtbox_site.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtbox_site.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Txtbox_site.Location = new System.Drawing.Point(287, 143);
+            this.Txtbox_site.Location = new System.Drawing.Point(287, 128);
             this.Txtbox_site.Name = "Txtbox_site";
             this.Txtbox_site.Size = new System.Drawing.Size(213, 36);
             this.Txtbox_site.TabIndex = 17;
@@ -160,7 +166,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.Location = new System.Drawing.Point(287, 345);
+            this.textBox3.Location = new System.Drawing.Point(287, 304);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(213, 36);
             this.textBox3.TabIndex = 20;
@@ -169,7 +175,7 @@
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("方正幼线简体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(287, 207);
+            this.dateTimePicker1.Location = new System.Drawing.Point(287, 188);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 31);
             this.dateTimePicker1.TabIndex = 21;
@@ -178,43 +184,82 @@
             // 
             this.dateTimePicker2.CalendarFont = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Font = new System.Drawing.Font("方正幼线简体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(287, 276);
+            this.dateTimePicker2.Location = new System.Drawing.Point(287, 246);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(213, 31);
             this.dateTimePicker2.TabIndex = 22;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkedListBox1);
-            this.groupBox1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox1.Location = new System.Drawing.Point(91, 431);
+            this.groupBox1.Location = new System.Drawing.Point(90, 364);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 249);
+            this.groupBox1.Size = new System.Drawing.Size(655, 338);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "待办事项";
             // 
-            // checkedListBox1
+            // tableLayoutPanel1
             // 
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkedListBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "待办内容",
-            "待办内容",
-            "待办内容"});
-            this.checkedListBox1.Location = new System.Drawing.Point(37, 53);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(584, 87);
-            this.checkedListBox1.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.67785F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.32215F));
+            this.tableLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(64, 46);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(527, 248);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // TodoflowLayoutPanel1
+            // 
+            this.TodoflowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.TodoflowLayoutPanel1.Name = "TodoflowLayoutPanel1";
+            this.TodoflowLayoutPanel1.Size = new System.Drawing.Size(521, 45);
+            this.TodoflowLayoutPanel1.TabIndex = 0;
+            // 
+            // TodoflowLayoutPanel3
+            // 
+            this.TodoflowLayoutPanel3.Location = new System.Drawing.Point(3, 105);
+            this.TodoflowLayoutPanel3.Name = "TodoflowLayoutPanel3";
+            this.TodoflowLayoutPanel3.Size = new System.Drawing.Size(521, 42);
+            this.TodoflowLayoutPanel3.TabIndex = 2;
+            // 
+            // TodoflowLayoutPanel4
+            // 
+            this.TodoflowLayoutPanel4.Location = new System.Drawing.Point(3, 154);
+            this.TodoflowLayoutPanel4.Name = "TodoflowLayoutPanel4";
+            this.TodoflowLayoutPanel4.Size = new System.Drawing.Size(521, 42);
+            this.TodoflowLayoutPanel4.TabIndex = 2;
+            // 
+            // TodoflowLayoutPanel5
+            // 
+            this.TodoflowLayoutPanel5.Location = new System.Drawing.Point(3, 203);
+            this.TodoflowLayoutPanel5.Name = "TodoflowLayoutPanel5";
+            this.TodoflowLayoutPanel5.Size = new System.Drawing.Size(521, 42);
+            this.TodoflowLayoutPanel5.TabIndex = 3;
+            // 
+            // TodoflowLayoutPanel2
+            // 
+            this.TodoflowLayoutPanel2.Location = new System.Drawing.Point(3, 54);
+            this.TodoflowLayoutPanel2.Name = "TodoflowLayoutPanel2";
+            this.TodoflowLayoutPanel2.Size = new System.Drawing.Size(521, 45);
+            this.TodoflowLayoutPanel2.TabIndex = 1;
             // 
             // UC_SiteInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -234,6 +279,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +301,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel3;
+        private System.Windows.Forms.Panel TodoflowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel2;
     }
 }

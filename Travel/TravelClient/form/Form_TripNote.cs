@@ -87,10 +87,16 @@ namespace TravelClient.form
             AddControlsToPanel(uc_Present);
         }
 
+
         private void Btn_PersonalInfo_Click(object sender, EventArgs e)
         {
             UC_Personalinfo uc_Personalinfo = new UC_Personalinfo();
             AddControlsToPanel(uc_Personalinfo);
+
+        private void Btn_presentTravel_Click(object sender, EventArgs e)
+        {
+            UC_AllSites uc_allsite = new UC_AllSites();
+            AddControlsToPanel(uc_allsite);
         }
     }
 }

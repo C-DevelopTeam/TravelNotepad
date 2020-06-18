@@ -608,8 +608,7 @@
             // 
             // UC_AllSites
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pictureBox_add1);
             this.Controls.Add(this.pictureBox1);

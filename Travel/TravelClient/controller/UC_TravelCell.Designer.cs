@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TravelCell));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Lbl_TravelTitle = new System.Windows.Forms.Label();
             this.Btn_deleteTravel = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.Btn_TravelTitle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,17 +44,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(81, 79);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // Lbl_TravelTitle
-            // 
-            this.Lbl_TravelTitle.AutoSize = true;
-            this.Lbl_TravelTitle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Lbl_TravelTitle.ForeColor = System.Drawing.Color.DimGray;
-            this.Lbl_TravelTitle.Location = new System.Drawing.Point(129, 33);
-            this.Lbl_TravelTitle.Name = "Lbl_TravelTitle";
-            this.Lbl_TravelTitle.Size = new System.Drawing.Size(148, 44);
-            this.Lbl_TravelTitle.TabIndex = 2;
-            this.Lbl_TravelTitle.Text = "旅行标题";
             // 
             // Btn_deleteTravel
             // 
@@ -76,27 +65,38 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "label7";
             // 
+            // Btn_TravelTitle
+            // 
+            this.Btn_TravelTitle.FlatAppearance.BorderSize = 0;
+            this.Btn_TravelTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_TravelTitle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_TravelTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Btn_TravelTitle.Location = new System.Drawing.Point(140, 33);
+            this.Btn_TravelTitle.Name = "Btn_TravelTitle";
+            this.Btn_TravelTitle.Size = new System.Drawing.Size(161, 47);
+            this.Btn_TravelTitle.TabIndex = 11;
+            this.Btn_TravelTitle.Text = "旅行标题";
+            this.Btn_TravelTitle.UseVisualStyleBackColor = true;
+            // 
             // UC_TravelCell
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.Btn_TravelTitle);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Btn_deleteTravel);
-            this.Controls.Add(this.Lbl_TravelTitle);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UC_TravelCell";
             this.Size = new System.Drawing.Size(837, 110);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label Lbl_TravelTitle;
         private System.Windows.Forms.Button Btn_deleteTravel;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button Btn_TravelTitle;
     }
 }
