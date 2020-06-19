@@ -55,7 +55,10 @@ namespace TravelClient.form
             }
             catch
             {
-                MessageBox.Show("字体不存在或加载失败\n程序将以默认字体显示", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                using (Form_Tips tip = new Form_Tips("警告", "字体不存在或加载失败\n程序将以默认字体显示"))
+                {
+                    tip.ShowDialog();
+                }
             }
         }
 
@@ -82,7 +85,12 @@ namespace TravelClient.form
 
             if (username.Length == 0 || username == "单行输入")
             {
-                DialogResult result = MessageBox.Show("用户名为空，是否注册新用户？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result;
+                using (Form_Tips tip = new Form_Tips("提示", "用户ID为空，是否注册新账号"))
+                {
+                    tip.ShowDialog();
+                    result = tip.DialogResult;
+                }
                 if (result == DialogResult.Yes)
                 {
                     using (Form_Register reg = new Form_Register())
@@ -96,7 +104,10 @@ namespace TravelClient.form
             else
             {
                 if (password.Length == 0 || password == "单行输入")
-                    MessageBox.Show("请输入密码！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    using (Form_Tips tip = new Form_Tips("提示", "请输入密码！"))
+                    {
+                        tip.ShowDialog();
+                    }
                 else
                 {
                     try
@@ -116,10 +127,20 @@ namespace TravelClient.form
                                 this.Show();
                             }
                         }
+                        else
+                        {
+                            using (Form_Tips tip = new Form_Tips("警告", "用户名或密码输入错误"))
+                            {
+                                tip.ShowDialog();
+                            }
+                        }
                     }
                     catch (Exception e1)
                     {
-                        MessageBox.Show(e1.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        using (Form_Tips tip = new Form_Tips("警告", e1.Message))
+                        {
+                            tip.ShowDialog();
+                        }
                     }
                 }
             }

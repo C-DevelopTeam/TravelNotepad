@@ -52,7 +52,10 @@ namespace TravelClient.form
             }
             catch
             {
-                MessageBox.Show("字体不存在或加载失败\n程序将以默认字体显示", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                using (Form_Tips tip = new Form_Tips("警告", "字体不存在或加载失败\n程序将以默认字体显示"))
+                {
+                    tip.ShowDialog();
+                }
             }
         }
 
@@ -64,10 +67,16 @@ namespace TravelClient.form
         private async void button6_Click(object sender, EventArgs e)
         {
             if (Txtbox_name.Text.Length == 0 || Txtbox_name.Text == "单行输入")
-                MessageBox.Show("请输入用户名!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (Form_Tips tip = new Form_Tips("提示", "请输入用户名!"))
+                {
+                    tip.ShowDialog();
+                }
             else
                if (TxtBox_psw.Text.Length == 0 || TxtBox_psw.Text == "单行输入")
-                MessageBox.Show("请输入密码!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (Form_Tips tip = new Form_Tips("提示", "请输入密码!"))
+                {
+                    tip.ShowDialog();
+                }
             else
             {
                 User user = new User();
@@ -94,7 +103,10 @@ namespace TravelClient.form
                         User newuser = new User();
                         newuser = (User)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
                         user.Uid = int.Parse(newuser.Uid.ToString("00000"));
-                        MessageBox.Show("注册成功!您的ID是"+ newuser.Uid.ToString("00000"), "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        using (Form_Tips tip = new Form_Tips("提示", "注册成功!您的ID是" + newuser.Uid.ToString("00000")))
+                        {
+                            tip.ShowDialog();
+                        }
                         using (Form_TripNote tn = new Form_TripNote())
                         {
                             this.Hide();
@@ -105,7 +117,10 @@ namespace TravelClient.form
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    using (Form_Tips tip = new Form_Tips("警告", e1.Message))
+                    {
+                        tip.ShowDialog();
+                    }
                 }
   
             }
