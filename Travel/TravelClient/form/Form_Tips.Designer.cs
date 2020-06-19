@@ -115,7 +115,7 @@
             this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_title.Location = new System.Drawing.Point(92, 55);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Size = new System.Drawing.Size(101, 33);
+            this.Lbl_title.Size = new System.Drawing.Size(85, 27);
             this.Lbl_title.TabIndex = 10;
             this.Lbl_title.Text = "label1";
             // 
@@ -126,7 +126,7 @@
             this.Lbl_info.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_info.Location = new System.Drawing.Point(113, 119);
             this.Lbl_info.Name = "Lbl_info";
-            this.Lbl_info.Size = new System.Drawing.Size(91, 27);
+            this.Lbl_info.Size = new System.Drawing.Size(77, 23);
             this.Lbl_info.TabIndex = 11;
             this.Lbl_info.Text = "label2";
             // 
@@ -146,6 +146,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Tips";
             this.Text = "Form_Tips";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_Tips_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form_Tips_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
