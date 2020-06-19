@@ -113,9 +113,9 @@
             this.Lbl_title.AutoSize = true;
             this.Lbl_title.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Lbl_title.Location = new System.Drawing.Point(92, 55);
+            this.Lbl_title.Location = new System.Drawing.Point(92, 41);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Size = new System.Drawing.Size(85, 27);
+            this.Lbl_title.Size = new System.Drawing.Size(101, 33);
             this.Lbl_title.TabIndex = 10;
             this.Lbl_title.Text = "label1";
             // 
@@ -124,9 +124,9 @@
             this.Lbl_info.AutoSize = true;
             this.Lbl_info.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_info.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Lbl_info.Location = new System.Drawing.Point(113, 119);
+            this.Lbl_info.Location = new System.Drawing.Point(68, 120);
             this.Lbl_info.Name = "Lbl_info";
-            this.Lbl_info.Size = new System.Drawing.Size(77, 23);
+            this.Lbl_info.Size = new System.Drawing.Size(91, 27);
             this.Lbl_info.TabIndex = 11;
             this.Lbl_info.Text = "label2";
             // 
