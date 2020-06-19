@@ -29,5 +29,16 @@ namespace TravelApi.Controllers
             }
             return query.ToList();
         }
+
+        [HttpGet("get/user")]
+        public ActionResult<List<Diary>> GetBlogSharedByUid(int uid)
+        {
+            IQueryable<Diary> query = _diaryService.GetShareByUid(uid);
+            if(query==null)
+            {
+                return NotFound();
+            }
+            return query.ToList();
+        }
     }
 }
