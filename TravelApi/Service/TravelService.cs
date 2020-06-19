@@ -29,7 +29,7 @@ namespace TravelApi.Service
 
         public IQueryable<Travel> GetByUid(int uid)
         {
-            return this.dbset.Where(t => t.Uid == uid);
+            return this.dbset.Where(t => t.Uid == uid).OrderByDescending(t => t.TravelId);
         }
     }
 }

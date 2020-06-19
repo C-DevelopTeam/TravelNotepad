@@ -110,8 +110,9 @@ namespace TravelClient.controller
                 HttpResponseMessage result = await client.Post(url, data);
                 if(result.IsSuccessStatusCode)
                 {
+                    diary = (Diary)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
                     //跳转至编辑日志界面
-                    using (UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail())
+                    using (UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail(diary.DiaryId.ToString()))
                     {
                         this.ChangePanel(uc_DiaryDetail);
                     }
