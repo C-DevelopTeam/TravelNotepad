@@ -132,8 +132,7 @@
             // 
             // UC_Personalinfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.btnCommit);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.tbDescription);
@@ -144,7 +143,7 @@
             this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.label1);
             this.Name = "UC_Personalinfo";
-            this.Size = new System.Drawing.Size(560, 500);
+            this.Size = new System.Drawing.Size(840, 750);
             this.ResumeLayout(false);
             this.PerformLayout();
 
