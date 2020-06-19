@@ -43,6 +43,17 @@ namespace TravelApi.Controllers
             return route;
         }
 
+        [HttpGet]
+        public ActionResult<Route> GetRouteById(long routeId)
+        {
+            var route = _routeService.GetById(routeId);
+            if(route == null)
+            {
+                return NotFound();
+            }
+            return route;
+        }
+
         //根据旅游id获取路线
         [HttpGet("get")]
         public ActionResult<List<Route>> GetRoute(long travelId)
