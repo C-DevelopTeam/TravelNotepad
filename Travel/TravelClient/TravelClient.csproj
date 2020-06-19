@@ -61,6 +61,12 @@
     <Compile Include="controller\UC_DiaryCell.Designer.cs">
       <DependentUpon>UC_DiaryCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\UC_DiaryDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_DiaryDetail.Designer.cs">
+      <DependentUpon>UC_DiaryDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\UC_DiaryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_DiaryCell.resx">
       <DependentUpon>UC_DiaryCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_DiaryDetail.resx">
+      <DependentUpon>UC_DiaryDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_DiaryList.resx">
       <DependentUpon>UC_DiaryList.cs</DependentUpon>

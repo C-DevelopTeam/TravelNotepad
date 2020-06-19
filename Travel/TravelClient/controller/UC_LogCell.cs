@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using TravelClient.form;
 
 namespace TravelClient.controller
 {
     public partial class UC_LogCell : UserControl
     {
-        public UC_LogCell()
+        private readonly ChangePanel ChangePanel;
+        private readonly string DiaryId;
+        public UC_LogCell(string diaryId, ChangePanel changePanel)
         {
             InitializeComponent();
+            this.DiaryId = diaryId;
+            this.ChangePanel = changePanel;
             SetFont();
         }
 
@@ -46,7 +51,11 @@ namespace TravelClient.controller
         private void UC_LogCell_Click(object sender, EventArgs e)
         {
             //跳转到日志的详情界面
-
+            string id = this.DiaryId;
+            using (UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail(id))
+            {
+                this.ChangePanel(uc_DiaryDetail);
+            }
         }    
     }
 }

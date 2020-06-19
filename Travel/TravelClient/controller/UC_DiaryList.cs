@@ -12,16 +12,21 @@ using System.Xml.Serialization;
 using TravelClient.Models;
 using TravelClient.utils;
 using System.Net.Http;
+using TravelClient.form;
+using System.IO;
 
 namespace TravelClient.controller
 {
+    public delegate void Refresh();
     public partial class UC_DiaryList : UserControl
     {
-        private string Uid;
-        public UC_DiaryList(string uid)
+        private readonly string Uid;
+        private readonly ChangePanel ChangePanel;
+        public UC_DiaryList(string uid, ChangePanel changePanel)
         {
             InitializeComponent();
             this.Uid = uid;
+            this.ChangePanel = changePanel;
             SetFont();
             InitInfo();
         }
@@ -64,7 +69,7 @@ namespace TravelClient.controller
 
                     foreach (Diary diary in diaries)
                     {
-                        UC_DiaryCell cell = new UC_DiaryCell();
+                        UC_DiaryCell cell = new UC_DiaryCell(diary.DiaryId.ToString(), this.ChangePanel, this.InitInfo);
                         cell.lblTitle.Text = diary.Title;
                         cell.lblTime.Text = diary.Time.ToString();
                         //添加到panel中
@@ -80,13 +85,44 @@ namespace TravelClient.controller
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void BtnAddDiary_Click(object sender, EventArgs e)
+        private async void BtnAddDiary_Click(object sender, EventArgs e)
         {
-            //添加日志，跳转至编辑日志界面
+            //添加日志
+            string url = "https://localhost:5001/api/diary";
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Diary));
+            Client client = new Client();
+            try
+            {
+                string data = "";
+                Diary diary = new Diary();
+                diary.DiaryId = 0;//后端会重新赋值，此处值不重要
+                diary.Time = DateTime.Now;
+                diary.Share = 0;//默认不分享
+                diary.Uid = Convert.ToInt32(this.Uid);
+
+                using (StringWriter sw = new StringWriter())
+                {
+                    xmlSerializer.Serialize(sw, diary);
+                    data = sw.ToString();
+                }
+                HttpResponseMessage result = await client.Post(url, data);
+                if(result.IsSuccessStatusCode)
+                {
+                    //跳转至编辑日志界面
+                    using (UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail())
+                    {
+                        this.ChangePanel(uc_DiaryDetail);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

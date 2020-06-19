@@ -108,14 +108,14 @@ namespace TravelClient.form
         private void Btn_NoteSharing_Click(object sender, EventArgs e)
         {
             //此处uid应该是从mainPage传输过来，现在整体尚未搭建完毕，先暂定为0
-            UC_LogCircle uc_LogCircle = new UC_LogCircle(uid:"0");
+            UC_LogCircle uc_LogCircle = new UC_LogCircle(uid:"0", changePanel);
             AddControlsToPanel(uc_LogCircle);
         }
 
         private void Btn_TravelNote_Click(object sender, EventArgs e)
         {
             //此处uid应该是从mainPage传输过来，现在整体尚未搭建完毕，先暂定为0
-            UC_DiaryList uc_DiaryList = new UC_DiaryList(uid:"0");
+            UC_DiaryList uc_DiaryList = new UC_DiaryList(uid:"0", changePanel);
             AddControlsToPanel(uc_DiaryList);
         }
     }
