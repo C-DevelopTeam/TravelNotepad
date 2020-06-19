@@ -41,6 +41,9 @@ namespace TravelClient.form
 
         private void Btn_ConfirmToCreate_Click(object sender, EventArgs e)
         {
+            this.travelTitle = txtBox_title.Text;
+            AddTravel(travelTitle, Uid);
+            init();
             this.Dispose();
         }
 
@@ -98,20 +101,15 @@ namespace TravelClient.form
                 HttpResponseMessage result = await client.Post(url, data);
                 if (result.IsSuccessStatusCode)
                 {
-                    /*User newuser = new User();
-                    newuser = (User)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
-                    user.Uid = int.Parse(newuser.Uid.ToString("00000"));
-                    using (Form_Tips tip = new Form_Tips("提示", "注册成功!您的ID是" + newuser.Uid.ToString("00000")))
+
+                    using (Form_Tips tip = new Form_Tips("提示", "成功创建"))
                     {
                         tip.ShowDialog();
                     }
-                    using (Form_TripNote tn = new Form_TripNote())
-                    {
-                        this.Hide();
-                        tn.ShowDialog();
-                        this.Dispose();
-                    }*/
-                    using (Form_Tips tip = new Form_Tips("警告", "成功"))
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", result.StatusCode.ToString()))
                     {
                         tip.ShowDialog();
                     }

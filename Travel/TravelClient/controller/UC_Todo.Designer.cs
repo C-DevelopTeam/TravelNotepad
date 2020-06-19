@@ -44,26 +44,27 @@
             this.Cbx_todo.TabIndex = 0;
             this.Cbx_todo.Text = "待办内容";
             this.Cbx_todo.UseVisualStyleBackColor = true;
+            this.Cbx_todo.CheckedChanged += new System.EventHandler(this.Cbx_todo_CheckedChanged);
             // 
             // Btn_deleteTodo
             // 
             this.Btn_deleteTodo.FlatAppearance.BorderSize = 0;
             this.Btn_deleteTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_deleteTodo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_deleteTodo.Image")));
-            this.Btn_deleteTodo.Location = new System.Drawing.Point(361, 7);
+            this.Btn_deleteTodo.Location = new System.Drawing.Point(425, 7);
             this.Btn_deleteTodo.Name = "Btn_deleteTodo";
             this.Btn_deleteTodo.Size = new System.Drawing.Size(43, 33);
             this.Btn_deleteTodo.TabIndex = 1;
             this.Btn_deleteTodo.UseVisualStyleBackColor = true;
+            this.Btn_deleteTodo.Click += new System.EventHandler(this.Btn_deleteTodo_Click);
             // 
             // UC_Todo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.Btn_deleteTodo);
             this.Controls.Add(this.Cbx_todo);
             this.Name = "UC_Todo";
-            this.Size = new System.Drawing.Size(521, 45);
+            this.Size = new System.Drawing.Size(521, 43);
             this.ResumeLayout(false);
             this.PerformLayout();
 

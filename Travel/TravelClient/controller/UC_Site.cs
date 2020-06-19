@@ -22,45 +22,56 @@ namespace TravelClient.controller
         public long routeID;
         public string siteId;
         string siteName = "";
+        long travelId;
+        string travelTitle;
 
         public UC_Site()
         {
             InitializeComponent();
         }
 
-        public UC_Site(ChangePanel changePanel,long routeID,string siteid)
+        public UC_Site(ChangePanel changePanel,string title,long travelID,long routeID,string siteid)
         {
             InitializeComponent();
             this.routeID = routeID;
+            this.travelId = travelID;
             this.changePanel = changePanel;
             this.siteId = siteid;
+            travelTitle = title;
             GetSiteName();
             
         }
 
-        private void Btn_ToSiteInfo_Click(object sender, EventArgs e)
+        private async void Btn_ToSiteInfo_Click(object sender, EventArgs e)
         {
-            /*
-            UC_SiteInfo uc_siteInfo = new UC_SiteInfo(changePanel,routeID);
-            changePanel(uc_siteInfo);
-            string url = "https://localhost:5001/api/route/get?siteId=" + siteId;
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Site));
+
+            string url = "https://localhost:5001/api/route?routeId=" + routeID;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Route));
             Client client = new Client();
             try
             {
                 HttpResponseMessage result = await client.Get(url);
                 if (result.IsSuccessStatusCode)
                 {
-                    Site site = (Site)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
-                    siteName = site.SiteName;
-                    this.Btn_ToSiteInfo.Text = siteName;
+                    Route route = (Route)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                    UC_SiteInfo uc_siteInfo = new UC_SiteInfo(changePanel,travelTitle,travelId, routeID,siteName);
+                    uc_siteInfo.delegate_Get = new delegate_getTask(uc_siteInfo.getTask);
+                    changePanel(uc_siteInfo);
+                
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", "获取失败"))
+                    {
+                        tip.ShowDialog();
+                    }
                 }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }*/
+            }
         }
 
 

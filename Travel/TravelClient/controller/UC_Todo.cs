@@ -8,14 +8,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using TravelClient.utils;
+using System.Net.Http;
+using TravelClient.form;
 
 namespace TravelClient.controller
 {
     public partial class UC_Todo : UserControl
     {
-        public UC_Todo()
+        Models.Task task = new Models.Task();
+        public delegate_getTask delegate_Get;
+
+        public UC_Todo(Models.Task task,delegate_getTask getTask)
         {
             InitializeComponent();
+            this.task = task;
+            Cbx_todo.Text = task.Description;
+            this.delegate_Get = getTask;
+            if(task.State == 1)
+            {
+                Cbx_todo.Checked = true;
+            }
+            else
+            {
+                Cbx_todo.Checked = false;
+            }
+            SetFont();
         }
 
         public void SetFont()
@@ -36,6 +55,38 @@ namespace TravelClient.controller
             {
                 MessageBox.Show("字体不存在或加载失败\n程序将以默认字体显示", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private async void Btn_deleteTodo_Click(object sender, EventArgs e)
+        {
+            string url = "https://localhost:5001/api/Task/delete?taskId=" + task.TaskId;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Models.Task>));
+            Client client = new Client();
+            try
+            {
+                HttpResponseMessage result = await client.Delete(url);
+                if (result.IsSuccessStatusCode)
+                {
+                    delegate_Get();
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", "初始化信息失败"))
+                    {
+                        tip.ShowDialog();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void Cbx_todo_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

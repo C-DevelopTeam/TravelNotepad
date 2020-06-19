@@ -38,20 +38,16 @@
             this.Lbl_timeForArrive = new System.Windows.Forms.Label();
             this.Lbl_site = new System.Windows.Forms.Label();
             this.Txtbox_site = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Txtbos_vehicle = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.Gpb_todolist = new System.Windows.Forms.GroupBox();
-            this.TodoflowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.TodoflowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.TodoflowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.TodoflowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.TodoflowLayoutPanel1 = new System.Windows.Forms.Panel();
-            this.Btn_addSite = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel_todo = new System.Windows.Forms.FlowLayoutPanel();
+            this.Btn_Comfirm = new System.Windows.Forms.Button();
+            this.Btn_addtodo = new System.Windows.Forms.Button();
+            this.TxtBox_todo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Gpb_todolist.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -150,14 +146,14 @@
             this.Txtbox_site.Size = new System.Drawing.Size(240, 36);
             this.Txtbox_site.TabIndex = 17;
             // 
-            // textBox3
+            // Txtbos_vehicle
             // 
-            this.textBox3.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.Location = new System.Drawing.Point(286, 290);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(240, 36);
-            this.textBox3.TabIndex = 20;
+            this.Txtbos_vehicle.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtbos_vehicle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Txtbos_vehicle.Location = new System.Drawing.Point(286, 290);
+            this.Txtbos_vehicle.Name = "Txtbos_vehicle";
+            this.Txtbos_vehicle.Size = new System.Drawing.Size(240, 36);
+            this.Txtbos_vehicle.TabIndex = 20;
             // 
             // dateTimePicker1
             // 
@@ -183,83 +179,68 @@
             // 
             // Gpb_todolist
             // 
-            this.Gpb_todolist.Controls.Add(this.flowLayoutPanel1);
+            this.Gpb_todolist.Controls.Add(this.TxtBox_todo);
+            this.Gpb_todolist.Controls.Add(this.Btn_addtodo);
+            this.Gpb_todolist.Controls.Add(this.flowLayoutPanel_todo);
             this.Gpb_todolist.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Gpb_todolist.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Gpb_todolist.Location = new System.Drawing.Point(90, 350);
+            this.Gpb_todolist.Location = new System.Drawing.Point(90, 347);
             this.Gpb_todolist.Name = "Gpb_todolist";
-            this.Gpb_todolist.Size = new System.Drawing.Size(608, 348);
+            this.Gpb_todolist.Size = new System.Drawing.Size(606, 334);
             this.Gpb_todolist.TabIndex = 23;
             this.Gpb_todolist.TabStop = false;
             this.Gpb_todolist.Text = "待办事项";
             // 
-            // TodoflowLayoutPanel5
+            // flowLayoutPanel_todo
             // 
-            this.TodoflowLayoutPanel5.Location = new System.Drawing.Point(3, 207);
-            this.TodoflowLayoutPanel5.Name = "TodoflowLayoutPanel5";
-            this.TodoflowLayoutPanel5.Size = new System.Drawing.Size(521, 45);
-            this.TodoflowLayoutPanel5.TabIndex = 3;
+            this.flowLayoutPanel_todo.Location = new System.Drawing.Point(45, 94);
+            this.flowLayoutPanel_todo.Name = "flowLayoutPanel_todo";
+            this.flowLayoutPanel_todo.Size = new System.Drawing.Size(524, 240);
+            this.flowLayoutPanel_todo.TabIndex = 25;
             // 
-            // TodoflowLayoutPanel4
+            // Btn_Comfirm
             // 
-            this.TodoflowLayoutPanel4.Location = new System.Drawing.Point(3, 156);
-            this.TodoflowLayoutPanel4.Name = "TodoflowLayoutPanel4";
-            this.TodoflowLayoutPanel4.Size = new System.Drawing.Size(521, 45);
-            this.TodoflowLayoutPanel4.TabIndex = 2;
+            this.Btn_Comfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
+            this.Btn_Comfirm.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_Comfirm.ForeColor = System.Drawing.SystemColors.Control;
+            this.Btn_Comfirm.Location = new System.Drawing.Point(362, 687);
+            this.Btn_Comfirm.Name = "Btn_Comfirm";
+            this.Btn_Comfirm.Size = new System.Drawing.Size(106, 46);
+            this.Btn_Comfirm.TabIndex = 25;
+            this.Btn_Comfirm.Text = "确定";
+            this.Btn_Comfirm.UseVisualStyleBackColor = false;
+            this.Btn_Comfirm.Click += new System.EventHandler(this.Btn_Comfirm_Click);
             // 
-            // TodoflowLayoutPanel3
+            // Btn_addtodo
             // 
-            this.TodoflowLayoutPanel3.Location = new System.Drawing.Point(3, 105);
-            this.TodoflowLayoutPanel3.Name = "TodoflowLayoutPanel3";
-            this.TodoflowLayoutPanel3.Size = new System.Drawing.Size(521, 45);
-            this.TodoflowLayoutPanel3.TabIndex = 2;
+            this.Btn_addtodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
+            this.Btn_addtodo.Font = new System.Drawing.Font("SF Pro Text", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_addtodo.ForeColor = System.Drawing.SystemColors.Control;
+            this.Btn_addtodo.Location = new System.Drawing.Point(463, 40);
+            this.Btn_addtodo.Name = "Btn_addtodo";
+            this.Btn_addtodo.Size = new System.Drawing.Size(106, 42);
+            this.Btn_addtodo.TabIndex = 26;
+            this.Btn_addtodo.Text = "确定添加";
+            this.Btn_addtodo.UseVisualStyleBackColor = false;
+            this.Btn_addtodo.Click += new System.EventHandler(this.Btn_addtodo_Click);
             // 
-            // TodoflowLayoutPanel2
+            // TxtBox_todo
             // 
-            this.TodoflowLayoutPanel2.Location = new System.Drawing.Point(3, 54);
-            this.TodoflowLayoutPanel2.Name = "TodoflowLayoutPanel2";
-            this.TodoflowLayoutPanel2.Size = new System.Drawing.Size(521, 45);
-            this.TodoflowLayoutPanel2.TabIndex = 1;
-            // 
-            // TodoflowLayoutPanel1
-            // 
-            this.TodoflowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.TodoflowLayoutPanel1.Name = "TodoflowLayoutPanel1";
-            this.TodoflowLayoutPanel1.Size = new System.Drawing.Size(521, 45);
-            this.TodoflowLayoutPanel1.TabIndex = 0;
-            // 
-            // Btn_addSite
-            // 
-            this.Btn_addSite.FlatAppearance.BorderSize = 0;
-            this.Btn_addSite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_addSite.Image = ((System.Drawing.Image)(resources.GetObject("Btn_addSite.Image")));
-            this.Btn_addSite.Location = new System.Drawing.Point(754, 24);
-            this.Btn_addSite.Name = "Btn_addSite";
-            this.Btn_addSite.Size = new System.Drawing.Size(55, 54);
-            this.Btn_addSite.TabIndex = 24;
-            this.Btn_addSite.UseVisualStyleBackColor = true;
-            this.Btn_addSite.Click += new System.EventHandler(this.Btn_addSite_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel3);
-            this.flowLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel4);
-            this.flowLayoutPanel1.Controls.Add(this.TodoflowLayoutPanel5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(47, 47);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(524, 257);
-            this.flowLayoutPanel1.TabIndex = 25;
+            this.TxtBox_todo.Font = new System.Drawing.Font("SF Pro Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBox_todo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtBox_todo.Location = new System.Drawing.Point(45, 45);
+            this.TxtBox_todo.Name = "TxtBox_todo";
+            this.TxtBox_todo.Size = new System.Drawing.Size(398, 31);
+            this.TxtBox_todo.TabIndex = 27;
             // 
             // UC_SiteInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.Btn_addSite);
+            this.Controls.Add(this.Btn_Comfirm);
             this.Controls.Add(this.Gpb_todolist);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Txtbos_vehicle);
             this.Controls.Add(this.Txtbox_site);
             this.Controls.Add(this.Lbl_site);
             this.Controls.Add(this.Lbl_timeForArrive);
@@ -273,7 +254,7 @@
             this.Size = new System.Drawing.Size(840, 750);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Gpb_todolist.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Gpb_todolist.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,16 +270,13 @@
         private System.Windows.Forms.Label Lbl_timeForArrive;
         private System.Windows.Forms.Label Lbl_site;
         private System.Windows.Forms.TextBox Txtbox_site;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Txtbos_vehicle;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.GroupBox Gpb_todolist;
-        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel4;
-        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel3;
-        private System.Windows.Forms.Panel TodoflowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel TodoflowLayoutPanel2;
-        private System.Windows.Forms.Button Btn_addSite;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_todo;
+        private System.Windows.Forms.Button Btn_Comfirm;
+        private System.Windows.Forms.TextBox TxtBox_todo;
+        private System.Windows.Forms.Button Btn_addtodo;
     }
 }

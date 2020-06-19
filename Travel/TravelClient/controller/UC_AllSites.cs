@@ -21,6 +21,8 @@ namespace TravelClient.controller
     {
         ChangePanel changePanel;
         long travelId;
+        string travelTitle;
+
         public UC_AllSites()
         { 
             InitializeComponent();
@@ -29,11 +31,13 @@ namespace TravelClient.controller
             AddControlsToPanel(uc_site, Sitepanel1);
         }
 
-        public UC_AllSites(ChangePanel changePanel, long travelID=-1)
+        public UC_AllSites(ChangePanel changePanel, string travelTitle,long travelID)
         {
             InitializeComponent();
             this.changePanel = changePanel;
             this.travelId = travelID;
+            this.travelTitle = travelTitle;
+            Lbl_title.Text = travelTitle + "-路线总览";
             SetFont();
             InitInfo();
         }
@@ -79,15 +83,18 @@ namespace TravelClient.controller
 
                     foreach (Route route in routes)
                     {
-                        UC_Site cell = new UC_Site(changePanel, route.RouteId,route.StartSiteId);
+                        UC_Site cell = new UC_Site(changePanel,travelTitle, travelId,route.RouteId,route.StartSiteId);
                         //添加到panel中
                         flowLayoutPanel_route.Controls.Add(cell);
                     }
-                    //添加底部标志
-
-                    //lblBottom.Text = "到底了哦~";
-                    //lblBottom.Anchor = AnchorStyles.None;
-                    //flowLayoutPanel_route.Controls.Add(lblBottom);
+                    
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", "获取失败"))
+                    {
+                        tip.ShowDialog();
+                    }
                 }
             }
             catch (Exception ex)
