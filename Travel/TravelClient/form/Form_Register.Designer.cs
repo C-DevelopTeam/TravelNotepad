@@ -35,13 +35,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Txtbox_name = new System.Windows.Forms.TextBox();
+            this.TxtBox_psw = new System.Windows.Forms.TextBox();
+            this.richTextBox_introducation = new System.Windows.Forms.RichTextBox();
             this.Btn_Register = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.Cbbox_gender = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,9 +63,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(223, 106);
+            this.label1.Location = new System.Drawing.Point(237, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 29);
+            this.label1.Size = new System.Drawing.Size(155, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "新用户注册";
             // 
@@ -76,7 +76,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(86, 192);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
+            this.label2.Size = new System.Drawing.Size(78, 26);
             this.label2.TabIndex = 6;
             this.label2.Text = "用户名";
             // 
@@ -87,7 +87,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(86, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 24);
+            this.label3.Size = new System.Drawing.Size(56, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "密码";
             // 
@@ -98,7 +98,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(86, 319);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 24);
+            this.label4.Size = new System.Drawing.Size(56, 26);
             this.label4.TabIndex = 6;
             this.label4.Text = "性别";
             // 
@@ -109,57 +109,41 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(86, 392);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 24);
+            this.label5.Size = new System.Drawing.Size(100, 26);
             this.label5.TabIndex = 6;
             this.label5.Text = "个人介绍";
             // 
-            // textBox1
+            // Txtbox_name
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(230, 192);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 28);
-            this.textBox1.TabIndex = 7;
+            this.Txtbox_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtbox_name.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Txtbox_name.Location = new System.Drawing.Point(230, 192);
+            this.Txtbox_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Txtbox_name.Name = "Txtbox_name";
+            this.Txtbox_name.Size = new System.Drawing.Size(230, 32);
+            this.Txtbox_name.TabIndex = 7;
             // 
-            // textBox2
+            // TxtBox_psw
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Location = new System.Drawing.Point(230, 255);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 28);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.TxtBox_psw.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBox_psw.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtBox_psw.Location = new System.Drawing.Point(230, 255);
+            this.TxtBox_psw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBox_psw.Name = "TxtBox_psw";
+            this.TxtBox_psw.Size = new System.Drawing.Size(230, 32);
+            this.TxtBox_psw.TabIndex = 7;
+            this.TxtBox_psw.UseSystemPasswordChar = true;
             // 
-            // listBox1
+            // richTextBox_introducation
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 22;
-            this.listBox1.Items.AddRange(new object[] {
-            "男",
-            "女",
-            "未知"});
-            this.listBox1.Location = new System.Drawing.Point(230, 319);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(96, 26);
-            this.listBox1.TabIndex = 8;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.richTextBox1.Location = new System.Drawing.Point(230, 392);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(311, 129);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.richTextBox_introducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.richTextBox_introducation.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.richTextBox_introducation.Location = new System.Drawing.Point(230, 392);
+            this.richTextBox_introducation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.richTextBox_introducation.Name = "richTextBox_introducation";
+            this.richTextBox_introducation.Size = new System.Drawing.Size(311, 129);
+            this.richTextBox_introducation.TabIndex = 9;
+            this.richTextBox_introducation.Text = "";
             // 
             // Btn_Register
             // 
@@ -192,22 +176,36 @@
             this.label6.ForeColor = System.Drawing.Color.Snow;
             this.label6.Location = new System.Drawing.Point(96, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 36);
+            this.label6.Size = new System.Drawing.Size(161, 40);
             this.label6.TabIndex = 11;
             this.label6.Text = "MY TRIP";
+            // 
+            // Cbbox_gender
+            // 
+            this.Cbbox_gender.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Cbbox_gender.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Cbbox_gender.FormattingEnabled = true;
+            this.Cbbox_gender.Items.AddRange(new object[] {
+            "男",
+            "女",
+            "未知"});
+            this.Cbbox_gender.Location = new System.Drawing.Point(230, 315);
+            this.Cbbox_gender.Name = "Cbbox_gender";
+            this.Cbbox_gender.Size = new System.Drawing.Size(121, 38);
+            this.Cbbox_gender.TabIndex = 13;
             // 
             // Form_Register
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.ClientSize = new System.Drawing.Size(621, 632);
+            this.Controls.Add(this.Cbbox_gender);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Btn_Register);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.richTextBox_introducation);
+            this.Controls.Add(this.TxtBox_psw);
+            this.Controls.Add(this.Txtbox_name);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -233,12 +231,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox Txtbox_name;
+        private System.Windows.Forms.TextBox TxtBox_psw;
+        private System.Windows.Forms.RichTextBox richTextBox_introducation;
         private System.Windows.Forms.Button Btn_Register;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox Cbbox_gender;
     }
 }
