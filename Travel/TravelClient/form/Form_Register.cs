@@ -107,7 +107,7 @@ namespace TravelClient.form
                         {
                             tip.ShowDialog();
                         }
-                        using (Form_TripNote tn = new Form_TripNote())
+                        using (Form_TripNote tn = new Form_TripNote(newuser.Uid))
                         {
                             this.Hide();
                             tn.ShowDialog();

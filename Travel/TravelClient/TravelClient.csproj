@@ -91,12 +91,6 @@
     <Compile Include="controller\UC_Personalinfo.Designer.cs">
       <DependentUpon>UC_Personalinfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="controller\UC_PresentTravelList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="controller\UC_PresentTravelList.Designer.cs">
-      <DependentUpon>UC_PresentTravelList.cs</DependentUpon>
-    </Compile>
     <Compile Include="controller\UC_Site.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +114,12 @@
     </Compile>
     <Compile Include="controller\UC_TravelCell.Designer.cs">
       <DependentUpon>UC_TravelCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_TravelList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_TravelList.Designer.cs">
+      <DependentUpon>UC_TravelList.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Form_MainPage.cs">
       <SubType>Form</SubType>
@@ -181,9 +181,6 @@
     <EmbeddedResource Include="controller\UC_Personalinfo.resx">
       <DependentUpon>UC_Personalinfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="controller\UC_PresentTravelList.resx">
-      <DependentUpon>UC_PresentTravelList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_Site.resx">
       <DependentUpon>UC_Site.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_TravelCell.resx">
       <DependentUpon>UC_TravelCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_TravelList.resx">
+      <DependentUpon>UC_TravelList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Form_MainPage.resx">
       <DependentUpon>Form_MainPage.cs</DependentUpon>

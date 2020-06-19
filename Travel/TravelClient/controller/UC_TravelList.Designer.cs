@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TravelList));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel_travels = new System.Windows.Forms.FlowLayoutPanel();
             this.PanelCell1 = new System.Windows.Forms.Panel();
             this.PanelCell2 = new System.Windows.Forms.Panel();
             this.PanelCell3 = new System.Windows.Forms.Panel();
@@ -39,21 +39,21 @@
             this.Lbl_MyTrip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_addTravel = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel_travels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel_travels
             // 
-            this.flowLayoutPanel1.Controls.Add(this.PanelCell1);
-            this.flowLayoutPanel1.Controls.Add(this.PanelCell2);
-            this.flowLayoutPanel1.Controls.Add(this.PanelCell3);
-            this.flowLayoutPanel1.Controls.Add(this.PanelCell4);
-            this.flowLayoutPanel1.Controls.Add(this.PanelCell5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 100);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(840, 585);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel_travels.Controls.Add(this.PanelCell1);
+            this.flowLayoutPanel_travels.Controls.Add(this.PanelCell2);
+            this.flowLayoutPanel_travels.Controls.Add(this.PanelCell3);
+            this.flowLayoutPanel_travels.Controls.Add(this.PanelCell4);
+            this.flowLayoutPanel_travels.Controls.Add(this.PanelCell5);
+            this.flowLayoutPanel_travels.Location = new System.Drawing.Point(0, 100);
+            this.flowLayoutPanel_travels.Name = "flowLayoutPanel_travels";
+            this.flowLayoutPanel_travels.Size = new System.Drawing.Size(840, 585);
+            this.flowLayoutPanel_travels.TabIndex = 0;
             // 
             // PanelCell1
             // 
@@ -141,10 +141,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Lbl_MyTrip);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanel_travels);
             this.Name = "UC_TravelList";
             this.Size = new System.Drawing.Size(840, 750);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel_travels.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,7 +153,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_travels;
         private System.Windows.Forms.Panel PanelCell1;
         private System.Windows.Forms.Panel PanelCell2;
         private System.Windows.Forms.Panel PanelCell3;

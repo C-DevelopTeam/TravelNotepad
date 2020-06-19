@@ -19,6 +19,7 @@ namespace TravelClient.controller
         public UC_SiteInfo()
         {
             InitializeComponent();
+            SetFont();
             UC_Todo uc_todo = new UC_Todo();
             AddControlsToPanel(uc_todo,TodoflowLayoutPanel1);
         }
@@ -26,6 +27,7 @@ namespace TravelClient.controller
         public UC_SiteInfo(ChangePanel changePanel,long routeID = -1,bool isCreate = false)
         {
             InitializeComponent();
+            SetFont();
             this.routeID = routeID;
             this.changePanel = changePanel;
             UC_Todo uc_todo = new UC_Todo();

@@ -23,10 +23,6 @@ namespace TravelClient.form
 
         private string baseUrl = "https://localhost:5001/api/user";
 
-        //private long Uid { get; set; }
-
-        //private string password;
-
         public Form_MainPage()
         {
             InitializeComponent();
@@ -79,11 +75,11 @@ namespace TravelClient.form
 
         private async void button6_Click(object sender, EventArgs e)
         {
-            string username = textBox1.Text;
+            string userID = textBox1.Text;
             string password = textBox2.Text;
             string passwordMD5 = MD5Encrypt(password);
 
-            if (username.Length == 0 || username == "单行输入")
+            if (userID.Length == 0 || userID == "单行输入")
             {
                 DialogResult result;
                 using (Form_Tips tip = new Form_Tips("提示", "用户ID为空，是否注册新账号"))
@@ -112,12 +108,12 @@ namespace TravelClient.form
                 {
                     try
                     {
-                        string url = baseUrl + "/login?Uid=" + username + "&password=" + passwordMD5;
+                        string url = baseUrl + "/login?Uid=" + userID + "&password=" + passwordMD5;
                         Client client = new Client();
                         HttpResponseMessage result = await client.Put(url,"");
                         if (result.IsSuccessStatusCode)
                         {
-                            using (Form_TripNote tn = new Form_TripNote())
+                            using (Form_TripNote tn = new Form_TripNote(int.Parse(userID)))
                             {
                                 tn.changePanel = tn.AddControlsToPanel;
                                 this.Hide();
