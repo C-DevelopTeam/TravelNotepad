@@ -103,5 +103,11 @@ namespace TravelClient.controller
             }
         }
 
+        private void Btn_AddRoute_Click(object sender, EventArgs e)
+        {
+            UC_SiteInfo uc_siteInfo = new UC_SiteInfo(changePanel, travelTitle, travelId,true);
+            uc_siteInfo.delegate_Get = new delegate_getTask(uc_siteInfo.getTask);
+            changePanel(uc_siteInfo);
+        }
     }
 }

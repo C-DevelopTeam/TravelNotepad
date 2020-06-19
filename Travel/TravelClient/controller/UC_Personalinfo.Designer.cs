@@ -86,6 +86,7 @@
             // tbUserName
             // 
             this.tbUserName.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tbUserName.Location = new System.Drawing.Point(160, 119);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(184, 34);
@@ -94,6 +95,7 @@
             // tbDescription
             // 
             this.tbDescription.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbDescription.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tbDescription.Location = new System.Drawing.Point(160, 282);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
@@ -113,6 +115,7 @@
             // cbGender
             // 
             this.cbGender.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbGender.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Items.AddRange(new object[] {
             "男",

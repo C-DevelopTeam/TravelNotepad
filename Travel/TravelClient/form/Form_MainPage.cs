@@ -113,6 +113,7 @@ namespace TravelClient.form
                         HttpResponseMessage result = await client.Put(url,"");
                         if (result.IsSuccessStatusCode)
                         {
+                            
                             using (Form_TripNote tn = new Form_TripNote(int.Parse(userID)))
                             {
                                 tn.changePanel = tn.AddControlsToPanel;
