@@ -41,40 +41,21 @@ namespace TravelApi.Controllers
                     diary.DiaryId = query.First().DiaryId + 1;
                 }
                 _diaryService.Add(diary);
+                return diary;
             }
             catch(Exception e)
             {
                 return BadRequest(e.InnerException.Message);
             }
-            return NoContent();
         }
 
         [HttpGet("get")]
-        public ActionResult<List<Object>> GetDairy(long diaryId)
+        public ActionResult<Diary> GetDairy(long diaryId)
         {
-            List<Object> result = new List<object>();
             var diary = _diaryService.GetById(diaryId);
             if(diary != null)
             {
-                result.Add(diary);
-                if(diary.TravelId != null)
-                {
-                    var travel = _travelService.GetById(diary.TravelId);
-                    if( travel != null)
-                    {
-                        result.Add(travel);
-                        var routes = _routeService.GetByTravelIdOrderStartTime(travel.TravelId);
-                        foreach(Route r in routes)
-                        {
-                            var startSite = _siteService.GetById(r.StartSiteId);
-                            var endSite = _siteService.GetById(r.EndSiteId);
-                            result.Add(r);
-                            result.Add(startSite);
-                            result.Add(endSite);
-                        }
-                    }
-                }
-                return result;
+                return diary;
             }
             else
             {

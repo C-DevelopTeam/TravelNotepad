@@ -29,7 +29,7 @@ namespace TravelClient.controller
             InitInfo();
         }
 
-        public void SetFont()
+        private void SetFont()
         {
             string AppPath = Application.StartupPath;
             try

@@ -65,7 +65,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(237, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 32);
+            this.label1.Size = new System.Drawing.Size(105, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "新用户注册";
             // 
@@ -76,7 +76,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(86, 192);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 26);
+            this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "用户名";
             // 
@@ -87,7 +87,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(86, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 26);
+            this.label3.Size = new System.Drawing.Size(38, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "密码";
             // 
@@ -98,7 +98,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(86, 319);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 26);
+            this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 6;
             this.label4.Text = "性别";
             // 
@@ -109,7 +109,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(86, 392);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 26);
+            this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 6;
             this.label5.Text = "个人介绍";
             // 
@@ -120,8 +120,8 @@
             this.Txtbox_name.Location = new System.Drawing.Point(230, 192);
             this.Txtbox_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Txtbox_name.Name = "Txtbox_name";
-            this.Txtbox_name.Size = new System.Drawing.Size(230, 32);
-            this.Txtbox_name.TabIndex = 7;
+            this.Txtbox_name.Size = new System.Drawing.Size(230, 24);
+            this.Txtbox_name.TabIndex = 1;
             // 
             // TxtBox_psw
             // 
@@ -130,8 +130,8 @@
             this.TxtBox_psw.Location = new System.Drawing.Point(230, 255);
             this.TxtBox_psw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtBox_psw.Name = "TxtBox_psw";
-            this.TxtBox_psw.Size = new System.Drawing.Size(230, 32);
-            this.TxtBox_psw.TabIndex = 7;
+            this.TxtBox_psw.Size = new System.Drawing.Size(230, 24);
+            this.TxtBox_psw.TabIndex = 2;
             this.TxtBox_psw.UseSystemPasswordChar = true;
             // 
             // richTextBox_introducation
@@ -142,7 +142,7 @@
             this.richTextBox_introducation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox_introducation.Name = "richTextBox_introducation";
             this.richTextBox_introducation.Size = new System.Drawing.Size(311, 129);
-            this.richTextBox_introducation.TabIndex = 9;
+            this.richTextBox_introducation.TabIndex = 4;
             this.richTextBox_introducation.Text = "";
             // 
             // Btn_Register
@@ -154,7 +154,7 @@
             this.Btn_Register.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_Register.Name = "Btn_Register";
             this.Btn_Register.Size = new System.Drawing.Size(123, 44);
-            this.Btn_Register.TabIndex = 10;
+            this.Btn_Register.TabIndex = 5;
             this.Btn_Register.Text = "注册";
             this.Btn_Register.UseVisualStyleBackColor = false;
             this.Btn_Register.Click += new System.EventHandler(this.button6_Click);
@@ -176,23 +176,22 @@
             this.label6.ForeColor = System.Drawing.Color.Snow;
             this.label6.Location = new System.Drawing.Point(96, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 40);
+            this.label6.Size = new System.Drawing.Size(110, 29);
             this.label6.TabIndex = 11;
             this.label6.Text = "MY TRIP";
             // 
             // Cbbox_gender
             // 
-            this.Cbbox_gender.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Cbbox_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Cbbox_gender.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Cbbox_gender.FormattingEnabled = true;
             this.Cbbox_gender.Items.AddRange(new object[] {
             "男",
-            "女",
-            "未知"});
+            "女"});
             this.Cbbox_gender.Location = new System.Drawing.Point(230, 315);
             this.Cbbox_gender.Name = "Cbbox_gender";
-            this.Cbbox_gender.Size = new System.Drawing.Size(121, 38);
-            this.Cbbox_gender.TabIndex = 13;
+            this.Cbbox_gender.Size = new System.Drawing.Size(121, 26);
+            this.Cbbox_gender.TabIndex = 3;
             // 
             // Form_Register
             // 
