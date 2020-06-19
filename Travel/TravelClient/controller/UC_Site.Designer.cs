@@ -61,9 +61,9 @@
             this.Btn_ToSiteInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_ToSiteInfo.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_ToSiteInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Btn_ToSiteInfo.Location = new System.Drawing.Point(58, 137);
+            this.Btn_ToSiteInfo.Location = new System.Drawing.Point(20, 137);
             this.Btn_ToSiteInfo.Name = "Btn_ToSiteInfo";
-            this.Btn_ToSiteInfo.Size = new System.Drawing.Size(75, 40);
+            this.Btn_ToSiteInfo.Size = new System.Drawing.Size(138, 43);
             this.Btn_ToSiteInfo.TabIndex = 3;
             this.Btn_ToSiteInfo.Text = "地点";
             this.Btn_ToSiteInfo.UseVisualStyleBackColor = true;

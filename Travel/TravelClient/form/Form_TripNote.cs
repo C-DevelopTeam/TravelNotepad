@@ -5,10 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using TravelClient.controller;
+using TravelClient.Models;
+using TravelClient.utils;
 
 namespace TravelClient.form
 {
@@ -101,10 +105,28 @@ namespace TravelClient.form
             AddControlsToPanel(uc_Personalinfo);
         }
 
-        private void Btn_presentTravel_Click(object sender, EventArgs e)
+        private async void Btn_presentTravel_Click(object sender, EventArgs e)
         {
-            UC_AllSites uc_allsite = new UC_AllSites(changePanel);
-            AddControlsToPanel(uc_allsite);
+            string url = "https://localhost:5001/api/Travel/get?uid=" + Uid;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Travel>));
+            Client client = new Client();
+            try
+            {
+                HttpResponseMessage result = await client.Get(url);
+                if (result.IsSuccessStatusCode)
+                {
+                    List<Travel> travels = (List<Travel>)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                    Travel presentTravel = travels.First();
+                    UC_AllSites uc_allsite = new UC_AllSites(changePanel,presentTravel.Description,presentTravel.TravelId);
+                    AddControlsToPanel(uc_allsite);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            
         }
 
         private void Btn_NoteSharing_Click(object sender, EventArgs e)

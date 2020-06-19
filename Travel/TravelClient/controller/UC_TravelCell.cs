@@ -35,7 +35,7 @@ namespace TravelClient.controller
 
         private void Btn_TravelTitle_Click(object sender, EventArgs e)
         {
-            UC_AllSites uc_AllSites = new UC_AllSites(changePanel);
+            UC_AllSites uc_AllSites = new UC_AllSites(changePanel,travelTiltle,travelID);
             changePanel(uc_AllSites);
         }
 
