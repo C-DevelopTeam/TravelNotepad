@@ -23,7 +23,7 @@ namespace TravelClient.utils
             return client;
         }
 
-        public HttpResponseMessage Post(string url, string data)
+        public async Task<HttpResponseMessage> Post(string url, string data)
         {
             HttpResponseMessage result = new HttpResponseMessage();
             using (HttpClient client = CreateClient())
@@ -32,7 +32,7 @@ namespace TravelClient.utils
                 {
                     var request = new HttpRequestMessage(HttpMethod.Post, url);
                     request.Content = new StringContent(data, Encoding.Unicode, "application/xml");
-                    result = client.SendAsync(request).Result;
+                    result = await client.SendAsync(request);
                 }
                 catch(Exception e)
                 {
