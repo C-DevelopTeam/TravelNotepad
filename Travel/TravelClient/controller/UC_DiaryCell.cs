@@ -37,14 +37,16 @@ namespace TravelClient.controller
             {
                 PrivateFontCollection font = new PrivateFontCollection();
                 font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
+                font.AddFontFile(AppPath + @"\font\SF-Pro-Text-Medium.otf");
 
                 Font SFProFont9 = new Font(font.Families[0], 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-                Font SFProFont20 = new Font(font.Families[0], 20F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-
-                //设置窗体控件字体，哪些控件要更改都写到下面
-                lblTitle.Font = SFProFont20;
+                Font SFProFont14 = new Font(font.Families[1], 14F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font TitleFont9 = new Font(font.Families[1], 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                
+                //设置窗体控件字体，哪些控件要更改都写到下面
+                lblTitle.Font = SFProFont14;
                 lblTime.Font = SFProFont9;
-                label1.Font = SFProFont9;
+                label1.Font = TitleFont9;
             }
             catch
             {

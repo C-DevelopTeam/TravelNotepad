@@ -40,9 +40,30 @@ namespace TravelClient.controller
 
         private void Btn_ToSiteInfo_Click(object sender, EventArgs e)
         {
+            /*
             UC_SiteInfo uc_siteInfo = new UC_SiteInfo(changePanel,routeID);
             changePanel(uc_siteInfo);
+            string url = "https://localhost:5001/api/route/get?siteId=" + siteId;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Site));
+            Client client = new Client();
+            try
+            {
+                HttpResponseMessage result = await client.Get(url);
+                if (result.IsSuccessStatusCode)
+                {
+                    Site site = (Site)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                    siteName = site.SiteName;
+                    this.Btn_ToSiteInfo.Text = siteName;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }*/
         }
+
+
 
         private async void GetSiteName()
         {
@@ -58,7 +79,14 @@ namespace TravelClient.controller
                     siteName = site.SiteName;
                     this.Btn_ToSiteInfo.Text = siteName;
                 }
-                
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", "获取失败"))
+                    {
+                        tip.ShowDialog();
+                    }
+                }
+
             }
             catch (Exception ex)
             {

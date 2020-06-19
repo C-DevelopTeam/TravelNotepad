@@ -36,17 +36,16 @@ namespace TravelClient.controller
             {
                 PrivateFontCollection font = new PrivateFontCollection();
                 font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
-                font.AddFontFile(AppPath + @"\font\SF-Pro-Text-Medium.otf");
 
-                Font titleFont25 = new Font(font.Families[1], 25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont18 = new Font(font.Families[0], 18F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                 Font SFProFont9 = new Font(font.Families[0], 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-                Font SFProFont15 = new Font(font.Families[0], 15F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont14 = new Font(font.Families[0], 14F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
                 //设置窗体控件字体，哪些控件要更改都写到下面
-                label1.Font = titleFont25;
+                label1.Font = titleFont18;
                 label2.Font = SFProFont9;
-                btnLogCircle.Font = SFProFont15;
-                btnMyShare.Font = SFProFont15;
+                btnLogCircle.Font = titleFont14;
+                btnMyShare.Font = titleFont14;
             }
             catch
             {
@@ -113,6 +112,11 @@ namespace TravelClient.controller
             {
                 MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void UC_LogCircle_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

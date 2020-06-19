@@ -33,72 +33,93 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.lblTitle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTitle.Location = new System.Drawing.Point(53, 17);
+            this.lblTitle.Location = new System.Drawing.Point(42, 20);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(69, 35);
+            this.lblTitle.Size = new System.Drawing.Size(94, 49);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "标题";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(484, 40);
+            this.label2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(383, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
+            this.label2.Size = new System.Drawing.Size(64, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "用户：";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label3.Location = new System.Drawing.Point(484, 66);
+            this.label3.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(383, 70);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(64, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "时间：";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblUserName.Location = new System.Drawing.Point(525, 40);
+            this.lblUserName.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblUserName.Location = new System.Drawing.Point(436, 38);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(0, 17);
+            this.lblUserName.Size = new System.Drawing.Size(19, 24);
             this.lblUserName.TabIndex = 3;
+            this.lblUserName.Text = "1";
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTime.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblTime.Location = new System.Drawing.Point(525, 63);
+            this.lblTime.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTime.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTime.Location = new System.Drawing.Point(436, 70);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(0, 17);
+            this.lblTime.Size = new System.Drawing.Size(19, 24);
             this.lblTime.TabIndex = 4;
+            this.lblTime.Text = "1";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.DarkGray;
+            this.label1.Location = new System.Drawing.Point(15, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(610, 2);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
             // 
             // UC_LogCell
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UC_LogCell";
-            this.Size = new System.Drawing.Size(674, 90);
+            this.Size = new System.Drawing.Size(640, 100);
             this.Click += new System.EventHandler(this.UC_LogCell_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,5 +132,6 @@
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.Label lblUserName;
         public System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label label1;
     }
 }

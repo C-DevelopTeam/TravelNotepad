@@ -40,12 +40,10 @@ namespace TravelClient.controller
                 font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
                 font.AddFontFile(AppPath + @"\font\SF-Pro-Text-Medium.otf");
 
-                Font titleFont25 = new Font(font.Families[1], 25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-                Font SFProFont12 = new Font(font.Families[0], 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont18 = new Font(font.Families[1], 18F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
                 //设置窗体控件字体，哪些控件要更改都写到下面
-                label1.Font = titleFont25;
-                btnAddDiary.Font = SFProFont12;
+                label1.Font = titleFont18;
             }
             catch
             {
