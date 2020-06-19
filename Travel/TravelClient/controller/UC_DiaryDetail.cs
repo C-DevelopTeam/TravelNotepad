@@ -21,11 +21,13 @@ namespace TravelClient.controller
     public partial class UC_DiaryDetail : UserControl
     {
         private readonly string DiaryId;
+        private readonly ChangePanel ChangePanel;
         private readonly string baseUrl = "https://localhost:5001/api/diary";
-        public UC_DiaryDetail(string diaryId)
+        public UC_DiaryDetail(string diaryId, ChangePanel changePanel)
         {
             InitializeComponent();
             this.DiaryId = diaryId;
+            this.ChangePanel = changePanel;
             SetFont();
             InitInfo();
         }
@@ -55,10 +57,12 @@ namespace TravelClient.controller
             }
         }
 
-        private void BtnBack_Click(object sender, EventArgs e)
+        private async void BtnBack_Click(object sender, EventArgs e)
         {
             //回退
-            this.Dispose();
+            Diary diary = await GetDiary();
+            UC_DiaryList uc_DiaryList = new UC_DiaryList(diary.Uid.ToString(), this.ChangePanel);
+            this.ChangePanel(uc_DiaryList);
         }
 
         private async void BtnSave_Click(object sender, EventArgs e)
@@ -177,22 +181,25 @@ namespace TravelClient.controller
                 btnShare.Text = "分享";
             }
             //获取所有文件名
-            string[] imgNames = diary.Photo.Trim().Split(' ');
-            string baseurl = "https://localhost:5001/api/file/download?filename=";
-            PictureBox pb;
-            Image image;
-            FileClient fileClient = new FileClient();
-            foreach (string name in imgNames)
+            if(diary.Photo != null)
             {
-                string url = baseurl + name;
-                pb = new PictureBox();
-                image = await fileClient.Download(url);
-                pb.Width = 155;
-                pb.Height = 175;
-                pb.Image = ResizeImage(image, new Size(200, 200));
-                pb.Anchor = AnchorStyles.None;
-                pb.SizeMode = PictureBoxSizeMode.CenterImage;
-                panelImgList.Controls.Add(pb);
+                string[] imgNames = diary.Photo.Trim().Split(' ');
+                string baseurl = "https://localhost:5001/api/file/download?filename=";
+                PictureBox pb;
+                Image image;
+                FileClient fileClient = new FileClient();
+                foreach (string name in imgNames)
+                {
+                    string url = baseurl + name;
+                    pb = new PictureBox();
+                    image = await fileClient.Download(url);
+                    pb.Width = 155;
+                    pb.Height = 175;
+                    pb.Image = ResizeImage(image, new Size(200, 200));
+                    pb.Anchor = AnchorStyles.None;
+                    pb.SizeMode = PictureBoxSizeMode.CenterImage;
+                    panelImgList.Controls.Add(pb);
+                }
             }
         }
 
