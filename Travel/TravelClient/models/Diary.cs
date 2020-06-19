@@ -10,6 +10,7 @@ namespace TravelClient.Models
         public string Description{get; set;}
         public string Photo{get; set;}
         public int Share{get; set;}
+        public int Uid { get; set; }
         public long? TravelId{get; set;}
 
         public Diary() { }

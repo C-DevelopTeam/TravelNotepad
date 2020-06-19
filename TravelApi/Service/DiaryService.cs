@@ -9,6 +9,7 @@ namespace TravelApi.Service
         IQueryable<Diary> GetDiaryByDate(string date);
         IQueryable<Diary> GetByShare();
         Diary GetById(long diaryId);
+        IQueryable<Diary> GetShareByUid(int uid);
     }
 
     public class DiaryService : EntityService<Diary>, IDiaryService
@@ -24,12 +25,17 @@ namespace TravelApi.Service
         
         public IQueryable<Diary> GetByShare()
         {
-            return this.dbset.Where(d =>d.Share==1);
+            return this.dbset.Where(d =>d.Share==1).OrderByDescending(d=>d.Time);
         }
 
         public Diary GetById(long diaryId)
         {
             return this.dbset.FirstOrDefault(t => t.DiaryId == diaryId);
+        }
+
+        public IQueryable<Diary> GetShareByUid(int uid)
+        {
+            return this.dbset.Where(d => d.Uid == uid && d.Share == 1).OrderByDescending(d=>d.Time);
         }
     }
 }

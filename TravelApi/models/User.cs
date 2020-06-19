@@ -14,5 +14,6 @@ namespace TravelApi.Models
         public string Sex {get; set;}
         public string Introduction {get; set;}
         public List<Travel> Travels {get; set;}
+        public List<Diary> Diaries{get; set;}
     }
 }

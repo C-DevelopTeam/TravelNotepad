@@ -15,6 +15,10 @@ namespace TravelApi.Models
         public string Photo{get; set;}
         [Required]
         public int Share{get; set;}
+        [Required]
+        public int Uid{get; set;}
+        [ForeignKey("Uid")]
+        public User User{get; set;}
         public long? TravelId{get; set;}
         [ForeignKey("TravelId")]
         public Travel Travel{get; set;}
