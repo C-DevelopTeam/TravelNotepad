@@ -14,7 +14,9 @@ namespace TravelClient.controller
 {
     public partial class UC_TravelCell : UserControl
     {
-        long travelID;
+        public long travelID;
+        public string travelTiltle;
+
         ChangePanel changePanel;
 
         public UC_TravelCell()
@@ -22,11 +24,13 @@ namespace TravelClient.controller
             InitializeComponent();
         }
 
-        public UC_TravelCell(ChangePanel changePanel,long ID=-1)
+        public UC_TravelCell(ChangePanel changePanel,long ID,string title)
         {
             InitializeComponent();
             this.changePanel = changePanel;
+            travelTiltle = title;
             travelID = ID;
+            Btn_TravelTitle.Text = title;
         }
 
         private void Btn_TravelTitle_Click(object sender, EventArgs e)

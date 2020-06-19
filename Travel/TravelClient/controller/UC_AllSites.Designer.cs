@@ -33,7 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel_route = new System.Windows.Forms.FlowLayoutPanel();
             this.Sitepanel1 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -92,7 +92,7 @@
             this.panel56 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel_route.SuspendLayout();
             this.Sitepanel1.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -151,24 +151,24 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel_route
             // 
-            this.flowLayoutPanel1.Controls.Add(this.Sitepanel1);
-            this.flowLayoutPanel1.Controls.Add(this.Sitepanel2);
-            this.flowLayoutPanel1.Controls.Add(this.Sitepanel3);
-            this.flowLayoutPanel1.Controls.Add(this.Sitepanel4);
-            this.flowLayoutPanel1.Controls.Add(this.panel25);
-            this.flowLayoutPanel1.Controls.Add(this.panel29);
-            this.flowLayoutPanel1.Controls.Add(this.panel33);
-            this.flowLayoutPanel1.Controls.Add(this.panel37);
-            this.flowLayoutPanel1.Controls.Add(this.panel41);
-            this.flowLayoutPanel1.Controls.Add(this.panel45);
-            this.flowLayoutPanel1.Controls.Add(this.panel49);
-            this.flowLayoutPanel1.Controls.Add(this.panel53);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 114);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(788, 597);
-            this.flowLayoutPanel1.TabIndex = 12;
+            this.flowLayoutPanel_route.Controls.Add(this.Sitepanel1);
+            this.flowLayoutPanel_route.Controls.Add(this.Sitepanel2);
+            this.flowLayoutPanel_route.Controls.Add(this.Sitepanel3);
+            this.flowLayoutPanel_route.Controls.Add(this.Sitepanel4);
+            this.flowLayoutPanel_route.Controls.Add(this.panel25);
+            this.flowLayoutPanel_route.Controls.Add(this.panel29);
+            this.flowLayoutPanel_route.Controls.Add(this.panel33);
+            this.flowLayoutPanel_route.Controls.Add(this.panel37);
+            this.flowLayoutPanel_route.Controls.Add(this.panel41);
+            this.flowLayoutPanel_route.Controls.Add(this.panel45);
+            this.flowLayoutPanel_route.Controls.Add(this.panel49);
+            this.flowLayoutPanel_route.Controls.Add(this.panel53);
+            this.flowLayoutPanel_route.Location = new System.Drawing.Point(21, 114);
+            this.flowLayoutPanel_route.Name = "flowLayoutPanel_route";
+            this.flowLayoutPanel_route.Size = new System.Drawing.Size(788, 597);
+            this.flowLayoutPanel_route.TabIndex = 12;
             // 
             // Sitepanel1
             // 
@@ -609,7 +609,7 @@
             // UC_AllSites
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanel_route);
             this.Controls.Add(this.pictureBox_add1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Lbl_title);
@@ -618,7 +618,7 @@
             this.Size = new System.Drawing.Size(840, 750);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel_route.ResumeLayout(false);
             this.Sitepanel1.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -644,7 +644,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lbl_title;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_route;
         private System.Windows.Forms.Panel Sitepanel1;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;

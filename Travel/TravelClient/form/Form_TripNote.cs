@@ -18,10 +18,12 @@ namespace TravelClient.form
     {
         private Point formPoint = new Point();
         public ChangePanel changePanel;
+        int Uid;
 
-        public Form_TripNote()
+        public Form_TripNote(int Uid)
         {
             InitializeComponent();
+            this.Uid = Uid;
             SetFont();
         }
 
@@ -87,7 +89,7 @@ namespace TravelClient.form
 
         private void Btn_MyTravel_Click(object sender, EventArgs e)
         {
-            UC_TravelList uc_Present = new UC_TravelList(changePanel);
+            UC_TravelList uc_Present = new UC_TravelList(changePanel,Uid);
             AddControlsToPanel(uc_Present);
         }
 
@@ -95,7 +97,7 @@ namespace TravelClient.form
         private void Btn_PersonalInfo_Click(object sender, EventArgs e)
         {
             //此处uid应该是从mainPage传输过来，现在整体尚未搭建完毕，先暂定为0
-            UC_Personalinfo uc_Personalinfo = new UC_Personalinfo(uid:"0");
+            UC_Personalinfo uc_Personalinfo = new UC_Personalinfo(Uid.ToString());
             AddControlsToPanel(uc_Personalinfo);
         }
 
@@ -108,14 +110,14 @@ namespace TravelClient.form
         private void Btn_NoteSharing_Click(object sender, EventArgs e)
         {
             //此处uid应该是从mainPage传输过来，现在整体尚未搭建完毕，先暂定为0
-            UC_LogCircle uc_LogCircle = new UC_LogCircle(uid:"0", changePanel);
+            UC_LogCircle uc_LogCircle = new UC_LogCircle(Uid.ToString(), changePanel);
             AddControlsToPanel(uc_LogCircle);
         }
 
         private void Btn_TravelNote_Click(object sender, EventArgs e)
         {
             //此处uid应该是从mainPage传输过来，现在整体尚未搭建完毕，先暂定为0
-            UC_DiaryList uc_DiaryList = new UC_DiaryList(uid:"0", changePanel);
+            UC_DiaryList uc_DiaryList = new UC_DiaryList(Uid.ToString(), changePanel);
             AddControlsToPanel(uc_DiaryList);
         }
     }
