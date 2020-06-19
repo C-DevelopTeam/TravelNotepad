@@ -111,5 +111,12 @@ namespace TravelClient.form
             UC_LogCircle uc_LogCircle = new UC_LogCircle(uid:"0");
             AddControlsToPanel(uc_LogCircle);
         }
+
+        private void Btn_TravelNote_Click(object sender, EventArgs e)
+        {
+            //此处uid应该是从mainPage传输过来，现在整体尚未搭建完毕，先暂定为0
+            UC_DiaryList uc_DiaryList = new UC_DiaryList(uid:"0");
+            AddControlsToPanel(uc_DiaryList);
+        }
     }
 }

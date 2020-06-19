@@ -40,5 +40,16 @@ namespace TravelApi.Controllers
             }
             return query.ToList();
         }
+
+        [HttpGet("get/userall")]
+        public ActionResult<List<Diary>> GetBlogByUid(int uid)
+        {
+            IQueryable<Diary> query = _diaryService.GetDiaryByUid(uid);
+            if(query==null)
+            {
+                return NotFound();
+            }
+            return query.ToList();
+        }
     }
 }
