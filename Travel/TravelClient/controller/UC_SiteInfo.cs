@@ -28,7 +28,7 @@ namespace TravelClient.controller
         long travelId;
         public delegate_getTask delegate_Get;
 
-        public UC_SiteInfo(ChangePanel changePanel,string travelTitle, long travelId, long routeID=-1,string siteName="",bool isCreate = false)
+        public UC_SiteInfo(ChangePanel changePanel,string travelTitle, long travelId, bool isCreate = false, long routeID=-1, string siteName="")
         {
             InitializeComponent();
             SetFont();
@@ -263,7 +263,51 @@ namespace TravelClient.controller
                 {
                     MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-            }    
+            }
+            else
+            {
+                string url = "https://localhost:5001/api/route";
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Route));
+                Client client = new Client();
+                try
+                {
+                    string data = "";
+                    Route route = new Route();
+                    route.Method = this.Txtbos_vehicle.Text;
+                    route.StartTime = this.dateTimePicker1.Value;
+                    route.EndTime = this.dateTimePicker2.Value;
+
+
+
+                    //添加site
+
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        xmlSerializer.Serialize(sw, route);
+                        data = sw.ToString();
+                    }
+                    HttpResponseMessage result = await client.Post(url, data);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        using (Form_Tips tip = new Form_Tips("提示", "新增成功"))
+                        {
+                            tip.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        using (Form_Tips tip = new Form_Tips("警告", "信息有误"))
+                        {
+                            tip.ShowDialog();
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
         }
     }
 }

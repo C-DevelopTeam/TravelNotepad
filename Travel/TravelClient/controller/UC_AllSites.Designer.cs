@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AllSites));
-            this.pictureBox_add1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,7 +89,7 @@
             this.panel54 = new System.Windows.Forms.Panel();
             this.panel55 = new System.Windows.Forms.Panel();
             this.panel56 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).BeginInit();
+            this.Btn_AddRoute = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel_route.SuspendLayout();
             this.Sitepanel1.SuspendLayout();
@@ -108,17 +107,6 @@
             this.panel49.SuspendLayout();
             this.panel53.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox_add1
-            // 
-            this.pictureBox_add1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_add1.Image")));
-            this.pictureBox_add1.InitialImage = null;
-            this.pictureBox_add1.Location = new System.Drawing.Point(742, 34);
-            this.pictureBox_add1.Name = "pictureBox_add1";
-            this.pictureBox_add1.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox_add1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_add1.TabIndex = 11;
-            this.pictureBox_add1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -606,17 +594,28 @@
             this.panel56.Size = new System.Drawing.Size(200, 200);
             this.panel56.TabIndex = 1;
             // 
+            // Btn_AddRoute
+            // 
+            this.Btn_AddRoute.FlatAppearance.BorderSize = 0;
+            this.Btn_AddRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_AddRoute.Image = ((System.Drawing.Image)(resources.GetObject("Btn_AddRoute.Image")));
+            this.Btn_AddRoute.Location = new System.Drawing.Point(742, 34);
+            this.Btn_AddRoute.Name = "Btn_AddRoute";
+            this.Btn_AddRoute.Size = new System.Drawing.Size(60, 60);
+            this.Btn_AddRoute.TabIndex = 13;
+            this.Btn_AddRoute.UseVisualStyleBackColor = true;
+            this.Btn_AddRoute.Click += new System.EventHandler(this.Btn_AddRoute_Click);
+            // 
             // UC_AllSites
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.Btn_AddRoute);
             this.Controls.Add(this.flowLayoutPanel_route);
-            this.Controls.Add(this.pictureBox_add1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Lbl_title);
             this.Controls.Add(this.label1);
             this.Name = "UC_AllSites";
             this.Size = new System.Drawing.Size(840, 750);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_add1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel_route.ResumeLayout(false);
             this.Sitepanel1.ResumeLayout(false);
@@ -639,8 +638,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox_add1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lbl_title;
         private System.Windows.Forms.Label label1;
@@ -701,5 +698,6 @@
         private System.Windows.Forms.Panel panel54;
         private System.Windows.Forms.Panel panel55;
         private System.Windows.Forms.Panel panel56;
+        private System.Windows.Forms.Button Btn_AddRoute;
     }
 }

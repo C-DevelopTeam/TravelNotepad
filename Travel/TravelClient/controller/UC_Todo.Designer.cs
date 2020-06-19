@@ -36,11 +36,11 @@
             // Cbx_todo
             // 
             this.Cbx_todo.AutoSize = true;
-            this.Cbx_todo.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbx_todo.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbx_todo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Cbx_todo.Location = new System.Drawing.Point(27, 7);
             this.Cbx_todo.Name = "Cbx_todo";
-            this.Cbx_todo.Size = new System.Drawing.Size(139, 33);
+            this.Cbx_todo.Size = new System.Drawing.Size(141, 37);
             this.Cbx_todo.TabIndex = 0;
             this.Cbx_todo.Text = "待办内容";
             this.Cbx_todo.UseVisualStyleBackColor = true;

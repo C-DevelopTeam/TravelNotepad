@@ -12,6 +12,7 @@ using System.Xml.Serialization;
 using TravelClient.utils;
 using System.Net.Http;
 using TravelClient.form;
+using System.IO;
 
 namespace TravelClient.controller
 {
@@ -43,7 +44,7 @@ namespace TravelClient.controller
             try
             {
                 PrivateFontCollection font = new PrivateFontCollection();
-                font.AddFontFile(AppPath + @"\font\SF-Pro-Text-Medium.otf");
+                font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
 
                 Font titleFont12 = new Font(font.Families[0], 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
 
@@ -84,9 +85,49 @@ namespace TravelClient.controller
             }
         }
 
-        private void Cbx_todo_CheckedChanged(object sender, EventArgs e)
+        private async void Cbx_todo_CheckedChanged(object sender, EventArgs e)
         {
+            if(Cbx_todo.Checked==true)
+            {
+                task.State = 1;
+            }
+            else
+            {
+                task.State = 0;
+            }
 
+            string url = "https://localhost:5001/api/Task/update?taskId="+task.TaskId;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Models.Task));
+            Client client = new Client();
+
+            try
+            {
+                string data = "";
+                using (StringWriter sw = new StringWriter())
+                {
+                    xmlSerializer.Serialize(sw, task);
+                    data = sw.ToString();
+                }
+                HttpResponseMessage result = await client.Put(url, data);
+                if (result.IsSuccessStatusCode)
+                {
+
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", result.StatusCode.ToString()))
+                    {
+                        tip.ShowDialog();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
+
     }
 }
+

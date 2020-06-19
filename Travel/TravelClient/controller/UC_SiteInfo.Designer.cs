@@ -42,10 +42,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.Gpb_todolist = new System.Windows.Forms.GroupBox();
+            this.TxtBox_todo = new System.Windows.Forms.TextBox();
+            this.Btn_addtodo = new System.Windows.Forms.Button();
             this.flowLayoutPanel_todo = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_Comfirm = new System.Windows.Forms.Button();
-            this.Btn_addtodo = new System.Windows.Forms.Button();
-            this.TxtBox_todo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Gpb_todolist.SuspendLayout();
             this.SuspendLayout();
@@ -184,32 +184,21 @@
             this.Gpb_todolist.Controls.Add(this.flowLayoutPanel_todo);
             this.Gpb_todolist.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Gpb_todolist.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Gpb_todolist.Location = new System.Drawing.Point(90, 347);
+            this.Gpb_todolist.Location = new System.Drawing.Point(89, 416);
             this.Gpb_todolist.Name = "Gpb_todolist";
             this.Gpb_todolist.Size = new System.Drawing.Size(606, 334);
             this.Gpb_todolist.TabIndex = 23;
             this.Gpb_todolist.TabStop = false;
             this.Gpb_todolist.Text = "待办事项";
             // 
-            // flowLayoutPanel_todo
+            // TxtBox_todo
             // 
-            this.flowLayoutPanel_todo.Location = new System.Drawing.Point(45, 94);
-            this.flowLayoutPanel_todo.Name = "flowLayoutPanel_todo";
-            this.flowLayoutPanel_todo.Size = new System.Drawing.Size(524, 240);
-            this.flowLayoutPanel_todo.TabIndex = 25;
-            // 
-            // Btn_Comfirm
-            // 
-            this.Btn_Comfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.Btn_Comfirm.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Btn_Comfirm.ForeColor = System.Drawing.SystemColors.Control;
-            this.Btn_Comfirm.Location = new System.Drawing.Point(362, 687);
-            this.Btn_Comfirm.Name = "Btn_Comfirm";
-            this.Btn_Comfirm.Size = new System.Drawing.Size(106, 46);
-            this.Btn_Comfirm.TabIndex = 25;
-            this.Btn_Comfirm.Text = "确定";
-            this.Btn_Comfirm.UseVisualStyleBackColor = false;
-            this.Btn_Comfirm.Click += new System.EventHandler(this.Btn_Comfirm_Click);
+            this.TxtBox_todo.Font = new System.Drawing.Font("SF Pro Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBox_todo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtBox_todo.Location = new System.Drawing.Point(45, 45);
+            this.TxtBox_todo.Name = "TxtBox_todo";
+            this.TxtBox_todo.Size = new System.Drawing.Size(398, 31);
+            this.TxtBox_todo.TabIndex = 27;
             // 
             // Btn_addtodo
             // 
@@ -224,14 +213,25 @@
             this.Btn_addtodo.UseVisualStyleBackColor = false;
             this.Btn_addtodo.Click += new System.EventHandler(this.Btn_addtodo_Click);
             // 
-            // TxtBox_todo
+            // flowLayoutPanel_todo
             // 
-            this.TxtBox_todo.Font = new System.Drawing.Font("SF Pro Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBox_todo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TxtBox_todo.Location = new System.Drawing.Point(45, 45);
-            this.TxtBox_todo.Name = "TxtBox_todo";
-            this.TxtBox_todo.Size = new System.Drawing.Size(398, 31);
-            this.TxtBox_todo.TabIndex = 27;
+            this.flowLayoutPanel_todo.Location = new System.Drawing.Point(45, 94);
+            this.flowLayoutPanel_todo.Name = "flowLayoutPanel_todo";
+            this.flowLayoutPanel_todo.Size = new System.Drawing.Size(524, 240);
+            this.flowLayoutPanel_todo.TabIndex = 25;
+            // 
+            // Btn_Comfirm
+            // 
+            this.Btn_Comfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
+            this.Btn_Comfirm.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_Comfirm.ForeColor = System.Drawing.SystemColors.Control;
+            this.Btn_Comfirm.Location = new System.Drawing.Point(363, 364);
+            this.Btn_Comfirm.Name = "Btn_Comfirm";
+            this.Btn_Comfirm.Size = new System.Drawing.Size(106, 46);
+            this.Btn_Comfirm.TabIndex = 25;
+            this.Btn_Comfirm.Text = "确定";
+            this.Btn_Comfirm.UseVisualStyleBackColor = false;
+            this.Btn_Comfirm.Click += new System.EventHandler(this.Btn_Comfirm_Click);
             // 
             // UC_SiteInfo
             // 

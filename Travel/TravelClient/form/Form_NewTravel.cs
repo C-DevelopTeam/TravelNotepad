@@ -101,11 +101,12 @@ namespace TravelClient.form
                 HttpResponseMessage result = await client.Post(url, data);
                 if (result.IsSuccessStatusCode)
                 {
-
+                    
                     using (Form_Tips tip = new Form_Tips("提示", "成功创建"))
                     {
                         tip.ShowDialog();
                     }
+                    init();
                 }
                 else
                 {
