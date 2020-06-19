@@ -55,6 +55,18 @@
     <Compile Include="controller\UC_AllSites.Designer.cs">
       <DependentUpon>UC_AllSites.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\UC_LogCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_LogCell.Designer.cs">
+      <DependentUpon>UC_LogCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\UC_LogCircle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_LogCircle.Designer.cs">
+      <DependentUpon>UC_LogCircle.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\UC_Personalinfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     <EmbeddedResource Include="controller\UC_AllSites.resx">
       <DependentUpon>UC_AllSites.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_LogCell.resx">
+      <DependentUpon>UC_LogCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_LogCircle.resx">
+      <DependentUpon>UC_LogCircle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_Personalinfo.resx">
       <DependentUpon>UC_Personalinfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,15 +214,42 @@
   <ItemGroup>
     <Content Include="bin\Debug\font\字体.txt" />
     <Content Include="static\font\字体.txt" />
+    <Content Include="static\image\add.png" />
+    <Content Include="static\image\add2.png" />
+    <Content Include="static\image\add3.png" />
+    <Content Include="static\image\close.png" />
+    <Content Include="static\image\delete.png" />
+    <Content Include="static\image\delete2.png" />
+    <Content Include="static\image\delete3.png" />
+    <Content Include="static\image\delete4.png" />
     <Content Include="static\image\forward.png" />
     <Content Include="static\image\forward_2.png" />
     <Content Include="static\image\forward_3.png" />
+    <Content Include="static\image\icons8_alpha_flag_70px.png" />
+    <Content Include="static\image\icons8_cancel_50px.png" />
+    <Content Include="static\image\icons8_delete_50px_1.png" />
+    <Content Include="static\image\icons8_flag_2_45px.png" />
+    <Content Include="static\image\icons8_flag_2_70px.png" />
+    <Content Include="static\image\icons8_less_than_70px.png" />
+    <Content Include="static\image\icons8_multiply_45px.png" />
+    <Content Include="static\image\icons8_round_70px.png" />
+    <Content Include="static\image\icons8_sphere_70px.png" />
+    <Content Include="static\image\icons8_sphere_70px_1.png" />
+    <Content Include="static\image\microsoft_sharepoint_64px.png" />
+    <Content Include="static\image\myTrip1.png" />
+    <Content Include="static\image\myTrip2.png" />
+    <Content Include="static\image\route.png" />
+    <Content Include="static\image\site.png" />
+    <Content Include="static\image\traveler.png" />
+    <Content Include="static\image\Travelicon.png" />
+    <Content Include="static\image\主图标.png" />
     <Content Include="static\image\主界面关闭.png" />
     <Content Include="static\image\主界面关闭2.png" />
     <Content Include="static\image\主界面关闭3.png" />
     <Content Include="static\image\主界面关闭4.png" />
     <Content Include="static\image\关闭.png" />
     <Content Include="static\image\图标.png" />
+    <Content Include="static\image\箭头.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -118,6 +118,7 @@
             this.Btn_NoteSharing.Text = "日志圈";
             this.Btn_NoteSharing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_NoteSharing.UseVisualStyleBackColor = false;
+            this.Btn_NoteSharing.Click += new System.EventHandler(this.Btn_NoteSharing_Click);
             // 
             // Btn_TravelNote
             // 
