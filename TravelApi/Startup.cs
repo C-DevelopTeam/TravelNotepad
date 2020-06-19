@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.Features;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using TravelApi.Dao;
 using TravelApi.Service;
@@ -40,6 +40,12 @@ namespace TravelApi
             services.AddTransient<ITaskService, TaskService>();
             services.AddTransient<ITravelService, TravelService>();
             services.AddControllers().AddXmlSerializerFormatters();
+            services.Configure<FormOptions>(o => 
+            {  
+                o.ValueLengthLimit = Int32.MaxValue;  
+                o.MultipartBodyLengthLimit = Int32.MaxValue;  
+                o.MemoryBufferThreshold = Int32.MaxValue; 
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

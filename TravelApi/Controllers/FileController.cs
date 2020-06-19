@@ -13,6 +13,7 @@ using TravelApi.Utils;
 namespace TravelApi.Controllers
 {
     [ApiController]
+    [Consumes("multipart/form-data")]
     [Route("api/[controller]")]
     public class FileController : ControllerBase
     {
@@ -25,31 +26,34 @@ namespace TravelApi.Controllers
         public FileController(IDiaryService diaryService, IConfiguration config)
         {
             this._diaryService = diaryService;
-            this._rootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, config.GetValue<string>("StoredFileFolder"));
+            this._rootPath = Path.Combine(Environment.CurrentDirectory, config.GetValue<string>("StoredFileFolder"));
             this._fileSizeLimit = config.GetValue<long>("fileSizeLimit");
         }
 
         [HttpPost("upload")]
-        [ValidateAntiForgeryToken]
+        [DisableRequestSizeLimit]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Upload(long diaryId)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
             {
                 ModelState.AddModelError("File", 
                     $"The request couldn't be processed (Error 1).");
+                Console.WriteLine("aaaaaa");
                 return BadRequest(ModelState);
             }
             var fileName = "";
             var diary = _diaryService.GetById(diaryId);
             if(diary == null)
             {
+                Console.WriteLine("bbbbbb");
                 return BadRequest("The diary is not existed.");
             }
             var boundary = MultipartRequestHelper.GetBoundary(
                     MediaTypeHeaderValue.Parse(Request.ContentType),
-                    _defaultFormOptions.MultipartBoundaryLengthLimit);
+                    _defaultFormOptions.MultipartBoundaryLengthLimit); //PostMan测试中无boundary*/
             var reader = new MultipartReader(boundary, HttpContext.Request.Body);
-            var section = await reader.ReadNextSectionAsync();
+            var section = await reader.ReadNextSectionAsync(); //问题所在
 
             while (section != null)
             {
@@ -64,6 +68,7 @@ namespace TravelApi.Controllers
                     {
                         ModelState.AddModelError("File", 
                             $"The request couldn't be processed (Error 2).");
+                        Console.WriteLine("cccccc");
                         return BadRequest(ModelState);
                     }
                     else
@@ -75,6 +80,7 @@ namespace TravelApi.Controllers
 
                         if (!ModelState.IsValid)
                         {
+                            Console.WriteLine("dddddd");
                             return BadRequest(ModelState);
                         }
 
@@ -90,7 +96,6 @@ namespace TravelApi.Controllers
                 _diaryService.Update(diary);
                 section = await reader.ReadNextSectionAsync();
             }
-
             return Created(nameof(FileController), null);
         }
 
@@ -112,14 +117,6 @@ namespace TravelApi.Controllers
                 }
                 var fileStream = new FileStream(filePath, FileMode.Open);
                 var header = new MediaTypeHeaderValue("application/octet-stream");
-                //var content = new StreamContent(fileStream);
-                // 修改Header
-                //content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                //content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-                //{
-                //    FileName = fileName
-                //};
-                //var response = new HttpRequestMessage(){Content = content};
                 return new FileStreamResult(fileStream, header);
             }
             catch(Exception e)

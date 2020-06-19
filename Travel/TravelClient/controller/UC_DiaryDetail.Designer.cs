@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DiaryDetail));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.tbTitle = new System.Windows.Forms.TextBox();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAddPic = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnShare = new System.Windows.Forms.Button();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddPic = new System.Windows.Forms.Button();
+            this.panelImgList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnAddPic);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnShare);
@@ -57,42 +57,17 @@
             this.panel1.Size = new System.Drawing.Size(840, 80);
             this.panel1.TabIndex = 0;
             // 
-            // btnBack
+            // btnAddPic
             // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(34, 16);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(56, 50);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
-            // 
-            // tbTitle
-            // 
-            this.tbTitle.BackColor = System.Drawing.SystemColors.Control;
-            this.tbTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbTitle.Font = new System.Drawing.Font("微软雅黑", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbTitle.Location = new System.Drawing.Point(96, 20);
-            this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(333, 44);
-            this.tbTitle.TabIndex = 2;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(558, 45);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(86, 32);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "编辑";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            this.btnAddPic.FlatAppearance.BorderSize = 0;
+            this.btnAddPic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPic.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPic.Image")));
+            this.btnAddPic.Location = new System.Drawing.Point(774, 3);
+            this.btnAddPic.Name = "btnAddPic";
+            this.btnAddPic.Size = new System.Drawing.Size(44, 36);
+            this.btnAddPic.TabIndex = 4;
+            this.btnAddPic.UseVisualStyleBackColor = true;
+            this.btnAddPic.Click += new System.EventHandler(this.BtnAddPic_Click);
             // 
             // btnSave
             // 
@@ -122,11 +97,42 @@
             this.btnShare.UseVisualStyleBackColor = false;
             this.btnShare.Click += new System.EventHandler(this.BtnShare_Click);
             // 
-            // imageList
+            // btnEdit
             // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(558, 45);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(86, 32);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "编辑";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
+            // tbTitle
+            // 
+            this.tbTitle.BackColor = System.Drawing.SystemColors.Control;
+            this.tbTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTitle.Font = new System.Drawing.Font("微软雅黑", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbTitle.Location = new System.Drawing.Point(96, 20);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(333, 44);
+            this.tbTitle.TabIndex = 2;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(34, 16);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(56, 50);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // rtbDescription
             // 
@@ -139,23 +145,21 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panelImgList);
             this.panel2.Controls.Add(this.rtbDescription);
             this.panel2.Location = new System.Drawing.Point(0, 86);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(840, 661);
             this.panel2.TabIndex = 1;
             // 
-            // btnAddPic
+            // panelImgList
             // 
-            this.btnAddPic.FlatAppearance.BorderSize = 0;
-            this.btnAddPic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPic.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPic.Image")));
-            this.btnAddPic.Location = new System.Drawing.Point(774, 3);
-            this.btnAddPic.Name = "btnAddPic";
-            this.btnAddPic.Size = new System.Drawing.Size(44, 36);
-            this.btnAddPic.TabIndex = 4;
-            this.btnAddPic.UseVisualStyleBackColor = true;
-            this.btnAddPic.Click += new System.EventHandler(this.BtnAddPic_Click);
+            this.panelImgList.AutoScroll = true;
+            this.panelImgList.Location = new System.Drawing.Point(0, 3);
+            this.panelImgList.Name = "panelImgList";
+            this.panelImgList.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelImgList.Size = new System.Drawing.Size(837, 183);
+            this.panelImgList.TabIndex = 1;
             // 
             // UC_DiaryDetail
             // 
@@ -165,6 +169,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UC_DiaryDetail";
             this.Size = new System.Drawing.Size(840, 750);
+            this.Load += new System.EventHandler(this.UC_DiaryDetail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -181,8 +186,8 @@
         private System.Windows.Forms.Button btnAddPic;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnShare;
-        private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel panelImgList;
     }
 }

@@ -52,20 +52,8 @@ namespace TravelClient.controller
         {
             //跳转到日志的详情界面
             string id = this.DiaryId;
-            using (UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail(id))
-            {
-                this.ChangePanel(uc_DiaryDetail);
-            }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail(id);
+            this.ChangePanel(uc_DiaryDetail);
         }
     }
 }
