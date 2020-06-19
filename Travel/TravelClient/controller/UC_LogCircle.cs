@@ -12,16 +12,19 @@ using TravelClient.utils;
 using System.Xml.Serialization;
 using System.Net.Http;
 using TravelClient.Models;
+using TravelClient.form;
 
 namespace TravelClient.controller
 {
     public partial class UC_LogCircle : UserControl
     {
-        private string Uid;
-        public UC_LogCircle(string uid)
+        private readonly string Uid;
+        private readonly ChangePanel ChangePanel;
+        public UC_LogCircle(string uid, ChangePanel changePanel)
         {
             InitializeComponent();
             this.Uid = uid;
+            this.ChangePanel = changePanel;
             SetFont();
             InitInfo();
         }
@@ -83,7 +86,7 @@ namespace TravelClient.controller
 
                     foreach (Diary diary in diaries)
                     {
-                        UC_LogCell cell = new UC_LogCell();
+                        UC_LogCell cell = new UC_LogCell(diary.DiaryId.ToString(), this.ChangePanel);
                         cell.lblTitle.Text = diary.Title;
                         cell.lblTime.Text = diary.Time.ToString();
 

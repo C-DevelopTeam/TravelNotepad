@@ -19,8 +19,8 @@ namespace TravelClient.controller
 {
     public partial class UC_Personalinfo : UserControl
     {
-        private string baseUrl = "https://localhost:5001/api/user";
-        private string Uid { get; }
+        private readonly string baseUrl = "https://localhost:5001/api/user";
+        private readonly string Uid;
         public UC_Personalinfo(string uid)
         {
             InitializeComponent();
@@ -108,9 +108,9 @@ namespace TravelClient.controller
                     }
                 }
             }
-            catch (Exception e1)
+            catch (Exception ex)
             {
-                MessageBox.Show(e1.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

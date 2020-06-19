@@ -8,14 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using TravelClient.form;
+using System.Xml.Serialization;
+using TravelClient.Models;
+using TravelClient.utils;
+using System.Net.Http;
 
 namespace TravelClient.controller
 {
     public partial class UC_DiaryCell : UserControl
     {
-        public UC_DiaryCell()
+        private readonly string DiaryId;
+        private readonly ChangePanel ChangePanel;
+        public Refresh Refresh;
+        public UC_DiaryCell(string diaryId, ChangePanel changePanel, Refresh refresh)
         {
             InitializeComponent();
+            this.DiaryId = diaryId;
+            this.ChangePanel = changePanel;
+            this.Refresh = refresh;
             SetFont();
         }
 
@@ -44,11 +55,36 @@ namespace TravelClient.controller
         private void UC_DiaryCell_Click(object sender, EventArgs e)
         {
             //跳转至日志详情页面
+            string id = this.DiaryId;
+            using (UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail(id))
+            {
+                this.ChangePanel(uc_DiaryDetail);
+            }
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private async void BtnDelete_Click(object sender, EventArgs e)
         {
-            //删除此条信息
+            //删除此条日志
+            DialogResult dialogResult = MessageBox.Show("是否确认删除此日志？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if(dialogResult == DialogResult.OK)
+            {
+                string id = this.DiaryId;
+                string url = "https://localhost:5001/api/diary/delete?diaryId=" + id;
+                Client client = new Client();
+                try
+                {
+                    HttpResponseMessage result = await client.Delete(url);
+                    if(result.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    this.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\n删除失败", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
