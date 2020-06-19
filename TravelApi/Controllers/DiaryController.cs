@@ -64,9 +64,9 @@ namespace TravelApi.Controllers
         }
 
         [HttpPut("update")]
-        public ActionResult<Diary> UpdateDiary(long dairyId, Diary diary)
+        public ActionResult<Diary> UpdateDiary(long diaryId, Diary diary)
         {
-            if(dairyId != diary.DiaryId)
+            if(!diaryId.Equals(diary.DiaryId))
             {
                 return BadRequest("The diary cannot be modified.");
             }

@@ -58,10 +58,8 @@ namespace TravelClient.controller
         {
             //跳转至日志详情页面
             string id = this.DiaryId;
-            using (UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail(id))
-            {
-                this.ChangePanel(uc_DiaryDetail);
-            }
+            UC_DiaryDetail uc_DiaryDetail = new UC_DiaryDetail(id);
+            this.ChangePanel(uc_DiaryDetail);
         }
 
         private async void BtnDelete_Click(object sender, EventArgs e)

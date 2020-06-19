@@ -160,6 +160,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils\Client.cs" />
+    <Compile Include="utils\FileClient.cs" />
     <EmbeddedResource Include="controller\UC_AllSites.resx">
       <DependentUpon>UC_AllSites.cs</DependentUpon>
     </EmbeddedResource>
