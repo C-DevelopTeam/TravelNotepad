@@ -83,7 +83,7 @@
             this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_title.Location = new System.Drawing.Point(240, 71);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Size = new System.Drawing.Size(166, 49);
+            this.Lbl_title.Size = new System.Drawing.Size(138, 41);
             this.Lbl_title.TabIndex = 4;
             this.Lbl_title.Text = "新建旅程";
             // 
@@ -116,7 +116,7 @@
             this.Lbl_tip1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_tip1.Location = new System.Drawing.Point(154, 142);
             this.Lbl_tip1.Name = "Lbl_tip1";
-            this.Lbl_tip1.Size = new System.Drawing.Size(279, 33);
+            this.Lbl_tip1.Size = new System.Drawing.Size(232, 27);
             this.Lbl_tip1.TabIndex = 7;
             this.Lbl_tip1.Text = "给你的旅程起个标题吧！";
             // 
@@ -125,7 +125,7 @@
             this.textBox1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(169, 190);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 36);
+            this.textBox1.Size = new System.Drawing.Size(230, 31);
             this.textBox1.TabIndex = 8;
             // 
             // textBox2
@@ -133,7 +133,7 @@
             this.textBox2.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(327, 247);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 36);
+            this.textBox2.Size = new System.Drawing.Size(100, 31);
             this.textBox2.TabIndex = 9;
             // 
             // Lbl_tip2
@@ -143,7 +143,7 @@
             this.Lbl_tip2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_tip2.Location = new System.Drawing.Point(138, 250);
             this.Lbl_tip2.Name = "Lbl_tip2";
-            this.Lbl_tip2.Size = new System.Drawing.Size(183, 33);
+            this.Lbl_tip2.Size = new System.Drawing.Size(152, 27);
             this.Lbl_tip2.TabIndex = 10;
             this.Lbl_tip2.Text = "你要去的城市是";
             // 
@@ -179,6 +179,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_NewTravel";
             this.Text = "Form_NewTravel";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_NewTravel_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form_NewTravel_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

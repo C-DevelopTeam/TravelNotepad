@@ -13,6 +13,8 @@ namespace TravelClient.form
 {
     public partial class Form_Tips : Form
     {
+        private Point formPoint = new Point();
+
         public Form_Tips(string title,string info)
         {
             InitializeComponent();
@@ -51,6 +53,22 @@ namespace TravelClient.form
             {
                 MessageBox.Show("字体不存在或加载失败\n程序将以默认字体显示", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void Form_Tips_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point myPosittion = MousePosition;
+                myPosittion.Offset(-formPoint.X, -formPoint.Y);
+                Location = myPosittion;
+            }
+        }
+
+        private void Form_Tips_MouseDown(object sender, MouseEventArgs e)
+        {
+            formPoint.X = e.X;
+            formPoint.Y = e.Y;
         }
     }
 }
