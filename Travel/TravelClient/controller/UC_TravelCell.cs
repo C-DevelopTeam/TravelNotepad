@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelClient.form;
+using System.Xml.Serialization;
+using TravelClient.utils;
+using System.Net.Http;
 
 namespace TravelClient.controller
 {
@@ -16,6 +19,7 @@ namespace TravelClient.controller
     {
         public long travelID;
         public string travelTiltle;
+        public Delegate_init init;
 
         ChangePanel changePanel;
 
@@ -24,13 +28,14 @@ namespace TravelClient.controller
             InitializeComponent();
         }
 
-        public UC_TravelCell(ChangePanel changePanel,long ID,string title)
+        public UC_TravelCell(ChangePanel changePanel,long ID,string title, Delegate_init init)
         {
             InitializeComponent();
             this.changePanel = changePanel;
             travelTiltle = title;
             travelID = ID;
             Btn_TravelTitle.Text = title;
+            this.init = init;
         }
 
         private void Btn_TravelTitle_Click(object sender, EventArgs e)
@@ -56,6 +61,32 @@ namespace TravelClient.controller
             catch
             {
                 MessageBox.Show("字体不存在或加载失败\n程序将以默认字体显示", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private async void Btn_deleteTravel_Click(object sender, EventArgs e)
+        {
+            string url = "https://localhost:5001/api/Travel/delete?travelId=" + travelID;
+            Client client = new Client();
+            try
+            {
+                HttpResponseMessage result = await client.Delete(url);
+                if (result.IsSuccessStatusCode)
+                {
+                    init();
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", "初始化信息失败"))
+                    {
+                        tip.ShowDialog();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

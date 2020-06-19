@@ -94,6 +94,7 @@ namespace TravelClient.form
         private void Btn_MyTravel_Click(object sender, EventArgs e)
         {
             UC_TravelList uc_Present = new UC_TravelList(changePanel,Uid);
+            uc_Present.init = new Delegate_init(uc_Present.InitInfo);
             AddControlsToPanel(uc_Present);
         }
 

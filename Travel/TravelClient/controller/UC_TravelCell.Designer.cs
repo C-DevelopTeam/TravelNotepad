@@ -55,6 +55,7 @@
             this.Btn_deleteTravel.Size = new System.Drawing.Size(59, 53);
             this.Btn_deleteTravel.TabIndex = 3;
             this.Btn_deleteTravel.UseVisualStyleBackColor = true;
+            this.Btn_deleteTravel.Click += new System.EventHandler(this.Btn_deleteTravel_Click);
             // 
             // label7
             // 

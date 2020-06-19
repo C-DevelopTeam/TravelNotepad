@@ -83,5 +83,10 @@ namespace TravelClient.controller
                 MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void Cbx_todo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

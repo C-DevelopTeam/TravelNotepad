@@ -22,7 +22,6 @@ namespace TravelClient.controller
     {
         int Uid;
         public Delegate_init init;
-        Label lblBottom = new Label();
         ChangePanel changePanel;
 
         public UC_TravelList(ChangePanel changePanel,int Uid)
@@ -62,7 +61,6 @@ namespace TravelClient.controller
                 Font titleFont12 = new Font(font.Families[0], 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                 //设置窗体控件字体，哪些控件要更改都写到下面
                 Lbl_MyTrip.Font = titleFont20;
-                lblBottom.Font = titleFont12;
 
             }
             catch
@@ -87,15 +85,12 @@ namespace TravelClient.controller
 
                     foreach (Travel Travel in travels)
                     {
-                        UC_TravelCell cell = new UC_TravelCell(changePanel,Travel.TravelId, Travel.Description);
+                        UC_TravelCell cell = new UC_TravelCell(changePanel,Travel.TravelId, Travel.Description,init);
                         //添加到panel中
                         flowLayoutPanel_travels.Controls.Add(cell);
                     }
                     //添加底部标志
-                    
-                    lblBottom.Text = "到底了哦~";
-                    lblBottom.Anchor = AnchorStyles.None;
-                    flowLayoutPanel_travels.Controls.Add(lblBottom);
+
                 }
             }
             catch (Exception ex)

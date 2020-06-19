@@ -44,6 +44,7 @@
             this.Cbx_todo.TabIndex = 0;
             this.Cbx_todo.Text = "待办内容";
             this.Cbx_todo.UseVisualStyleBackColor = true;
+            this.Cbx_todo.CheckedChanged += new System.EventHandler(this.Cbx_todo_CheckedChanged);
             // 
             // Btn_deleteTodo
             // 

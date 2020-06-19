@@ -13,6 +13,7 @@ using TravelClient.Models;
 using System.Xml.Serialization;
 using TravelClient.utils;
 using System.Net.Http;
+using System.IO;
 
 namespace TravelClient.controller
 {
@@ -33,12 +34,18 @@ namespace TravelClient.controller
             SetFont();
             this.isCreate = isCreate;
             this.changePanel = changePanel;
-            this.route.RouteId = routeID;
-            this.sitename = siteName;
-            this.travelId = travelId;
             this.TravelTitle = travelTitle;
+
             this.Lbl_title.Text = travelTitle;
-            initinfo();
+            if (isCreate==false)
+            {
+                this.route.RouteId = routeID;
+                this.sitename = siteName;
+                this.travelId = travelId;
+
+                initinfo();
+            }
+            
             
         }
 
@@ -150,6 +157,113 @@ namespace TravelClient.controller
         private void Btn_addSite_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private async void Btn_addtodo_Click(object sender, EventArgs e)
+        {
+            if(TxtBox_todo.Text.Length==0)
+            {
+                using (Form_Tips tip = new Form_Tips("警告", "待办事项为空"))
+                {
+                    tip.ShowDialog();
+                }
+            }
+            else
+            {
+                Models.Task task = new Models.Task();
+                task.State = 0;
+                task.RouteId = route.RouteId;
+                task.Description = TxtBox_todo.Text;
+
+                string url = "https://localhost:5001/api/Task";
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Models.Task));
+                Client client = new Client();
+
+                try
+                {
+                    string data = "";
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        xmlSerializer.Serialize(sw, task);
+                        data = sw.ToString();
+                    }
+                    HttpResponseMessage result = await client.Post(url, data);
+                    if (result.IsSuccessStatusCode)
+                    {
+
+                        using (Form_Tips tip = new Form_Tips("提示", "成功创建"))
+                        {
+                            tip.ShowDialog();
+                        }
+                        TxtBox_todo.Text = "";
+                        flowLayoutPanel_todo.Controls.Clear();
+                        getTask();
+                    }
+                    else
+                    {
+                        using (Form_Tips tip = new Form_Tips("警告", result.StatusCode.ToString()))
+                        {
+                            tip.ShowDialog();
+                        }
+                    } 
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            
+
+        }
+
+        private async void Btn_Comfirm_Click(object sender, EventArgs e)
+        {
+            if (isCreate == false)
+            {
+                string url = "https://localhost:5001/api/route?routeId=" + route.RouteId;
+                string url2 = "https://localhost:5001/api/route/update?routeId=" + route.RouteId;
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Route));
+                Client client = new Client();
+                try
+                {
+                    string data = "";
+                    HttpResponseMessage result = await client.Get(url);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        Route route = (Route)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                        route.Method = this.Txtbos_vehicle.Text;
+                        route.StartTime = this.dateTimePicker1.Value;
+                        route.EndTime = this.dateTimePicker2.Value;
+                        using (StringWriter sw = new StringWriter())
+                        {
+                            xmlSerializer.Serialize(sw, route);
+                            data = sw.ToString();
+                        }
+
+                        result = await client.Put(url2, data);
+                        if (result.IsSuccessStatusCode)
+                        {
+                            using (Form_Tips tip = new Form_Tips("提示", "修改成功"))
+                            {
+                                tip.ShowDialog();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        using (Form_Tips tip = new Form_Tips("警告", "信息有误"))
+                        {
+                            tip.ShowDialog();
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }    
         }
     }
 }
