@@ -170,6 +170,12 @@
     <None Include="bin\Debug\font\JOKERMAN.TTF" />
     <None Include="bin\Debug\font\SF-Pro-Text-Medium.otf" />
     <None Include="bin\Debug\font\造字工房映力黑规体.otf" />
+    <None Include="Properties\DataSources\TravelClient.Models.Diary.datasource" />
+    <None Include="Properties\DataSources\TravelClient.Models.Route.datasource" />
+    <None Include="Properties\DataSources\TravelClient.Models.Site.datasource" />
+    <None Include="Properties\DataSources\TravelClient.Models.Task.datasource" />
+    <None Include="Properties\DataSources\TravelClient.Models.Travel.datasource" />
+    <None Include="Properties\DataSources\TravelClient.Models.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

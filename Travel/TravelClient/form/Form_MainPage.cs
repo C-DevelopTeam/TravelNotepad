@@ -6,9 +6,12 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelClient.utils;
 
 namespace TravelClient.form
 {
@@ -17,6 +20,12 @@ namespace TravelClient.form
         private Point formPoint = new Point();
 
         private Point mousePoint = new Point();
+
+        private string baseUrl = "https://localhost:5001/api/user";
+
+        //private long Uid { get; set; }
+
+        //private string password;
 
         public Form_MainPage()
         {
@@ -65,10 +74,11 @@ namespace TravelClient.form
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private async void button6_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
+            string passwordMD5 = MD5Encrypt(password);
 
             if (username.Length == 0 || username == "单行输入")
             {
@@ -89,11 +99,27 @@ namespace TravelClient.form
                     MessageBox.Show("请输入密码！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    using (Form_TripNote tn = new Form_TripNote())
+                    try
                     {
-                        this.Hide();
-                        tn.ShowDialog();
-                        this.Show();
+                        string url = baseUrl + "/login?Uid=" + username + "&password=" + passwordMD5;
+                        Client client = new Client();
+                        HttpResponseMessage result = await client.Put(url,"");
+                        if (result.IsSuccessStatusCode)
+                        {
+                            using (Form_TripNote tn = new Form_TripNote())
+                            {
+                                tn.changePanel = tn.AddControlsToPanel;
+                                this.Hide();
+                                tn.ShowDialog();
+                                textBox1.Text = "";
+                                textBox2.Text = "";
+                                this.Show();
+                            }
+                        }
+                    }
+                    catch (Exception e1)
+                    {
+                        MessageBox.Show(e1.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }
@@ -137,6 +163,21 @@ namespace TravelClient.form
         {
             formPoint.X = e.X;
             formPoint.Y = e.Y;
+        }
+
+        public static string MD5Encrypt(string strText)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] targetData = md5.ComputeHash(Encoding.UTF8.GetBytes(strText));
+
+            string byte2String = null;
+
+            for (int i = 0; i < targetData.Length; i++)
+            {
+                byte2String += targetData[i].ToString("x2");
+            }
+
+            return byte2String.ToUpper();
         }
     }
 }

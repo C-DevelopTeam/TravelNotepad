@@ -4,16 +4,23 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using TravelClient.Models;
+using TravelClient.utils;
 
 namespace TravelClient.form
 {
     public partial class Form_Register : Form
     {
         private Point formPoint = new Point();
+        private string baseUrl = "https://localhost:5001/api/user";
 
         public Form_Register()
         {
@@ -30,18 +37,18 @@ namespace TravelClient.form
                 font.AddFontFile(AppPath + @"\font\JOKERMAN.TTF");//字体的路径及名字
                 font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
 
-                Font jokermanFont25 = new Font(font.Families[0], 25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-                Font titleFont15 = new Font(font.Families[1], 20F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-                Font titleFont10 = new Font(font.Families[1], 15F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font jokermanFont18 = new Font(font.Families[0], 18F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont14 = new Font(font.Families[1], 14F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
+                Font titleFont11 = new Font(font.Families[1], 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
                 //设置窗体控件字体，哪些控件要更改都写到下面
-                label1.Font = titleFont15;
-                label2.Font = titleFont10;
-                label3.Font = titleFont10;
-                label4.Font = titleFont10;
-                label5.Font = titleFont10;
-                label6.Font = jokermanFont25;
-                Btn_Register.Font = titleFont10;
+                label1.Font = titleFont14;
+                label2.Font = titleFont11;
+                label3.Font = titleFont11;
+                label4.Font = titleFont11;
+                label5.Font = titleFont11;
+                label6.Font = jokermanFont18;
+                Btn_Register.Font = titleFont11;
             }
             catch
             {
@@ -54,21 +61,53 @@ namespace TravelClient.form
             this.Dispose();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private async void button6_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length == 0 || textBox1.Text == "单行输入")
+            if (Txtbox_name.Text.Length == 0 || Txtbox_name.Text == "单行输入")
                 MessageBox.Show("请输入用户名!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
-               if (textBox2.Text.Length == 0 || textBox2.Text == "单行输入")
+               if (TxtBox_psw.Text.Length == 0 || TxtBox_psw.Text == "单行输入")
                 MessageBox.Show("请输入密码!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                MessageBox.Show("注册成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                using (Form_TripNote tn = new Form_TripNote())
+                User user = new User();
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(User));
+                Client client = new Client();
+                string data = "";
+
+                try
                 {
-                    tn.ShowDialog();
-                    this.Dispose();
+                    string url = baseUrl + "/register";
+                    user.Uname = Txtbox_name.Text;
+                    user.Password = MD5Encrypt(TxtBox_psw.Text);
+                    user.Sex = Cbbox_gender.Text;
+                    user.Introduction = richTextBox_introducation.Text;
+                    
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        xmlSerializer.Serialize(sw, user);
+                        data = sw.ToString();
+                    }
+                    HttpResponseMessage result = await client.Post(url,data);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        User newuser = new User();
+                        newuser = (User)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                        user.Uid = int.Parse(newuser.Uid.ToString("00000"));
+                        MessageBox.Show("注册成功!您的ID是"+ newuser.Uid.ToString("00000"), "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        using (Form_TripNote tn = new Form_TripNote())
+                        {
+                            this.Hide();
+                            tn.ShowDialog();
+                            this.Dispose();
+                        }
+                    }
                 }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+  
             }
         }
 
@@ -86,6 +125,21 @@ namespace TravelClient.form
                 myPosittion.Offset(-formPoint.X, -formPoint.Y);
                 Location = myPosittion;
             }
+        }
+
+        public static string MD5Encrypt(string strText)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] targetData = md5.ComputeHash(Encoding.UTF8.GetBytes(strText));
+
+            string byte2String = null;
+
+            for (int i = 0; i < targetData.Length; i++)
+            {
+                byte2String += targetData[i].ToString("x2");
+            }
+
+            return byte2String.ToUpper();
         }
     }
 }
