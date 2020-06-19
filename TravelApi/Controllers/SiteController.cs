@@ -35,5 +35,23 @@ namespace TravelApi.Controllers
             }
             return NoContent();
         }
+
+        [HttpGet("get")]
+        public ActionResult<Site> GetSite(string siteId)
+        {
+            try
+            {
+                var site = _siteService.GetById(siteId);
+                if(site == null)
+                {
+                    return NotFound();
+                }
+                return site;
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.InnerException.Message);
+            }
+        }
     }
 }
