@@ -137,6 +137,7 @@
             this.Btn_TravelNote.Text = "旅行日志";
             this.Btn_TravelNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_TravelNote.UseVisualStyleBackColor = false;
+            this.Btn_TravelNote.Click += new System.EventHandler(this.Btn_TravelNote_Click);
             // 
             // Btn_MyTravel
             // 
