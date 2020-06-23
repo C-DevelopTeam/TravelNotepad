@@ -91,6 +91,12 @@
     <Compile Include="controller\UC_Personalinfo.Designer.cs">
       <DependentUpon>UC_Personalinfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\UC_PicBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\UC_PicBox.Designer.cs">
+      <DependentUpon>UC_PicBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\UC_Site.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_Personalinfo.resx">
       <DependentUpon>UC_Personalinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\UC_PicBox.resx">
+      <DependentUpon>UC_PicBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controller\UC_Site.resx">
       <DependentUpon>UC_Site.cs</DependentUpon>

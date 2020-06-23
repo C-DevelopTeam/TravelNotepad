@@ -23,11 +23,13 @@ namespace TravelClient.controller
         private readonly string DiaryId;
         private readonly ChangePanel ChangePanel;
         private readonly string baseUrl = "https://localhost:5001/api/diary";
+        private Refresh refresh;
         public UC_DiaryDetail(string diaryId, ChangePanel changePanel)
         {
             InitializeComponent();
             this.DiaryId = diaryId;
             this.ChangePanel = changePanel;
+            this.refresh = ImgRefresh;
             SetFont();
             InitInfo();
         }
@@ -85,8 +87,8 @@ namespace TravelClient.controller
                 
             }
             //将编辑激活
-            btnEdit.Text = "编辑";
             btnEdit.Enabled = true;
+            btnEdit.Text = "编辑";
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
@@ -117,7 +119,6 @@ namespace TravelClient.controller
                         {
                             tip.ShowDialog();
                         }
-                        
                     }
                     btnShare.Text = "分享";
                 }
@@ -150,7 +151,6 @@ namespace TravelClient.controller
 
         private async void BtnAddPic_Click(object sender, EventArgs e)
         {
-            string url = "https://localhost:5001/api/file/upload?diaryId=" + this.DiaryId;
             string filePath = "";
             FileClient fileClient = new FileClient();
             //添加图片：打开文件管理器，选择图片进行上传
@@ -165,13 +165,13 @@ namespace TravelClient.controller
             }
             try
             {
-                if(await fileClient.Upload(url, filePath))
+                if(await fileClient.Upload(this.DiaryId, filePath))
                 {
                     using (Form_Tips tip = new Form_Tips("提示", "上传成功"))
                     {
                         tip.ShowDialog();
                     }
-                    
+                    ImgRefresh();
                 }
                 else
                 {
@@ -204,30 +204,38 @@ namespace TravelClient.controller
             {
                 btnShare.Text = "分享";
             }
-            //获取所有文件名
-            if(diary.Photo != null)
+            LoadImg(diary.Photo);
+        }
+
+        private async void LoadImg(string photo)
+        {
+            panelImgList.Controls.Clear();
+            if (photo != null)
             {
-                string[] imgNames = diary.Photo.Trim().Split(' ');
+                string[] imgNames = photo.Trim().Split(' ');
                 string baseurl = "https://localhost:5001/api/file/download?filename=";
-                PictureBox pb;
+                UC_PicBox pb;
                 Image image;
                 FileClient fileClient = new FileClient();
                 foreach (string name in imgNames)
                 {
                     string url = baseurl + name;
-                    pb = new PictureBox();
+                    pb = new UC_PicBox(this.DiaryId, name, this.refresh);
                     image = await fileClient.Download(url);
-                    if(image != null)
+                    if (image != null)
                     {
-                        pb.Width = 155;
-                        pb.Height = 175;
-                        pb.Image = ResizeImage(image, new Size(200, 200));
+                        pb.picBox.Image = ResizeImage(image, new Size(200, 200));
                         pb.Anchor = AnchorStyles.None;
-                        pb.SizeMode = PictureBoxSizeMode.CenterImage;
                         panelImgList.Controls.Add(pb);
                     }
                 }
             }
+        }
+
+        private async void ImgRefresh()
+        {
+            Diary diary = await GetDiary();
+            LoadImg(diary.Photo);
         }
 
         private async Task<Diary> GetDiary()
@@ -236,7 +244,7 @@ namespace TravelClient.controller
             string url = this.baseUrl + "/get?diaryId=" + this.DiaryId;
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(Diary));
             Client client = new Client();
-            Diary diary = new Diary();
+            Diary diary = null;
             try
             {
                 HttpResponseMessage result = await client.Get(url);
@@ -309,11 +317,6 @@ namespace TravelClient.controller
             g.DrawImage(imgToResize, 0, 0, destWidth, destHeight);
             g.Dispose();
             return (Image)b;
-        }
-
-        private void UC_DiaryDetail_Load(object sender, EventArgs e)
-        {
-            SetFont();
         }
     }
 }

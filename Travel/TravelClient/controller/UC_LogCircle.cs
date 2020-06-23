@@ -113,10 +113,5 @@ namespace TravelClient.controller
                 MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
-        private void UC_LogCircle_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

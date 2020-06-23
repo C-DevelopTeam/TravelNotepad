@@ -162,11 +162,6 @@ namespace TravelClient.form
             }
         }
 
-        private void Form_MainPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form_MainPage_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

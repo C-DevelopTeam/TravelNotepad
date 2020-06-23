@@ -87,6 +87,25 @@ namespace TravelClient.utils
             }
         }
 
+        public async void Delete(string url)
+        {
+            using (HttpClient client = CreateClient())
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.DeleteAsync(url);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Unable to connect to the server", ex);
+                }
+            }
+        }
+
         private Image BytesToImage(byte[] buffer)
         {
             MemoryStream ms = new MemoryStream(buffer);

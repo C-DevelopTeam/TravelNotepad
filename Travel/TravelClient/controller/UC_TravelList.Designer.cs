@@ -102,11 +102,11 @@
             // Lbl_MyTrip
             // 
             this.Lbl_MyTrip.AutoSize = true;
-            this.Lbl_MyTrip.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_MyTrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_MyTrip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_MyTrip.Location = new System.Drawing.Point(131, 28);
             this.Lbl_MyTrip.Name = "Lbl_MyTrip";
-            this.Lbl_MyTrip.Size = new System.Drawing.Size(183, 54);
+            this.Lbl_MyTrip.Size = new System.Drawing.Size(122, 31);
             this.Lbl_MyTrip.TabIndex = 5;
             this.Lbl_MyTrip.Text = "我的旅程";
             // 

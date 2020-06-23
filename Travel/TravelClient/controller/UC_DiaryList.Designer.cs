@@ -46,7 +46,7 @@
             this.btnAddDiary.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAddDiary.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDiary.Image")));
             this.btnAddDiary.Location = new System.Drawing.Point(747, 22);
-            this.btnAddDiary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddDiary.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddDiary.Name = "btnAddDiary";
             this.btnAddDiary.Size = new System.Drawing.Size(63, 61);
             this.btnAddDiary.TabIndex = 4;
@@ -56,12 +56,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(120, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 49);
+            this.label1.Size = new System.Drawing.Size(109, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "旅行日志";
             // 
@@ -69,7 +69,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(33, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(79, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +81,7 @@
             this.panelDiaryList.AutoScroll = true;
             this.panelDiaryList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panelDiaryList.Location = new System.Drawing.Point(0, 101);
-            this.panelDiaryList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDiaryList.Margin = new System.Windows.Forms.Padding(4);
             this.panelDiaryList.Name = "panelDiaryList";
             this.panelDiaryList.Size = new System.Drawing.Size(840, 515);
             this.panelDiaryList.TabIndex = 1;
@@ -103,7 +103,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelDiaryList);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_DiaryList";
             this.Size = new System.Drawing.Size(840, 750);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

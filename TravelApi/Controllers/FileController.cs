@@ -93,7 +93,7 @@ namespace TravelApi.Controllers
                 _diaryService.Update(diary);
                 section = await reader.ReadNextSectionAsync();
             }
-            return NoContent();
+            return Ok();
         }
 
 
@@ -120,6 +120,23 @@ namespace TravelApi.Controllers
             {
                 return BadRequest(e.InnerException.Message);
             }
+        }
+
+        [HttpDelete("delete")]
+        public IActionResult Delete(long diaryId, string fileName)
+        {
+            var diary = _diaryService.GetById(diaryId);
+            if(diary == null)
+            {
+                return NotFound();
+            }
+            if(!diary.Photo.Contains(fileName))
+            {
+                return NotFound();
+            }
+            diary.Photo = diary.Photo.Replace(" "+fileName, "");
+            _diaryService.Update(diary);
+            return Ok();
         }
     }
 }

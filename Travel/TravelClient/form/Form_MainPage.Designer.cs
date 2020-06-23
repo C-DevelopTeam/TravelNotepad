@@ -166,7 +166,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form_MainPage";
             this.Text = "Form_MainPage";
-            this.Load += new System.EventHandler(this.Form_MainPage_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MainPage_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form_MainPage_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

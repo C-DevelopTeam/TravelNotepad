@@ -127,7 +127,6 @@ namespace TravelClient.controller
                 MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
     }
 }
 
