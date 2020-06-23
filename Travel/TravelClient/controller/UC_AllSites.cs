@@ -23,14 +23,6 @@ namespace TravelClient.controller
         long travelId;
         string travelTitle;
 
-        public UC_AllSites()
-        { 
-            InitializeComponent();
-            SetFont();
-            UC_Site uc_site = new UC_Site();
-            AddControlsToPanel(uc_site, Sitepanel1);
-        }
-
         public UC_AllSites(ChangePanel changePanel, string travelTitle,long travelID)
         {
             InitializeComponent();

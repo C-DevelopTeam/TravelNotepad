@@ -78,7 +78,11 @@ namespace TravelClient.controller
             diary.Description = rtbDescription.Text;
             if (await PutDiary(diary))
             {
-                MessageBox.Show("修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (Form_Tips tip = new Form_Tips("提示", "修改成功"))
+                {
+                    tip.ShowDialog();
+                }
+                
             }
             //将编辑激活
             btnEdit.Text = "编辑";
@@ -109,14 +113,23 @@ namespace TravelClient.controller
                     diary.Share = 0;
                     if (await PutDiary(diary))
                     {
-                        MessageBox.Show("修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        using (Form_Tips tip = new Form_Tips("提示", "修改成功"))
+                        {
+                            tip.ShowDialog();
+                        }
+                        
                     }
                     btnShare.Text = "分享";
                 }
             }
             else if(btnShare.Text.Equals("分享"))
             {
-                DialogResult dr = MessageBox.Show("确定进行分享？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult dr;
+                using (Form_Tips tip = new Form_Tips("提示", "确定进行分享？"))
+                {
+                    tip.ShowDialog();
+                    dr = tip.DialogResult;
+                }
                 if (dr == DialogResult.Yes)
                 {
                     //修改数据库
@@ -124,7 +137,11 @@ namespace TravelClient.controller
                     diary.Share = 1;
                     if(await PutDiary(diary))
                     {
-                        MessageBox.Show("修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        using (Form_Tips tip = new Form_Tips("提示", "修改成功"))
+                        {
+                            tip.ShowDialog();
+                        }
+                        
                     }
                     btnShare.Text = "已分享";
                 }
@@ -150,11 +167,18 @@ namespace TravelClient.controller
             {
                 if(await fileClient.Upload(url, filePath))
                 {
-                    MessageBox.Show("上传成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    using (Form_Tips tip = new Form_Tips("提示", "上传成功"))
+                    {
+                        tip.ShowDialog();
+                    }
+                    
                 }
                 else
                 {
-                    MessageBox.Show("上传失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    using (Form_Tips tip = new Form_Tips("提示", "上传失败"))
+                    {
+                        tip.ShowDialog();
+                    }
                 }
             }
             catch(Exception ex)

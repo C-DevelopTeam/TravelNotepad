@@ -34,7 +34,7 @@ namespace TravelClient.utils
                     request.Content = new StringContent(data, Encoding.Unicode, "application/xml");
                     result = await client.SendAsync(request);
                 }
-                catch(Exception e)
+               catch(Exception e)
                 {
                     throw new Exception("Unable to connect to the server", e);
                 }

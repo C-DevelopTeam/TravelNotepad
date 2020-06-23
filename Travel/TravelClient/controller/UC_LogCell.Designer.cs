@@ -39,12 +39,12 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTitle.Location = new System.Drawing.Point(42, 20);
+            this.lblTitle.Location = new System.Drawing.Point(30, 20);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(61, 29);
+            this.lblTitle.Size = new System.Drawing.Size(84, 44);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "标题";
             // 
@@ -53,10 +53,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(383, 38);
+            this.label2.Location = new System.Drawing.Point(343, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 15);
+            this.label2.Size = new System.Drawing.Size(64, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "用户：";
             // 
@@ -65,10 +65,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(383, 70);
+            this.label3.Location = new System.Drawing.Point(343, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 15);
+            this.label3.Size = new System.Drawing.Size(64, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "时间：";
             // 
@@ -77,10 +77,10 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblUserName.Location = new System.Drawing.Point(436, 38);
+            this.lblUserName.Location = new System.Drawing.Point(399, 38);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(14, 15);
+            this.lblUserName.Size = new System.Drawing.Size(20, 22);
             this.lblUserName.TabIndex = 3;
             this.lblUserName.Text = "1";
             // 
@@ -89,10 +89,10 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTime.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTime.Location = new System.Drawing.Point(436, 70);
+            this.lblTime.Location = new System.Drawing.Point(399, 70);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(14, 15);
+            this.lblTime.Size = new System.Drawing.Size(20, 22);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "1";
             // 

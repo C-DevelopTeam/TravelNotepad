@@ -33,13 +33,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnMyShare = new System.Windows.Forms.Button();
             this.btnLogCircle = new System.Windows.Forms.Button();
             this.panelLogList = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(126, 30);
+            this.label1.Location = new System.Drawing.Point(125, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 49);
@@ -71,8 +71,8 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(53, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -87,10 +87,37 @@
             this.panel2.Controls.Add(this.btnMyShare);
             this.panel2.Controls.Add(this.btnLogCircle);
             this.panel2.Location = new System.Drawing.Point(0, 97);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 649);
             this.panel2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.DarkGray;
+            this.label6.Location = new System.Drawing.Point(21, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 2);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "label6";
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.DarkGray;
+            this.label5.Location = new System.Drawing.Point(23, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 2);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.DarkGray;
+            this.label4.Location = new System.Drawing.Point(197, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(2, 700);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "label4";
             // 
             // btnMyShare
             // 
@@ -100,7 +127,7 @@
             this.btnMyShare.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnMyShare.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnMyShare.Location = new System.Drawing.Point(4, 84);
-            this.btnMyShare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMyShare.Margin = new System.Windows.Forms.Padding(4);
             this.btnMyShare.Name = "btnMyShare";
             this.btnMyShare.Size = new System.Drawing.Size(195, 82);
             this.btnMyShare.TabIndex = 1;
@@ -116,7 +143,7 @@
             this.btnLogCircle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogCircle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnLogCircle.Location = new System.Drawing.Point(-1, 4);
-            this.btnLogCircle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogCircle.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogCircle.Name = "btnLogCircle";
             this.btnLogCircle.Size = new System.Drawing.Size(200, 72);
             this.btnLogCircle.TabIndex = 0;
@@ -129,7 +156,7 @@
             this.panelLogList.AutoScroll = true;
             this.panelLogList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panelLogList.Location = new System.Drawing.Point(200, 97);
-            this.panelLogList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogList.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogList.Name = "panelLogList";
             this.panelLogList.Size = new System.Drawing.Size(640, 653);
             this.panelLogList.TabIndex = 2;
@@ -137,38 +164,11 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(20, 95);
+            this.label3.Location = new System.Drawing.Point(21, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(800, 2);
             this.label3.TabIndex = 9;
             this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.DarkGray;
-            this.label4.Location = new System.Drawing.Point(197, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(2, 700);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(23, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 2);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "label5";
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(21, 164);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 2);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "label6";
             // 
             // UC_LogCircle
             // 
@@ -179,7 +179,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelLogList);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_LogCircle";
             this.Size = new System.Drawing.Size(840, 750);
             this.Load += new System.EventHandler(this.UC_LogCircle_Load);
