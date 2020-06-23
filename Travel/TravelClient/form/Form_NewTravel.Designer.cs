@@ -79,11 +79,11 @@
             // Lbl_title
             // 
             this.Lbl_title.AutoSize = true;
-            this.Lbl_title.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_title.Location = new System.Drawing.Point(240, 71);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Size = new System.Drawing.Size(166, 49);
+            this.Lbl_title.Size = new System.Drawing.Size(109, 29);
             this.Lbl_title.TabIndex = 4;
             this.Lbl_title.Text = "新建旅程";
             // 
@@ -112,45 +112,45 @@
             // Lbl_tip1
             // 
             this.Lbl_tip1.AutoSize = true;
-            this.Lbl_tip1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_tip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_tip1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_tip1.Location = new System.Drawing.Point(154, 142);
             this.Lbl_tip1.Name = "Lbl_tip1";
-            this.Lbl_tip1.Size = new System.Drawing.Size(279, 33);
+            this.Lbl_tip1.Size = new System.Drawing.Size(185, 20);
             this.Lbl_tip1.TabIndex = 7;
             this.Lbl_tip1.Text = "给你的旅程起个标题吧！";
             // 
             // txtBox_title
             // 
-            this.txtBox_title.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_title.Location = new System.Drawing.Point(169, 190);
             this.txtBox_title.Name = "txtBox_title";
-            this.txtBox_title.Size = new System.Drawing.Size(230, 36);
+            this.txtBox_title.Size = new System.Drawing.Size(230, 26);
             this.txtBox_title.TabIndex = 8;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(327, 247);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 36);
+            this.textBox2.Size = new System.Drawing.Size(100, 26);
             this.textBox2.TabIndex = 9;
             // 
             // Lbl_tip2
             // 
             this.Lbl_tip2.AutoSize = true;
-            this.Lbl_tip2.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_tip2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_tip2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_tip2.Location = new System.Drawing.Point(138, 250);
             this.Lbl_tip2.Name = "Lbl_tip2";
-            this.Lbl_tip2.Size = new System.Drawing.Size(183, 33);
+            this.Lbl_tip2.Size = new System.Drawing.Size(121, 20);
             this.Lbl_tip2.TabIndex = 10;
             this.Lbl_tip2.Text = "你要去的城市是";
             // 
             // Btn_ConfirmToCreate
             // 
             this.Btn_ConfirmToCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.Btn_ConfirmToCreate.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_ConfirmToCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_ConfirmToCreate.ForeColor = System.Drawing.SystemColors.Control;
             this.Btn_ConfirmToCreate.Location = new System.Drawing.Point(224, 311);
             this.Btn_ConfirmToCreate.Name = "Btn_ConfirmToCreate";

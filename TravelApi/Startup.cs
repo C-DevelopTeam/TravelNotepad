@@ -43,15 +43,14 @@ namespace TravelApi
             services.AddTransient<ISiteService, SiteService>();
             services.AddTransient<ITaskService, TaskService>();
             services.AddTransient<ITravelService, TravelService>();
-            services.AddMvc();
-            services.AddControllers().AddXmlSerializerFormatters();
             services.AddControllers().ConfigureApiBehaviorOptions(options =>
             {
                 options.SuppressConsumesConstraintForFormFileParameters = true;
-                options.SuppressInferBindingSourcesForParameters = true;
+                //options.SuppressInferBindingSourcesForParameters = true;
                 options.SuppressModelStateInvalidFilter = true;
                 options.SuppressMapClientErrors = true;
             });
+            services.AddMvc().AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

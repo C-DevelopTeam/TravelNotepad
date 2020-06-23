@@ -70,7 +70,7 @@
             // 
             this.Btn_TravelTitle.FlatAppearance.BorderSize = 0;
             this.Btn_TravelTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_TravelTitle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_TravelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_TravelTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Btn_TravelTitle.Location = new System.Drawing.Point(115, 33);
             this.Btn_TravelTitle.Name = "Btn_TravelTitle";

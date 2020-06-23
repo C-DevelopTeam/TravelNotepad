@@ -122,11 +122,11 @@
             // Lbl_title
             // 
             this.Lbl_title.AutoSize = true;
-            this.Lbl_title.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_title.Location = new System.Drawing.Point(130, 42);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Size = new System.Drawing.Size(289, 54);
+            this.Lbl_title.Size = new System.Drawing.Size(164, 31);
             this.Lbl_title.TabIndex = 9;
             this.Lbl_title.Text = "xx—路线总览";
             // 

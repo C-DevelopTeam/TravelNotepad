@@ -47,24 +47,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SF Pro Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(252, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 21);
+            this.label2.Size = new System.Drawing.Size(124, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "分享你的旅行日志！";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(125, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 49);
+            this.label1.Size = new System.Drawing.Size(85, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "日志圈";
             // 
@@ -124,7 +124,7 @@
             this.btnMyShare.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMyShare.FlatAppearance.BorderSize = 0;
             this.btnMyShare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyShare.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnMyShare.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnMyShare.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnMyShare.Location = new System.Drawing.Point(4, 84);
             this.btnMyShare.Margin = new System.Windows.Forms.Padding(4);
@@ -140,7 +140,7 @@
             this.btnLogCircle.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLogCircle.FlatAppearance.BorderSize = 0;
             this.btnLogCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogCircle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnLogCircle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogCircle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnLogCircle.Location = new System.Drawing.Point(-1, 4);
             this.btnLogCircle.Margin = new System.Windows.Forms.Padding(4);
@@ -182,7 +182,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_LogCircle";
             this.Size = new System.Drawing.Size(840, 750);
-            this.Load += new System.EventHandler(this.UC_LogCircle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

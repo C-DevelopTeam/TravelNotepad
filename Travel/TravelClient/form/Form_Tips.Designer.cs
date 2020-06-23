@@ -98,7 +98,7 @@
             // 
             this.Btn_confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.Btn_confirm.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.Btn_confirm.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_confirm.ForeColor = System.Drawing.SystemColors.Control;
             this.Btn_confirm.Location = new System.Drawing.Point(146, 194);
             this.Btn_confirm.Name = "Btn_confirm";
@@ -111,22 +111,22 @@
             // Lbl_title
             // 
             this.Lbl_title.AutoSize = true;
-            this.Lbl_title.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_title.Location = new System.Drawing.Point(92, 41);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Size = new System.Drawing.Size(101, 33);
+            this.Lbl_title.Size = new System.Drawing.Size(51, 20);
             this.Lbl_title.TabIndex = 10;
             this.Lbl_title.Text = "label1";
             // 
             // Lbl_info
             // 
             this.Lbl_info.AutoSize = true;
-            this.Lbl_info.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Lbl_info.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_info.Location = new System.Drawing.Point(68, 120);
             this.Lbl_info.Name = "Lbl_info";
-            this.Lbl_info.Size = new System.Drawing.Size(91, 27);
+            this.Lbl_info.Size = new System.Drawing.Size(46, 17);
             this.Lbl_info.TabIndex = 11;
             this.Lbl_info.Text = "label2";
             // 

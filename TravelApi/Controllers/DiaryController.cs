@@ -73,6 +73,7 @@ namespace TravelApi.Controllers
             try
             {
                 _diaryService.Update(diary);
+                return NoContent();
             }
             catch(Exception e)
             {
@@ -80,7 +81,6 @@ namespace TravelApi.Controllers
                 if (e.InnerException != null) error = e.InnerException.Message;
                 return BadRequest(error);
             }
-            return NoContent();
         }
 
         [HttpDelete("delete")]
