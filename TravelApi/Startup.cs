@@ -33,18 +33,24 @@ namespace TravelApi
             .UseMySql(Configuration.GetConnectionString("travelDataBase"),
             mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 30), ServerType.MySql)
             ));
+            services.Configure<FormOptions>(o => 
+            {  
+                o.MultipartBodyLengthLimit = Int32.MaxValue;  
+            });
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IDiaryService, DiaryService>();
             services.AddTransient<IRouteService, RouteService>();
             services.AddTransient<ISiteService, SiteService>();
             services.AddTransient<ITaskService, TaskService>();
             services.AddTransient<ITravelService, TravelService>();
+            services.AddMvc();
             services.AddControllers().AddXmlSerializerFormatters();
-            services.Configure<FormOptions>(o => 
-            {  
-                o.ValueLengthLimit = Int32.MaxValue;  
-                o.MultipartBodyLengthLimit = Int32.MaxValue;  
-                o.MemoryBufferThreshold = Int32.MaxValue; 
+            services.AddControllers().ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressConsumesConstraintForFormFileParameters = true;
+                options.SuppressInferBindingSourcesForParameters = true;
+                options.SuppressModelStateInvalidFilter = true;
+                options.SuppressMapClientErrors = true;
             });
         }
 

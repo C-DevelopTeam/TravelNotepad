@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using TravelApi.Service;
 using TravelApi.Models;
 using TravelApi.Utils;
+using TravelApi.Filters;
 
 namespace TravelApi.Controllers
 {
@@ -32,28 +33,26 @@ namespace TravelApi.Controllers
 
         [HttpPost("upload")]
         [DisableRequestSizeLimit]
-        //[ValidateAntiForgeryToken]
+        [DisableFormValueModelBinding]
         public async Task<IActionResult> Upload(long diaryId)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
             {
                 ModelState.AddModelError("File", 
                     $"The request couldn't be processed (Error 1).");
-                Console.WriteLine("aaaaaa");
                 return BadRequest(ModelState);
             }
             var fileName = "";
             var diary = _diaryService.GetById(diaryId);
             if(diary == null)
             {
-                Console.WriteLine("bbbbbb");
                 return BadRequest("The diary is not existed.");
             }
             var boundary = MultipartRequestHelper.GetBoundary(
                     MediaTypeHeaderValue.Parse(Request.ContentType),
-                    _defaultFormOptions.MultipartBoundaryLengthLimit); //PostMan测试中无boundary*/
+                    _defaultFormOptions.MultipartBoundaryLengthLimit);
             var reader = new MultipartReader(boundary, HttpContext.Request.Body);
-            var section = await reader.ReadNextSectionAsync(); //问题所在
+            var section = await reader.ReadNextSectionAsync(); 
 
             while (section != null)
             {
@@ -68,7 +67,6 @@ namespace TravelApi.Controllers
                     {
                         ModelState.AddModelError("File", 
                             $"The request couldn't be processed (Error 2).");
-                        Console.WriteLine("cccccc");
                         return BadRequest(ModelState);
                     }
                     else
@@ -80,7 +78,6 @@ namespace TravelApi.Controllers
 
                         if (!ModelState.IsValid)
                         {
-                            Console.WriteLine("dddddd");
                             return BadRequest(ModelState);
                         }
 
@@ -96,7 +93,7 @@ namespace TravelApi.Controllers
                 _diaryService.Update(diary);
                 section = await reader.ReadNextSectionAsync();
             }
-            return Created(nameof(FileController), null);
+            return NoContent();
         }
 
 

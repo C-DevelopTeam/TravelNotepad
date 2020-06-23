@@ -217,12 +217,15 @@ namespace TravelClient.controller
                     string url = baseurl + name;
                     pb = new PictureBox();
                     image = await fileClient.Download(url);
-                    pb.Width = 155;
-                    pb.Height = 175;
-                    pb.Image = ResizeImage(image, new Size(200, 200));
-                    pb.Anchor = AnchorStyles.None;
-                    pb.SizeMode = PictureBoxSizeMode.CenterImage;
-                    panelImgList.Controls.Add(pb);
+                    if(image != null)
+                    {
+                        pb.Width = 155;
+                        pb.Height = 175;
+                        pb.Image = ResizeImage(image, new Size(200, 200));
+                        pb.Anchor = AnchorStyles.None;
+                        pb.SizeMode = PictureBoxSizeMode.CenterImage;
+                        panelImgList.Controls.Add(pb);
+                    }
                 }
             }
         }

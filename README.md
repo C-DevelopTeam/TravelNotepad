@@ -20,28 +20,4 @@ C#大作业：基于旅游场景的备忘录
 >
 > 2020年6月5日：前端代码大体完成，除了时间线、分页控件
 
-------
-## 前端运行截图：
-* 主界面
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/mainpage.png">
-
-* 登录
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/login.png">
-
-* 注册
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/register.png">
-
-* 我的旅程
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/mytrip.png">
-
-* 新建旅程
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/createtrip.png">
-
-* 我的日志
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/myjournal.png">
-
-* 新建日志
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/createjournal.png">
-
-* 新建待办
-<img src="https://github.com/C-DevelopTeam/TravelNotepad/blob/master/example/createtodolist.png">
+> 2020年6月23日：完善相关功能

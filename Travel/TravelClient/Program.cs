@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelClient.form;
 
 namespace TravelClient
 {
@@ -16,7 +17,8 @@ namespace TravelClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form.Form_MainPage());
+            Form_MainPage mainPage = new Form_MainPage();
+            Application.Run(mainPage);
         }
     }
 }
