@@ -121,8 +121,8 @@ namespace TravelClient.form
                                 tn.ShowDialog();
                                 textBox1.Text = "";
                                 textBox2.Text = "";
-                                this.Show();
                             }
+                            this.Show();
                         }
                         else
                         {

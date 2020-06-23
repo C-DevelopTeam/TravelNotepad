@@ -46,14 +46,14 @@ namespace TravelClient.utils
             }
         }
 
-        public async Task<bool> Upload(string url, string filePath)
+        public async Task<bool> Upload(string diaryId, string filePath)
         {
             using(HttpClient client = CreateClient())
             {
-                string boundary = string.Format("----WebKitFormBoundary{0}", DateTime.Now.Ticks.ToString("x"));
+                string url = "https://localhost:5001/api/file/upload?diaryId="+diaryId;
+                string boundary = "----" + DateTime.Now.Ticks.ToString("x");
                 MultipartFormDataContent content = new MultipartFormDataContent(boundary);
-                content.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
-                content.Headers.Add("client", "true");
+                content.Headers.ContentType = MediaTypeHeaderValue.Parse(string.Format("multipart/form-data; boundary={0}", boundary));
                 if (string.IsNullOrEmpty(filePath) && !File.Exists(filePath))
                 {
                     throw new Exception("文件不存在");
