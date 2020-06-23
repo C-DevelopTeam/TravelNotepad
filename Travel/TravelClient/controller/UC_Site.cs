@@ -25,10 +25,6 @@ namespace TravelClient.controller
         long travelId;
         string travelTitle;
 
-        public UC_Site()
-        {
-            InitializeComponent();
-        }
 
         public UC_Site(ChangePanel changePanel,string title,long travelID,long routeID,string siteid)
         {
@@ -37,6 +33,7 @@ namespace TravelClient.controller
             this.travelId = travelID;
             this.changePanel = changePanel;
             this.siteId = siteid;
+            SetFont();
             travelTitle = title;
             GetSiteName();
             

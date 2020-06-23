@@ -26,7 +26,7 @@ namespace TravelApi.Controllers
             try
             {
                 IQueryable<Route> query = _routeService.GetByTravelId(route.TravelId);
-                if(query!=null)
+                if(query.Count()!=0)
                 {
                     route.RouteId = query.ToList().First().RouteId+1;
                 }

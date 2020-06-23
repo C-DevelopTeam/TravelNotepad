@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DiaryDetail));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnAddPic = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnShare = new System.Windows.Forms.Button();
@@ -39,32 +38,19 @@
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelImgList = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnAddPic);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnShare);
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Controls.Add(this.tbTitle);
-            this.panel1.Controls.Add(this.btnBack);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(840, 80);
-            this.panel1.TabIndex = 0;
             // 
             // btnAddPic
             // 
             this.btnAddPic.FlatAppearance.BorderSize = 0;
             this.btnAddPic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPic.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPic.Image")));
-            this.btnAddPic.Location = new System.Drawing.Point(774, 3);
+            this.btnAddPic.Location = new System.Drawing.Point(770, 14);
+            this.btnAddPic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddPic.Name = "btnAddPic";
-            this.btnAddPic.Size = new System.Drawing.Size(44, 36);
+            this.btnAddPic.Size = new System.Drawing.Size(66, 54);
             this.btnAddPic.TabIndex = 4;
             this.btnAddPic.UseVisualStyleBackColor = true;
             this.btnAddPic.Click += new System.EventHandler(this.BtnAddPic_Click);
@@ -73,11 +59,12 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(650, 45);
+            this.btnSave.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(679, 22);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 32);
+            this.btnSave.Size = new System.Drawing.Size(83, 46);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -87,11 +74,12 @@
             // 
             this.btnShare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.btnShare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShare.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnShare.ForeColor = System.Drawing.Color.White;
-            this.btnShare.Location = new System.Drawing.Point(742, 45);
+            this.btnShare.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnShare.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnShare.Location = new System.Drawing.Point(563, 22);
+            this.btnShare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(86, 32);
+            this.btnShare.Size = new System.Drawing.Size(111, 46);
             this.btnShare.TabIndex = 3;
             this.btnShare.Text = "分享";
             this.btnShare.UseVisualStyleBackColor = false;
@@ -101,11 +89,12 @@
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(558, 45);
+            this.btnEdit.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.Location = new System.Drawing.Point(472, 22);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(86, 32);
+            this.btnEdit.Size = new System.Drawing.Size(83, 46);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "编辑";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -115,10 +104,11 @@
             // 
             this.tbTitle.BackColor = System.Drawing.SystemColors.Control;
             this.tbTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbTitle.Font = new System.Drawing.Font("微软雅黑", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbTitle.Location = new System.Drawing.Point(96, 20);
+            this.tbTitle.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbTitle.Location = new System.Drawing.Point(87, 22);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(333, 44);
+            this.tbTitle.Size = new System.Drawing.Size(386, 48);
             this.tbTitle.TabIndex = 2;
             // 
             // btnBack
@@ -127,59 +117,76 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(34, 16);
+            this.btnBack.Location = new System.Drawing.Point(4, 9);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(56, 50);
+            this.btnBack.Size = new System.Drawing.Size(84, 75);
             this.btnBack.TabIndex = 0;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(0, 192);
+            this.rtbDescription.Location = new System.Drawing.Point(0, 232);
+            this.rtbDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.rtbDescription.Size = new System.Drawing.Size(840, 466);
+            this.rtbDescription.Size = new System.Drawing.Size(836, 418);
             this.rtbDescription.TabIndex = 0;
             this.rtbDescription.Text = "";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.panelImgList);
             this.panel2.Controls.Add(this.rtbDescription);
-            this.panel2.Location = new System.Drawing.Point(0, 86);
+            this.panel2.Location = new System.Drawing.Point(0, 92);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(840, 661);
+            this.panel2.Size = new System.Drawing.Size(840, 654);
             this.panel2.TabIndex = 1;
             // 
             // panelImgList
             // 
             this.panelImgList.AutoScroll = true;
-            this.panelImgList.Location = new System.Drawing.Point(0, 3);
+            this.panelImgList.Location = new System.Drawing.Point(0, 6);
+            this.panelImgList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelImgList.Name = "panelImgList";
             this.panelImgList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panelImgList.Size = new System.Drawing.Size(837, 183);
+            this.panelImgList.Size = new System.Drawing.Size(836, 218);
             this.panelImgList.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.DarkGray;
+            this.label7.Location = new System.Drawing.Point(20, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(780, 2);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "label7";
             // 
             // UC_DiaryDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbTitle);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnShare);
+            this.Controls.Add(this.btnAddPic);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UC_DiaryDetail";
             this.Size = new System.Drawing.Size(840, 750);
             this.Load += new System.EventHandler(this.UC_DiaryDetail_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox tbTitle;
         private System.Windows.Forms.Button btnBack;
@@ -189,5 +196,6 @@
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel panelImgList;
+        private System.Windows.Forms.Label label7;
     }
 }

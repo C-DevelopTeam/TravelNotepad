@@ -74,9 +74,9 @@ namespace TravelClient.controller
                 try
                 {
                     HttpResponseMessage result = await client.Delete(url);
-                    if(result.IsSuccessStatusCode)
+                    if(!result.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("删除未成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     this.Refresh();
                 }

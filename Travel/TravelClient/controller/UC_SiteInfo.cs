@@ -14,6 +14,8 @@ using System.Xml.Serialization;
 using TravelClient.utils;
 using System.Net.Http;
 using System.IO;
+using System.Xml;
+
 
 namespace TravelClient.controller
 {
@@ -27,6 +29,12 @@ namespace TravelClient.controller
         bool isCreate = false;
         long travelId;
         public delegate_getTask delegate_Get;
+        string cmbMarkNumText;
+        string keyword;
+        string city = "";
+        Dictionary<string, Site> sites = new Dictionary<string, Site>();
+
+
 
         public UC_SiteInfo(ChangePanel changePanel,string travelTitle, long travelId, bool isCreate = false, long routeID=-1, string siteName="")
         {
@@ -35,18 +43,64 @@ namespace TravelClient.controller
             this.isCreate = isCreate;
             this.changePanel = changePanel;
             this.TravelTitle = travelTitle;
+            this.travelId = travelId;
+
+            comboBox_site.TextUpdate += ComboBox_site_TextUpdate;
 
             this.Lbl_title.Text = travelTitle;
             if (isCreate==false)
             {
                 this.route.RouteId = routeID;
                 this.sitename = siteName;
-                this.travelId = travelId;
 
                 initinfo();
             }
             
             
+        }
+
+        private void ComboBox_site_TextUpdate(object sender, EventArgs e)
+        {
+            city = TxtBox_city.Text;
+            keyword = comboBox_site.Text;
+            sites.Clear();
+            comboBox_site.Items.Clear();
+            getsite();
+        }
+
+        private void comboBox_site_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void getsite()
+        {
+            Client client = new Client();
+            string url = "https://restapi.amap.com/v3/assistant/inputtips?key=6ed5794f8d092ea145181b36e643ff22&keywords="+keyword+"&city="+city+"&output=XML";
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Site>));
+            HttpResponseMessage result = await client.Get(url);
+
+            
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(await result.Content.ReadAsStreamAsync());
+            XmlNodeList xmlNodeList = xmlDocument.SelectNodes("//tip");
+            foreach (XmlElement element in xmlNodeList)
+            {
+                Site site = new Site();
+                site.SiteId = element.ChildNodes[0].InnerText;
+                site.SiteName = element.ChildNodes[1].InnerText;
+                site.Distinct = element.ChildNodes[2].InnerText;
+                site.Adcode = element.ChildNodes[3].InnerText;
+                site.Location = element.ChildNodes[4].InnerText;
+                site.Address = element.ChildNodes[5].InnerText;
+                if(!sites.Keys.Contains(site.SiteName))
+                {
+                    sites.Add(site.SiteName, site);
+                }
+                comboBox_site.Items.Add(site.SiteName);
+            }
+            comboBox_site.DroppedDown = true;
+
         }
 
         public void SetFont()
@@ -58,6 +112,7 @@ namespace TravelClient.controller
                 font.AddFontFile(AppPath + @"\font\造字工房映力黑规体.otf");
                 Font titleFont20 = new Font(font.Families[0], 20F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                 Font titleFont12 = new Font(font.Families[0], 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                Font titleFont10 = new Font(font.Families[0], 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
                 //设置窗体控件字体，哪些控件要更改都写到下面
                 Lbl_site.Font = titleFont12;
@@ -65,6 +120,10 @@ namespace TravelClient.controller
                 Lbl_timeForLeave.Font = titleFont12;
                 Lbl_title.Font = titleFont20;
                 Lbl_vehicle.Font = titleFont12;
+                Lbl_city.Font = titleFont12;
+                Btn_delete.Font = titleFont10;
+                Btn_Comfirm.Font = titleFont10;
+
             }
             catch
             {
@@ -75,7 +134,7 @@ namespace TravelClient.controller
 
         private async void initinfo()
         {
-            this.Txtbox_site.Text = sitename;
+            this.comboBox_site.Text = sitename;
             string url = "https://localhost:5001/api/route?routeId=" + route.RouteId;
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(Route));
             Client client = new Client();
@@ -190,11 +249,6 @@ namespace TravelClient.controller
                     HttpResponseMessage result = await client.Post(url, data);
                     if (result.IsSuccessStatusCode)
                     {
-
-                        using (Form_Tips tip = new Form_Tips("提示", "成功创建"))
-                        {
-                            tip.ShowDialog();
-                        }
                         TxtBox_todo.Text = "";
                         flowLayoutPanel_todo.Controls.Clear();
                         getTask();
@@ -242,9 +296,9 @@ namespace TravelClient.controller
                         }
 
                         result = await client.Put(url2, data);
-                        if (result.IsSuccessStatusCode)
+                        if (!result.IsSuccessStatusCode)
                         {
-                            using (Form_Tips tip = new Form_Tips("提示", "修改成功"))
+                            using (Form_Tips tip = new Form_Tips("提示", "修改失败"))
                             {
                                 tip.ShowDialog();
                             }
@@ -267,32 +321,47 @@ namespace TravelClient.controller
             else
             {
                 string url = "https://localhost:5001/api/route";
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Route));
+                string urlOfSite = "https://localhost:5001/api/Site";
+                XmlSerializer xmlSerializerForRoute = new XmlSerializer(typeof(Route));
+                XmlSerializer xmlSerializerForSite = new XmlSerializer(typeof(Site));
                 Client client = new Client();
                 try
                 {
                     string data = "";
+                    string dataOfSite = "";
                     Route route = new Route();
                     route.Method = this.Txtbos_vehicle.Text;
                     route.StartTime = this.dateTimePicker1.Value;
                     route.EndTime = this.dateTimePicker2.Value;
-
-
-
+                    route.TravelId = travelId;
+                    Site site = new Site();
+                    site = sites[comboBox_site.Text];
+                    route.StartSiteId = site.SiteId;
                     //添加site
 
                     using (StringWriter sw = new StringWriter())
                     {
-                        xmlSerializer.Serialize(sw, route);
+                        xmlSerializerForRoute.Serialize(sw, route);
                         data = sw.ToString();
                     }
-                    HttpResponseMessage result = await client.Post(url, data);
+
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        xmlSerializerForSite.Serialize(sw, site);
+                        dataOfSite = sw.ToString();
+                    }
+                    HttpResponseMessage resultOfSite = await client.Post(urlOfSite, dataOfSite);
+
+                    HttpResponseMessage result = new HttpResponseMessage();
+
+                    if (resultOfSite.IsSuccessStatusCode)
+                    {
+                        result = await client.Post(url, data);
+                    }
+                    
                     if (result.IsSuccessStatusCode)
                     {
-                        using (Form_Tips tip = new Form_Tips("提示", "新增成功"))
-                        {
-                            tip.ShowDialog();
-                        }
+                        isCreate = false;
                     }
                     else
                     {
@@ -302,10 +371,41 @@ namespace TravelClient.controller
                         }
                     }
 
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        private async void Btn_delete_Click(object sender, EventArgs e)
+        {
+            string url = "https://localhost:5001/api/Route/delete?routelId=" + route.RouteId;
+            Client client = new Client();
+            try
+            {
+                HttpResponseMessage result = await client.Delete(url);
+                if (result.IsSuccessStatusCode)
+                {
+                    UC_AllSites uc_as = new UC_AllSites(changePanel, TravelTitle, travelId);
+                    changePanel(uc_as);
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", "初始化信息失败"))
+                    {
+                        tip.ShowDialog();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                using (Form_Tips tip = new Form_Tips("警告", ex.Message))
+                {
+                    tip.ShowDialog();
                 }
             }
         }
