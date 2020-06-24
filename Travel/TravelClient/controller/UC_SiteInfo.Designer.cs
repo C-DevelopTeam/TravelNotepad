@@ -67,11 +67,11 @@
             // Lbl_title
             // 
             this.Lbl_title.AutoSize = true;
-            this.Lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_title.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_title.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_title.Location = new System.Drawing.Point(184, 24);
             this.Lbl_title.Name = "Lbl_title";
-            this.Lbl_title.Size = new System.Drawing.Size(122, 31);
+            this.Lbl_title.Size = new System.Drawing.Size(183, 54);
             this.Lbl_title.TabIndex = 9;
             this.Lbl_title.Text = "旅程标题";
             // 
@@ -99,44 +99,44 @@
             // Lbl_vehicle
             // 
             this.Lbl_vehicle.AutoSize = true;
-            this.Lbl_vehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_vehicle.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_vehicle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_vehicle.Location = new System.Drawing.Point(84, 293);
             this.Lbl_vehicle.Name = "Lbl_vehicle";
-            this.Lbl_vehicle.Size = new System.Drawing.Size(105, 20);
+            this.Lbl_vehicle.Size = new System.Drawing.Size(159, 33);
             this.Lbl_vehicle.TabIndex = 13;
             this.Lbl_vehicle.Text = "怎么去下一站";
             // 
             // Lbl_timeForLeave
             // 
             this.Lbl_timeForLeave.AutoSize = true;
-            this.Lbl_timeForLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_timeForLeave.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_timeForLeave.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_timeForLeave.Location = new System.Drawing.Point(84, 233);
             this.Lbl_timeForLeave.Name = "Lbl_timeForLeave";
-            this.Lbl_timeForLeave.Size = new System.Drawing.Size(73, 20);
+            this.Lbl_timeForLeave.Size = new System.Drawing.Size(111, 33);
             this.Lbl_timeForLeave.TabIndex = 14;
             this.Lbl_timeForLeave.Text = "离开时间";
             // 
             // Lbl_timeForArrive
             // 
             this.Lbl_timeForArrive.AutoSize = true;
-            this.Lbl_timeForArrive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_timeForArrive.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_timeForArrive.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_timeForArrive.Location = new System.Drawing.Point(83, 175);
             this.Lbl_timeForArrive.Name = "Lbl_timeForArrive";
-            this.Lbl_timeForArrive.Size = new System.Drawing.Size(73, 20);
+            this.Lbl_timeForArrive.Size = new System.Drawing.Size(111, 33);
             this.Lbl_timeForArrive.TabIndex = 15;
             this.Lbl_timeForArrive.Text = "到达时间";
             // 
             // Lbl_site
             // 
             this.Lbl_site.AutoSize = true;
-            this.Lbl_site.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_site.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_site.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_site.Location = new System.Drawing.Point(360, 121);
             this.Lbl_site.Name = "Lbl_site";
-            this.Lbl_site.Size = new System.Drawing.Size(41, 20);
+            this.Lbl_site.Size = new System.Drawing.Size(63, 33);
             this.Lbl_site.TabIndex = 16;
             this.Lbl_site.Text = "地点";
             // 
@@ -146,7 +146,7 @@
             this.Txtbos_vehicle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Txtbos_vehicle.Location = new System.Drawing.Point(260, 290);
             this.Txtbos_vehicle.Name = "Txtbos_vehicle";
-            this.Txtbos_vehicle.Size = new System.Drawing.Size(266, 26);
+            this.Txtbos_vehicle.Size = new System.Drawing.Size(266, 35);
             this.Txtbos_vehicle.TabIndex = 20;
             // 
             // dateTimePicker1
@@ -157,18 +157,18 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(260, 175);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(266, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(266, 31);
             this.dateTimePicker1.TabIndex = 21;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("方正幼线简体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm";
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(260, 233);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(266, 23);
+            this.dateTimePicker2.Size = new System.Drawing.Size(266, 31);
             this.dateTimePicker2.TabIndex = 22;
             // 
             // Gpb_todolist
@@ -176,7 +176,7 @@
             this.Gpb_todolist.Controls.Add(this.TxtBox_todo);
             this.Gpb_todolist.Controls.Add(this.Btn_addtodo);
             this.Gpb_todolist.Controls.Add(this.flowLayoutPanel_todo);
-            this.Gpb_todolist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Gpb_todolist.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gpb_todolist.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Gpb_todolist.Location = new System.Drawing.Point(100, 405);
             this.Gpb_todolist.Name = "Gpb_todolist";
@@ -191,17 +191,17 @@
             this.TxtBox_todo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TxtBox_todo.Location = new System.Drawing.Point(45, 45);
             this.TxtBox_todo.Name = "TxtBox_todo";
-            this.TxtBox_todo.Size = new System.Drawing.Size(398, 23);
+            this.TxtBox_todo.Size = new System.Drawing.Size(398, 30);
             this.TxtBox_todo.TabIndex = 27;
             // 
             // Btn_addtodo
             // 
             this.Btn_addtodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.Btn_addtodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_addtodo.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_addtodo.ForeColor = System.Drawing.SystemColors.Control;
-            this.Btn_addtodo.Location = new System.Drawing.Point(463, 40);
+            this.Btn_addtodo.Location = new System.Drawing.Point(463, 33);
             this.Btn_addtodo.Name = "Btn_addtodo";
-            this.Btn_addtodo.Size = new System.Drawing.Size(106, 42);
+            this.Btn_addtodo.Size = new System.Drawing.Size(106, 49);
             this.Btn_addtodo.TabIndex = 26;
             this.Btn_addtodo.Text = "确定添加";
             this.Btn_addtodo.UseVisualStyleBackColor = false;
@@ -211,13 +211,13 @@
             // 
             this.flowLayoutPanel_todo.Location = new System.Drawing.Point(45, 94);
             this.flowLayoutPanel_todo.Name = "flowLayoutPanel_todo";
-            this.flowLayoutPanel_todo.Size = new System.Drawing.Size(524, 240);
+            this.flowLayoutPanel_todo.Size = new System.Drawing.Size(524, 227);
             this.flowLayoutPanel_todo.TabIndex = 25;
             // 
             // Btn_Comfirm
             // 
             this.Btn_Comfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(106)))), ((int)(((byte)(149)))));
-            this.Btn_Comfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_Comfirm.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Comfirm.ForeColor = System.Drawing.SystemColors.Control;
             this.Btn_Comfirm.Location = new System.Drawing.Point(366, 353);
             this.Btn_Comfirm.Name = "Btn_Comfirm";
@@ -229,32 +229,33 @@
             // 
             // comboBox_site
             // 
-            this.comboBox_site.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_site.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBox_site.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBox_site.FormattingEnabled = true;
             this.comboBox_site.Location = new System.Drawing.Point(442, 117);
             this.comboBox_site.Name = "comboBox_site";
-            this.comboBox_site.Size = new System.Drawing.Size(295, 28);
+            this.comboBox_site.Size = new System.Drawing.Size(295, 41);
             this.comboBox_site.TabIndex = 26;
             this.comboBox_site.SelectedIndexChanged += new System.EventHandler(this.comboBox_site_SelectedIndexChanged);
             // 
             // Lbl_city
             // 
             this.Lbl_city.AutoSize = true;
-            this.Lbl_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_city.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_city.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Lbl_city.Location = new System.Drawing.Point(83, 120);
             this.Lbl_city.Name = "Lbl_city";
-            this.Lbl_city.Size = new System.Drawing.Size(41, 20);
+            this.Lbl_city.Size = new System.Drawing.Size(63, 33);
             this.Lbl_city.TabIndex = 27;
             this.Lbl_city.Text = "城市";
             // 
             // TxtBox_city
             // 
-            this.TxtBox_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBox_city.Font = new System.Drawing.Font("造字工房力黑（非商用）常规体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBox_city.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TxtBox_city.Location = new System.Drawing.Point(175, 117);
             this.TxtBox_city.Name = "TxtBox_city";
-            this.TxtBox_city.Size = new System.Drawing.Size(147, 26);
+            this.TxtBox_city.Size = new System.Drawing.Size(147, 34);
             this.TxtBox_city.TabIndex = 28;
             // 
             // Btn_delete

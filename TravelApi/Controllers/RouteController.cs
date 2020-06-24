@@ -59,7 +59,7 @@ namespace TravelApi.Controllers
         public ActionResult<List<Route>> GetRoute(long travelId)
         {
             IQueryable<Route> query = _routeService.GetByTravelId(travelId);
-            if(query==null)
+            if(query.Count()==0)
             {
                 return NotFound();
             }

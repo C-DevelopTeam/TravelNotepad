@@ -24,7 +24,7 @@ namespace TravelApi.Controllers
         {
             try{
                 IQueryable<User> query = _userService.SelectAll();
-                if(query!=null)
+                if(query.Count()!=0)
                 {
                     user.Uid = query.ToList().First().Uid+1;
                 }
