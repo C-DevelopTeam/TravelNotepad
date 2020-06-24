@@ -36,6 +36,7 @@ namespace TravelClient.controller
             travelID = ID;
             Btn_TravelTitle.Text = title;
             this.init = init;
+            SetFont();
         }
 
         private void Btn_TravelTitle_Click(object sender, EventArgs e)

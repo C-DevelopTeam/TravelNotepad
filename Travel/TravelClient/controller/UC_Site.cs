@@ -51,7 +51,7 @@ namespace TravelClient.controller
                 if (result.IsSuccessStatusCode)
                 {
                     Route route = (Route)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
-                    UC_SiteInfo uc_siteInfo = new UC_SiteInfo(changePanel,travelTitle,travelId, false,routeID,siteName);
+                    UC_SiteInfo uc_siteInfo = new UC_SiteInfo(changePanel,travelTitle,travelId, false,routeID,siteId);
                     uc_siteInfo.delegate_Get = new delegate_getTask(uc_siteInfo.getTask);
                     changePanel(uc_siteInfo);
                 

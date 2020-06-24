@@ -25,6 +25,7 @@ namespace TravelClient.controller
         ChangePanel changePanel;
         Route route = new Route();
         string sitename = "";
+        string siteId;
         string TravelTitle;
         bool isCreate = false;
         long travelId;
@@ -36,10 +37,10 @@ namespace TravelClient.controller
 
 
 
-        public UC_SiteInfo(ChangePanel changePanel,string travelTitle, long travelId, bool isCreate = false, long routeID=-1, string siteName="")
+        public UC_SiteInfo(ChangePanel changePanel,string travelTitle, long travelId, bool isCreate = false, long routeID=-1, string siteId="")
         {
             InitializeComponent();
-            SetFont();
+            //SetFont();
             this.isCreate = isCreate;
             this.changePanel = changePanel;
             this.TravelTitle = travelTitle;
@@ -51,12 +52,43 @@ namespace TravelClient.controller
             if (isCreate==false)
             {
                 this.route.RouteId = routeID;
-                this.sitename = siteName;
+                this.siteId = siteId;
 
                 initinfo();
             }
             
             
+        }
+
+        private async void GetSiteName()
+        {
+            string url = "https://localhost:5001/api/site/get?siteId=" + siteId;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Site));
+            Client client = new Client();
+            try
+            {
+                HttpResponseMessage result = await client.Get(url);
+                if (result.IsSuccessStatusCode)
+                {
+                    Site site = (Site)xmlSerializer.Deserialize(await result.Content.ReadAsStreamAsync());
+                    sitename = site.SiteName;
+                    this.comboBox_site.Text = sitename;
+                    city = site.City;
+                    TxtBox_city.Text = city;
+                }
+                else
+                {
+                    using (Form_Tips tip = new Form_Tips("警告", "获取失败"))
+                    {
+                        tip.ShowDialog();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void ComboBox_site_TextUpdate(object sender, EventArgs e)
@@ -65,7 +97,7 @@ namespace TravelClient.controller
             keyword = comboBox_site.Text;
             sites.Clear();
             comboBox_site.Items.Clear();
-            getsite();
+            getSites();
         }
 
         private void comboBox_site_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,7 +105,7 @@ namespace TravelClient.controller
 
         }
 
-        private async void getsite()
+        private async void getSites()
         {
             Client client = new Client();
             string url = "https://restapi.amap.com/v3/assistant/inputtips?key=6ed5794f8d092ea145181b36e643ff22&keywords="+keyword+"&city="+city+"&output=XML";
@@ -93,6 +125,7 @@ namespace TravelClient.controller
                 site.Adcode = element.ChildNodes[3].InnerText;
                 site.Location = element.ChildNodes[4].InnerText;
                 site.Address = element.ChildNodes[5].InnerText;
+                site.City = city;
                 if(!sites.Keys.Contains(site.SiteName))
                 {
                     sites.Add(site.SiteName, site);
@@ -134,7 +167,7 @@ namespace TravelClient.controller
 
         private async void initinfo()
         {
-            this.comboBox_site.Text = sitename;
+            
             string url = "https://localhost:5001/api/route?routeId=" + route.RouteId;
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(Route));
             Client client = new Client();
@@ -148,6 +181,7 @@ namespace TravelClient.controller
                     this.dateTimePicker1.Value = route.StartTime;
                     this.dateTimePicker2.Value = route.EndTime;
                     getTask();
+                    GetSiteName();
                 }
                 else
                 {
@@ -329,19 +363,19 @@ namespace TravelClient.controller
                 {
                     string data = "";
                     string dataOfSite = "";
-                    Route route = new Route();
-                    route.Method = this.Txtbos_vehicle.Text;
-                    route.StartTime = this.dateTimePicker1.Value;
-                    route.EndTime = this.dateTimePicker2.Value;
-                    route.TravelId = travelId;
+                    Route routeToSend = new Route();
+                    routeToSend.Method = this.Txtbos_vehicle.Text;
+                    routeToSend.StartTime = this.dateTimePicker1.Value;
+                    routeToSend.EndTime = this.dateTimePicker2.Value;
+                    routeToSend.TravelId = travelId;
                     Site site = new Site();
                     site = sites[comboBox_site.Text];
-                    route.StartSiteId = site.SiteId;
+                    routeToSend.StartSiteId = site.SiteId;
                     //添加site
 
                     using (StringWriter sw = new StringWriter())
                     {
-                        xmlSerializerForRoute.Serialize(sw, route);
+                        xmlSerializerForRoute.Serialize(sw, routeToSend);
                         data = sw.ToString();
                     }
 
@@ -361,6 +395,8 @@ namespace TravelClient.controller
                     
                     if (result.IsSuccessStatusCode)
                     {
+                        Route newRoute = (Route)xmlSerializerForRoute.Deserialize(await result.Content.ReadAsStreamAsync());
+                        routeToSend = newRoute;
                         isCreate = false;
                     }
                     else
@@ -370,6 +406,7 @@ namespace TravelClient.controller
                             tip.ShowDialog();
                         }
                     }
+
 
 
                 }
@@ -382,7 +419,7 @@ namespace TravelClient.controller
 
         private async void Btn_delete_Click(object sender, EventArgs e)
         {
-            string url = "https://localhost:5001/api/Route/delete?routelId=" + route.RouteId;
+            string url = "https://localhost:5001/api/Route/delete?routeId=" + route.RouteId;
             Client client = new Client();
             try
             {
