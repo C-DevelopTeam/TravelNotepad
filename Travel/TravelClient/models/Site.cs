@@ -4,6 +4,7 @@ namespace TravelClient.Models
     {
         public string SiteId{get; set;}
         public string SiteName{get; set;}
+        public string City {get; set; }
         public string Distinct{get; set;}
         public string Adcode{get; set;}
         public string Location{get; set;}

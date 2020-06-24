@@ -24,25 +24,20 @@ DROP TABLE IF EXISTS `diary`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `diary` (
   `diaryid` decimal(12,0) NOT NULL,
+  `time` datetime NOT NULL,
   `title` varchar(45) DEFAULT NULL,
   `description` longtext,
   `photo` longtext,
   `share` decimal(1,0) NOT NULL DEFAULT '0',
+  `uid` decimal(5,0) NOT NULL,
   `travelid` decimal(12,0) DEFAULT NULL,
   PRIMARY KEY (`diaryid`),
   KEY `travelid_idx` (`travelid`),
-  CONSTRAINT `travelid` FOREIGN KEY (`travelid`) REFERENCES `travel` (`travelid`)
+  KEY `uerid_idx` (`uid`),
+  CONSTRAINT `travelid` FOREIGN KEY (`travelid`) REFERENCES `travel` (`travelid`),
+  CONSTRAINT `uerid` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='日记表';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `diary`
---
-
-LOCK TABLES `diary` WRITE;
-/*!40000 ALTER TABLE `diary` DISABLE KEYS */;
-/*!40000 ALTER TABLE `diary` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `route`
@@ -52,7 +47,7 @@ DROP TABLE IF EXISTS `route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `route` (
-  `routeid` int NOT NULL,
+  `routeid` decimal(14,0) NOT NULL,
   `state` decimal(1,0) NOT NULL DEFAULT '0',
   `method` varchar(100) NOT NULL DEFAULT '未定义出行方式',
   `start_time` datetime DEFAULT NULL,
@@ -67,15 +62,6 @@ CREATE TABLE `route` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `route`
---
-
-LOCK TABLES `route` WRITE;
-/*!40000 ALTER TABLE `route` DISABLE KEYS */;
-/*!40000 ALTER TABLE `route` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `site`
 --
 
@@ -85,6 +71,7 @@ DROP TABLE IF EXISTS `site`;
 CREATE TABLE `site` (
   `siteid` varchar(45) NOT NULL,
   `sitename` varchar(100) NOT NULL,
+  `city` varchar(45) NOT NULL,
   `distinct` varchar(80) DEFAULT NULL,
   `adcode` varchar(45) DEFAULT NULL,
   `location` varchar(100) DEFAULT NULL,
@@ -94,15 +81,6 @@ CREATE TABLE `site` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `site`
---
-
-LOCK TABLES `site` WRITE;
-/*!40000 ALTER TABLE `site` DISABLE KEYS */;
-/*!40000 ALTER TABLE `site` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `task`
 --
 
@@ -110,24 +88,14 @@ DROP TABLE IF EXISTS `task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `task` (
-  `taskid` int NOT NULL,
+  `taskid` decimal(16,0) NOT NULL,
   `state` decimal(1,0) NOT NULL DEFAULT '0',
   `description` varchar(45) NOT NULL,
-  `routeid` int NOT NULL,
+  `routeid` decimal(14,0) NOT NULL,
   PRIMARY KEY (`taskid`),
-  KEY `routeid_idx` (`routeid`),
-  CONSTRAINT `routeid` FOREIGN KEY (`routeid`) REFERENCES `route` (`routeid`)
+  KEY `routeid_idx` (`routeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='待办表';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `task`
---
-
-LOCK TABLES `task` WRITE;
-/*!40000 ALTER TABLE `task` DISABLE KEYS */;
-/*!40000 ALTER TABLE `task` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `travel`
@@ -147,15 +115,6 @@ CREATE TABLE `travel` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `travel`
---
-
-LOCK TABLES `travel` WRITE;
-/*!40000 ALTER TABLE `travel` DISABLE KEYS */;
-/*!40000 ALTER TABLE `travel` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `user`
 --
 
@@ -172,15 +131,6 @@ CREATE TABLE `user` (
   CONSTRAINT `user_chk_1` CHECK ((`sex` in (_utf8mb4'男',_utf8mb4'女')))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户表';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -191,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-30 20:19:29
+-- Dump completed on 2020-06-24 11:22:45
